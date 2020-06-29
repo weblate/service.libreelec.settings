@@ -556,13 +556,19 @@ class system(modules.Module):
             restore_file_path = xbmcDialog.browse( 1,
                                                    oe._(32373),
                                                    'files',
-                                                   '??????????????.tar',
+                                                   '',
                                                    False,
                                                    False,
                                                    self.BACKUP_DESTINATION )
             # Do nothing if the dialog is cancelled - path will be the backup destination
             if not os.path.isfile(restore_file_path):
                 return
+            # file selected that won't trigger busybox's backup restoration
+            if not restore_file_path.endswith(('.tar', '.tar.gz', '.tar.bz2', '.tar.xz')):
+                log.log(f'Error: Invalid restore file: {restore_file_path}', log.ERROR)
+                xbmcDialog.ok(oe._(32373), 'Error: Invalid selection. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz')
+                return
+
             log.log(f'Restore file: {restore_file_path}', log.INFO)
             restore_file_name = restore_file_path.split('/')[-1]
             if os.path.exists(self.RESTORE_DIR):
