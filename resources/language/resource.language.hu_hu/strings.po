@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-11-26 09:40+0000\n"
+"PO-Revision-Date: 2021-11-26 20:29+0000\n"
 "Last-Translator: dtech <dee.gabor@gmail.com>\n"
 "Language-Team: Hungarian <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/hu_hu/>\n"
 "Language: hu_hu\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
-msgstr "@DISTRONAME@ Beállítások"
+msgstr "@DISTRONAME@ beállítások"
 
 msgctxt "#601"
 msgid "Interface"
