@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-11-24 09:39+0000\n"
+"PO-Revision-Date: 2021-11-29 20:59+0000\n"
 "Last-Translator: Matthieu Sontag <matthieu.sontag@gmail.com>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/fr_fr/>\n"
 "Language: fr_fr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.9\n"
+"X-Generator: Weblate 4.9.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -274,11 +274,11 @@ msgstr "Définir le mot de passe SSH"
 
 msgctxt "#747"
 msgid "Enable a PIN for @DISTRONAME@ Settings access"
-msgstr "Activer un NIP pour accéder aux paramètres @DISTRONAME@"
+msgstr "Activer un code PIN pour accéder aux paramètres @DISTRONAME@"
 
 msgctxt "#748"
 msgid "Change the PIN Lock for @DISTRONAME@ Settings access"
-msgstr "Changer le NIP de verrouillage pour accéder aux paramètres @DISTRONAME@"
+msgstr "Changer le code PIN de verrouillage pour accéder aux paramètres @DISTRONAME@"
 
 msgctxt "#749"
 msgid ""
@@ -681,15 +681,15 @@ msgstr "URL invalide"
 
 msgctxt "#32192"
 msgid "PIN lock"
-msgstr "NIP de verrouillage"
+msgstr "PIN de verrouillage"
 
 msgctxt "#32193"
 msgid "Enable @DISTRONAME@ Settings PIN Lock"
-msgstr "Activer le verrouillage NIP des paramètres @DISTRONAME@"
+msgstr "Activer le verrouillage des paramètres @DISTRONAME@ par code PIN"
 
 msgctxt "#32194"
 msgid "Change @DISTRONAME@ Settings PIN Lock"
-msgstr "Changer le verrouillage NIP des paramètres @DISTRONAME@"
+msgstr "Changer le code PIN de verrouillage des paramètres @DISTRONAME@"
 
 msgctxt "#32196"
 msgid "About"
@@ -799,39 +799,39 @@ msgstr "Il y a eu une erreur durant le processus.[CR]Le mot de passe SSH n'a pas
 
 msgctxt "#32226"
 msgid "Enter new 4 digit PIN"
-msgstr "Entrez un nouveau NIP à 4 chiffres"
+msgstr "Entrez un nouveau code PIN à 4 chiffres"
 
 msgctxt "#32227"
 msgid "Re-enter PIN"
-msgstr "Rentrez le NIP à nouveau"
+msgstr "Rentrez le code PIN à nouveau"
 
 msgctxt "#32228"
 msgid "Error - PIN codes did not match!"
-msgstr "Erreur - les code NIP ne correspondent pas !"
+msgstr "Erreur - les codes PIN ne correspondent pas !"
 
 msgctxt "#32229"
 msgid "@DISTRONAME@ Settings PIN lock not set.[CR][CR]Please try again."
-msgstr "Verrouillage NIP des paramètres @DISTRONAME@ pas configuré.[CR][CR]Veuillez essayer à nouveau."
+msgstr "Verrouillage des paramètres @DISTRONAME@ par code PIN non configuré.[CR][CR]Veuillez essayer à nouveau."
 
 msgctxt "#32230"
 msgid "@DISTRONAME@ Settings PIN lock set."
-msgstr "Verrouillage NIP des paramètres @DISTRONAME@ configuré."
+msgstr "Verrouillage des paramètres @DISTRONAME@ par code PIN configuré."
 
 msgctxt "#32231"
 msgid "Your @DISTRONAME@ Settings PIN lock has been set to:"
-msgstr "Le code PIN de verrouillage de @DISTRONAME@ est désormais :"
+msgstr "Le code PIN de verrouillage de @DISTRONAME@ est désormais :"
 
 msgctxt "#32232"
 msgid "Error - PIN code not 4 digits!"
-msgstr "Erreur - le code NIP n'a pas 4 chiffres !"
+msgstr "Erreur - le code PIN n'a pas 4 chiffres !"
 
 msgctxt "#32233"
 msgid "@DISTRONAME@ Settings Locked[CR]Enter 4 digit PIN"
-msgstr "Configuration de @DISTRONAME@ verrouillée[CR]Entre le code PI à 4 chiffres"
+msgstr "Configuration de @DISTRONAME@ verrouillée[CR]Entrer le code PIN à 4 chiffres"
 
 msgctxt "#32234"
 msgid "Incorrect PIN!"
-msgstr "NIP incorrect !"
+msgstr "Code PIN incorrect !"
 
 msgctxt "#32235"
 msgid " attempts remaining."
@@ -841,7 +841,7 @@ msgctxt "#32236"
 msgid ""
 "You have entered an incorrect PIN too many times.[CR][CR]You will need to "
 "wait 5 minutes before trying again."
-msgstr "Vous avez entré un NIP incorrect trop de fois.[CR][CR]Vous devrez attendre 5 minutes avant d'essayer à nouveau."
+msgstr "Vous avez entré un code PIN incorrect trop de fois.[CR][CR]Vous devrez attendre 5 minutes avant d'essayer à nouveau."
 
 msgctxt "#32237"
 msgid "@DISTRONAME@ Settings Locked!"
