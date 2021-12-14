@@ -4,26 +4,31 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-12-14 06:26+0000\n"
+"Last-Translator: nonviotale <nonviotale@gmail.com>\n"
+"Language-Team: Greek <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/el_gr/>\n"
 "Language: el_gr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
-msgstr ""
+msgstr "@DISTRONAME@ Ρυθμίσεις"
 
 msgctxt "#601"
 msgid "Interface"
-msgstr ""
+msgstr "Διαεπαφή"
 
 msgctxt "#602"
 msgid "Address"
-msgstr ""
+msgstr "Διεύθυνση"
 
 msgctxt "#603"
 msgid "Type"
-msgstr ""
+msgstr "Τύπος"
 
 msgctxt "#604"
 msgid "State"
@@ -31,19 +36,19 @@ msgstr ""
 
 msgctxt "#605"
 msgid "Address"
-msgstr ""
+msgstr "Διεύθυνση"
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr ""
+msgstr "Διανομή: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr ""
+msgstr "Έκδοση: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr ""
+msgstr "Αρχιτεκτονική: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
@@ -59,27 +64,27 @@ msgstr ""
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
-msgstr ""
+msgstr "Ρύθμιση επιλογών δικτύου κατά την εκκίνηση, NTP και VPNs"
 
 msgctxt "#702"
 msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
-msgstr ""
+msgstr "Διαχείριση συνδέσεων Ethernet, Ασύρματων και VPN που είναι διαθέσιμα στο σύστημα"
 
 msgctxt "#703"
 msgid "Configure system services like Samba, SSH, Cron, Avahi and Syslog"
-msgstr ""
+msgstr "Ρύθμιση υπηρεσιών συστήματος, όπως Samba, SSH, Cron, Avahi και Syslog"
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr ""
+msgstr "Ρύθμιση και σύζευξη συσκευών Bluetooth"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr ""
+msgstr "Χρήσιμες πληροφορίες, όπως έκδοση και λεπτομέρειες αρχιτεκτονική, σύνδεσμοι υποστήριξης και τεκμηριώσης, καθώς και τρόποι να κάνετε δωρεά και υποστήριξη του έργου."
 
 msgctxt "#707"
 msgid "Configure updates"
-msgstr ""
+msgstr "Ρύθμιση ενημερώσεων"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
@@ -95,7 +100,7 @@ msgstr ""
 
 msgctxt "#713"
 msgid "Configure the physical keyboard type"
-msgstr ""
+msgstr "Ρύθμιση τύπου πληκτρολογίου"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
@@ -103,7 +108,7 @@ msgstr ""
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
-msgstr ""
+msgstr "Θέση ON και όταν υπάρχει μια διαθέσιμη ενημέρωση, θα λαμβάνετε ειδοποίηση στην οθόνη"
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
