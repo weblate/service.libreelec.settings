@@ -55,8 +55,8 @@ msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who c
 msgstr "LibreELEC es creado por un equipo global de aficionados de Linux y Kodi que contribuyen tiempo y esfuerzo para administrar el proyecto, escribir código, y proveer soporte. Nos divertimos haciéndolo. ¡Esperamos que te diviertas utilizándolo!"
 
 msgctxt "#610"
-msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via PayPal:[CR]donations@libreelec.tv"
-msgstr "[B]El soporte[/B] se provee mediante nuestro foro:[CR]https://forum.libreelec.tv[CR][CR][B]La documentación[/B] está disponible en nuestra wiki:[CR]https://libreelec.wiki[CR][CR][B]El código[/B] se puede encontrar en GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Las donaciones[/B] para los gastos del proyecto son aceptadas mediante PayPal:[CR]donations@libreelec.tv"
+msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
+msgstr "[B]El soporte[/B] se provee mediante nuestro foro:[CR]https://forum.libreelec.tv[CR][CR][B]La documentación[/B] está disponible en nuestra wiki:[CR]https://libreelec.wiki[CR][CR][B]El código[/B] se puede encontrar en GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Las donaciones[/B] para los gastos del proyecto son aceptadas mediante OpenCollective:[CR]https://opencollective.com/libreelec/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
