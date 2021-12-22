@@ -57,7 +57,7 @@ msgid "Architecture: "
 msgstr "Architettura: "
 
 msgctxt "#609"
-msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who"contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
+msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
 msgstr "LibreELEC è realizzato da un team globale di appassionati di Linux e Kodi che donano tempo e sforzi per gestire il progetto, scrivere codice e fornire supporto. Noi ci divertiamo a farlo. Speriamo voi vi divertiate ad usarlo!"
 
 msgctxt "#610"
