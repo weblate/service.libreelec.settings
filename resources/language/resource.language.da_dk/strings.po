@@ -4,7 +4,7 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-25 09:02+0000\n"
+"PO-Revision-Date: 2021-12-27 14:05+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/da_dk/>\n"
 "Language: da_dk\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
-msgstr ""
+msgstr "@DISTRONAME@ Indstillinger"
 
 msgctxt "#601"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 msgctxt "#602"
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 msgctxt "#603"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgctxt "#604"
 msgid "State"
@@ -36,59 +36,59 @@ msgstr "Tilstand"
 
 msgctxt "#605"
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr ""
+msgstr "Distribution: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr ""
+msgstr "Version: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr ""
+msgstr "Arkitektur: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr ""
+msgstr "LibreELEC er skabt af et globalt team af Linux- og Kodi-entusiaster, som bidrager med tid og kræfter til at styre projektet, skrive kode og yde support. Vi har det sjovt med at lave det. Vi håber du har det sjovt med at bruge det!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
-msgstr ""
+msgstr "[B]Support[/B] ydes via vores forum:[CR]https://forum.libreelec.tv[CR][CR][B]Dokumentation[/B] kan læses i vores wiki:[CR] https://libreelec.wiki[CR][CR][B]Kode[/B] kan findes på GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donationer[/B] til projektudgifter accepteres via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
-msgstr ""
+msgstr "Konfigurer et værtsnavn, tastaturtype, udfør en nulstilling, opdatering eller sikkerhedskopiering og gendannelse"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
-msgstr ""
+msgstr "Konfigurer netværksstartindstillinger, NTP og VPN'er"
 
 msgctxt "#702"
 msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
-msgstr ""
+msgstr "Administrer de Ethernet-, trådløse og VPN-forbindelser, der er tilgængelige for systemet"
 
 msgctxt "#703"
 msgid "Configure system services like Samba, SSH, Cron, Avahi and Syslog"
-msgstr ""
+msgstr "Konfigurer systemtjenester som Samba, SSH, Cron, Avahi og Syslog"
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr ""
+msgstr "Konfigurer og par Bluetooth-enheder"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr ""
+msgstr "Nyttig information som versions- og arkitekturdetaljer, support- og dokumentationslinks, og hvordan man donerer og støtter projektet."
 
 msgctxt "#707"
 msgid "Configure updates"
-msgstr ""
+msgstr "Konfigurer opdateringer"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr ""
+msgstr "Konfigurer værtsnavnet på dit @DISTRONAME@-system. Dette vil blive brugt til HTPC \\\\værtsnavnet i Windows og SMB-servernavnet i Mac OS Finder"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
