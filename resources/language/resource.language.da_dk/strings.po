@@ -4,7 +4,7 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-27 14:05+0000\n"
+"PO-Revision-Date: 2021-12-29 15:09+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/da_dk/>\n"
 "Language: da_dk\n"
@@ -92,39 +92,39 @@ msgstr "Konfigurer værtsnavnet på dit @DISTRONAME@-system. Dette vil blive bru
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
-msgstr ""
+msgstr "Konfigurer det 1. tastaturudseende"
 
 msgctxt "#712"
 msgid "Configure the 2nd keyboard software layout"
-msgstr ""
+msgstr "Konfigurer det 2. tastaturudseende"
 
 msgctxt "#713"
 msgid "Configure the physical keyboard type"
-msgstr ""
+msgstr "Konfigurer den fysiske tastaturtype"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
-msgstr ""
+msgstr "@DISTRONAME@ kan konfigureres til automatiske eller manuelle opdateringer. Automatiske opdateringer er tilgængelige på stabile udgivelser og stabile udgivelseskandidater. Automatisk opdatering deaktiverer selv på beta- og udviklingsbuilds"
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
-msgstr ""
+msgstr "Vælg TIL, og en meddelelse på skærmen vil blive vist, når en ny opdatering er tilgængelig"
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr ""
+msgstr "Send boot config-filer fra /flash, kodi.log, kernel log og Samba configs til http://ix.io, og vis den korte URL"
 
 msgctxt "#719"
 msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr ""
+msgstr "Send boot config-filer fra /flash, kodi_crash.log, kernel log og Samba configs til http://ix.io, og vis den korte URL"
 
 msgctxt "#720"
 msgid "Set to ON to enable the Bluetooth service"
-msgstr ""
+msgstr "Vælg TIL for at aktivere Bluetooth-tjenesten"
 
 msgctxt "#722"
 msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backup/"
-msgstr ""
+msgstr "Opret et tar-arkiv indeholdende alle @DISTRONAME@ og Kodi-konfigurationsindstillinger, databaser og miniaturebillede-indhold. Sikkerhedskopierede filer vil blive gemt i /storage/backup/"
 
 msgctxt "#723"
 msgid "Restore a tar archive backup previously created using the backup option above"
