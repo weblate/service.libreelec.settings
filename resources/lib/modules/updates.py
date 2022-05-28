@@ -211,22 +211,22 @@ class updates(modules.Module):
         gpu_props = {}
         gpu_driver = ""
         gpu_card = self.get_gpu_card()
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'Using card: {gpu_card}', oe.LOGDEBUG)
+        log.log(f'Using card: {gpu_card}', log.DEBUG)
         gpu_path = oe.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=1).replace('\n','')
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'gpu path: {gpu_path}', oe.LOGDEBUG)
+        log.log(f'gpu path: {gpu_path}', log.DEBUG)
         if gpu_path:
             drv_path = os.path.dirname(os.path.dirname(gpu_path))
             props = oe.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=1)
             if props:
                 for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
                     gpu_props[key] = value
-            oe.dbg_log('updates::get_gpu_type', f'gpu props: {gpu_props}', oe.LOGDEBUG)
+            log.log(f'gpu props: {gpu_props}', log.DEBUG)
             gpu_driver = gpu_props.get("DRIVER", "")
         if not gpu_driver:
             gpu_driver = oe.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=1).replace('\n','')
         if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
             gpu_driver = 'nvidia-legacy'
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'gpu driver: {gpu_driver}', oe.LOGDEBUG)
+        log.log(f'gpu driver: {gpu_driver}', log.DEBUG)
         return gpu_driver if gpu_driver else "unknown"
 
     @log.log_function()
@@ -235,7 +235,7 @@ class updates(modules.Module):
             dtflag = oe.execute('/usr/bin/dtflag', get_result=1).rstrip('\x00\n')
         else:
             dtflag = "unknown"
-        oe.dbg_log('system::get_hardware_flags_dtflag', f'ARM board: {dtflag}', oe.LOGDEBUG)
+        log.log(f'ARM board: {dtflag}', log.DEBUG)
         return dtflag
 
     @log.log_function()
@@ -245,14 +245,14 @@ class updates(modules.Module):
         elif oe.ARCHITECTURE.split('.')[1] in ['aarch64', 'arm' ]:
             return self.get_hardware_flags_dtflag()
         else:
-            oe.dbg_log('updates::get_hardware_flags', f'Project is {oe.PROJECT}, no hardware flag available', oe.LOGDEBUG)
+            log.log(f'Project is {oe.PROJECT}, no hardware flag available', log.DEBUG)
             return ''
 
     @log.log_function()
     def load_values(self):
         # Hardware flags
         self.hardware_flags = self.get_hardware_flags()
-        oe.dbg_log('system::load_values', f'loaded hardware_flag {self.hardware_flags}', oe.LOGDEBUG)
+        log.log(f'loaded hardware_flag {self.hardware_flags}', log.DEBUG)
 
         # AutoUpdate
 
@@ -324,7 +324,7 @@ class updates(modules.Module):
                 self.update_thread.start()
             else:
                 self.update_thread.wait_evt.set()
-            oe.dbg_log('updates::set_auto_update', str(self.struct['update']['settings']['AutoUpdate']['value']), oe.LOGINFO)
+            log.log(str(self.struct['update']['settings']['AutoUpdate']['value']), log.INFO)
 
     @log.log_function()
     def set_channel(self, listItem=None):
@@ -355,12 +355,12 @@ class updates(modules.Module):
           try:
             a_float = float(a_items[1])
           except:
-            oe.dbg_log('updates::custom_sort_train', f"invalid channel name: '{a}'", oe.LOGWARNING)
+            log.log(f"invalid channel name: '{a}'", log.WARNING)
             a_float = 0
           try:
             b_float = float(b_items[1])
           except:
-            oe.dbg_log('updates::custom_sort_train', f"invalid channel name: '{b}'", oe.LOGWARNING)
+            log.log(f"invalid channel name: '{b}'", log.WARNING)
             b_float = 0
           return (b_float - a_float)
         elif (a_builder < b_builder):
@@ -371,7 +371,7 @@ class updates(modules.Module):
     @log.log_function()
     def get_channels(self):
         channels = []
-        oe.dbg_log('updates::get_channels', str(self.update_json), oe.LOGDEBUG)
+        log.log(str(self.update_json), log.DEBUG)
         if not self.update_json is None:
             for channel in self.update_json:
                 channels.append(channel)
@@ -471,7 +471,7 @@ class updates(modules.Module):
     @log.log_function()
     def check_updates_v2(self, force=False):
         if hasattr(self, 'update_in_progress'):
-            oe.dbg_log('updates::check_updates_v2', 'Update in progress (exit)', oe.LOGDEBUG)
+            log.log('Update in progress (exit)', log.DEBUG)
             return
         if self.struct['update']['settings']['SubmitStats']['value'] == '1':
             systemid = oe.SYSTEMID
@@ -485,9 +485,9 @@ class updates(modules.Module):
         if oe.BUILDER_NAME:
            url += f'&b={oe.url_quote(oe.BUILDER_NAME)}'
 
-        oe.dbg_log('updates::check_updates_v2', f'URL: {url}', oe.LOGDEBUG)
+        log.log(f'URL: {url}', log.DEBUG)
         update_json = oe.load_url(url)
-        oe.dbg_log('updates::check_updates_v2', f'RESULT: {repr(update_json)}', oe.LOGDEBUG)
+        log.log(f'RESULT: {repr(update_json)}', log.DEBUG)
         if update_json:
             update_json = json.loads(update_json)
             self.last_update_check = time.time()
@@ -520,7 +520,7 @@ class updates(modules.Module):
 
     def get_rpi_flashing_state(self):
         try:
-            oe.dbg_log('updates::get_rpi_flashing_state', 'enter_function', oe.LOGDEBUG)
+            log.log('enter_function', log.DEBUG)
 
             jdata = {
                         'EXITCODE': 'EXIT_FAILED',
@@ -540,8 +540,8 @@ class updates(modules.Module):
                     state['incompatible'] = False
                     jdata = json.load(machine_out)
 
-            oe.dbg_log('updates::get_rpi_flashing_state', f'console output: {console_output}', oe.LOGDEBUG)
-            oe.dbg_log('updates::get_rpi_flashing_state', f'json values: {jdata}', oe.LOGDEBUG)
+            log.log(f'console output: {console_output}', log.DEBUG)
+            log.log(f'json values: {jdata}', log.DEBUG)
 
             if jdata['BOOTLOADER_CURRENT'] != 0:
                 state['bootloader']['current'] = datetime.datetime.utcfromtimestamp(jdata['BOOTLOADER_CURRENT']).strftime('%Y-%m-%d')
@@ -566,11 +566,11 @@ class updates(modules.Module):
                 else:
                     state['vl805']['state'] = oe._(32029) % state['vl805']['current']
 
-            oe.dbg_log('updates::get_rpi_flashing_state', f'state: {state}', oe.LOGDEBUG)
-            oe.dbg_log('updates::get_rpi_flashing_state', 'exit_function', oe.LOGDEBUG)
+            log.log(f'state: {state}', log.DEBUG)
+            log.log('exit_function', log.DEBUG)
             return state
         except Exception as e:
-            oe.dbg_log('updates::get_rpi_flashing_state', f'ERROR: ({repr(e)})')
+            log.log(f'ERROR: ({repr(e)})')
             return {'incompatible': True}
 
     @log.log_function()
@@ -579,14 +579,14 @@ class updates(modules.Module):
         if os.path.exists(self.RPI_FLASHING_TRIGGER):
             with open(self.RPI_FLASHING_TRIGGER, 'r') as trigger:
                 values = trigger.read().split('\n')
-        oe.dbg_log('updates::get_rpi_eeprom', f'values: {values}', oe.LOGDEBUG)
+        log.log(f'values: {values}', log.DEBUG)
         return 'true' if (f'{device}="yes"') in values else 'false'
 
     @log.log_function()
     def set_rpi_eeprom(self):
         bootloader = (self.struct['rpieeprom']['settings']['bootloader']['value'] == 'true')
         vl805 = (self.struct['rpieeprom']['settings']['vl805']['value'] == 'true')
-        oe.dbg_log('updates::set_rpi_eeprom', f'states: [{bootloader}], [{vl805}]', oe.LOGDEBUG)
+        log.log(f'states: [{bootloader}], [{vl805}]', log.DEBUG)
         if bootloader or vl805:
             values = []
             values.append('BOOTLOADER="%s"' % ('yes' if bootloader else 'no'))
@@ -621,7 +621,7 @@ class updateThread(threading.Thread):
         threading.Thread.__init__(self)
         self.stopped = False
         self.wait_evt = threading.Event()
-        oe.dbg_log('updates::updateThread', 'Started', oe.LOGINFO)
+        log.log('updateThread Started', log.INFO)
 
     @log.log_function()
     def stop(self):
@@ -639,4 +639,4 @@ class updateThread(threading.Thread):
                 oe.notify(oe._(32363), oe._(32364))
                 self.wait_evt.wait(3600)
             self.wait_evt.clear()
-        oe.dbg_log('updates::updateThread', 'Stopped', oe.LOGINFO)
+        log.log('updateThread Stopped', log.INFO)
