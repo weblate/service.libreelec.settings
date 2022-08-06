@@ -4,7 +4,7 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-29 15:09+0000\n"
+"PO-Revision-Date: 2022-03-19 06:50+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/da_dk/>\n"
 "Language: da_dk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -20,7 +20,7 @@ msgstr "@DISTRONAME@ Indstillinger"
 
 msgctxt "#601"
 msgid "Interface"
-msgstr "Grænseflade"
+msgstr "Brugerflade"
 
 msgctxt "#602"
 msgid "Address"
@@ -128,23 +128,23 @@ msgstr "Opret et tar-arkiv indeholdende alle @DISTRONAME@ og Kodi-konfigurations
 
 msgctxt "#723"
 msgid "Restore a tar archive backup previously created using the backup option above"
-msgstr ""
+msgstr "Gendan en tar-arkiv sikkerhedskopi, der tidligere er oprettet ved hjælp af sikkerhedskopieringsindstillingen ovenfor"
 
 msgctxt "#724"
 msgid ""
 "[COLOR FF00FF00]SOFT RESET[/COLOR]\n"
 "Permanently reset @DISTRONAME@ configuration to defaults (resets also Kodi to default including your library. your media - music/videos/etc are not touched)"
-msgstr ""
+msgstr "[COLOR FF00FF00]BLØD NULSTILLING[/COLOR][CR]Permanent nulstilling af @DISTRONAME@-konfigurationen til standardindstillingerne. Nulstiller også Kodi til standard, inklusiv dit bibliotek. Dine medier (musik, videoer osv.) røres ikke"
 
 msgctxt "#725"
 msgid ""
 "[COLOR FFFF0000]HARD RESET[/COLOR]\n"
 "Permanently reset @DISTRONAME@ and Kodi configuration to defaults (everything in your storage partition will be deleted)"
-msgstr ""
+msgstr "[COLOR FFFF0000]HÅRD NULSTILLING[/COLOR][CR]Permanent nulstilling af @DISTRONAME@ og Kodi-konfigurationen til standardindstillingerne (alt i din lagerpartition vil blive slettet)"
 
 msgctxt "#726"
 msgid "Enable or disable support for Wireless (WLAN) networks"
-msgstr ""
+msgstr "Aktiver eller deaktiver understøttelse af trådløse (WLAN) netværk"
 
 msgctxt "#727"
 msgid "Enable a 'tethered' Wireless Access Point. This requires your wireless card (and driver) to support bridging and access point mode. Not all cards are capable."
@@ -884,11 +884,11 @@ msgstr ""
 
 msgctxt "#32334"
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 msgctxt "#32335"
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
 msgctxt "#32338"
 msgid "No Bluetooth adapter found."
@@ -1068,7 +1068,7 @@ msgstr ""
 
 msgctxt "#32410"
 msgid "Logging"
-msgstr ""
+msgstr "Logføring"
 
 msgctxt "#32411"
 msgid "Use Persistent Logs"

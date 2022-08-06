@@ -4,7 +4,7 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-19 19:22+0000\n"
+"PO-Revision-Date: 2022-02-25 19:10+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/ar_sa/>\n"
 "Language: ar_sa\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.10\n"
+"X-Generator: Weblate 4.11\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -884,11 +884,11 @@ msgstr ""
 
 msgctxt "#32334"
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 msgctxt "#32335"
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 msgctxt "#32338"
 msgid "No Bluetooth adapter found."

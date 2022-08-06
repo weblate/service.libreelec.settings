@@ -4,18 +4,23 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-03-26 09:38+0000\n"
+"Last-Translator: liimee <alt3753.7@gmail.com>\n"
+"Language-Team: Indonesian <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/id_id/>\n"
 "Language: id_id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
-msgstr ""
+msgstr "Pengaturan @DISTRONAME@"
 
 msgctxt "#601"
 msgid "Interface"
-msgstr ""
+msgstr "Antarmuka"
 
 msgctxt "#602"
 msgid "Address"
@@ -35,27 +40,27 @@ msgstr ""
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr ""
+msgstr "Distribusi: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr ""
+msgstr "Versi: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr ""
+msgstr "Arsitektur: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr ""
+msgstr "LibreELEC dibuat oleh tim global yang terdiri dari penggemar Linux dan Kodi yang berkontribusi waktu dan usaha untuk mengelola proyeknya, menulis kode, dan memberikan dukungan. Kami senang membuatnya. Kami harap Anda senang menggunakannya!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
-msgstr ""
+msgstr "[B]Dukungan[/B] tersedia melalui forum kami:[CR]https://forum.libreelec.tv[CR][CR][B]Dokumentasi[/B] dapat dibaca di wiki kami:[CR]https://libreelec.wiki[CR][CR][B]Kode[/B] dapat ditemukan di GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donasi[/B] untuk biaya proyek diterima melalui OpenCollective:[CR]https://opencollective.com/libreelec/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
-msgstr ""
+msgstr "Atur hostname, jenis papan ketik, lakukan pengaturan ulang, pembaruan, atau pencadangan dan pemulihan"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
@@ -63,23 +68,23 @@ msgstr ""
 
 msgctxt "#702"
 msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
-msgstr ""
+msgstr "Kelola koneksi Ethernet, Nirkabel dan VPN yang tersedia pada sistem"
 
 msgctxt "#703"
 msgid "Configure system services like Samba, SSH, Cron, Avahi and Syslog"
-msgstr ""
+msgstr "Konfigurasi layanan sistem seperti Samba, SSH, Cron, Avahi dan Syslog"
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr ""
+msgstr "Konfigurasi dan tautkan perangkat Bluetooth"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr ""
+msgstr "Informasi berguna seperti versi dan arsitektur, tautan dukungan dan dokumentasi, dan bagaimana cara untuk berdonasi dan mendukung proyek."
 
 msgctxt "#707"
 msgid "Configure updates"
-msgstr ""
+msgstr "Konfigurasi pembaruan"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
@@ -139,7 +144,7 @@ msgstr ""
 
 msgctxt "#726"
 msgid "Enable or disable support for Wireless (WLAN) networks"
-msgstr ""
+msgstr "Aktifkan atau nonaktifkan dukungan untuk jaringan nirkabel (WLAN)"
 
 msgctxt "#727"
 msgid "Enable a 'tethered' Wireless Access Point. This requires your wireless card (and driver) to support bridging and access point mode. Not all cards are capable."
@@ -159,15 +164,15 @@ msgstr ""
 
 msgctxt "#732"
 msgid "Configure the 1st time (NTP) server"
-msgstr ""
+msgstr "Konfigurasi server waktu (NTP) pertama"
 
 msgctxt "#733"
 msgid "Configure the 2nd time (NTP) server"
-msgstr ""
+msgstr "Konfigurasi server waktu (NTP) kedua"
 
 msgctxt "#734"
 msgid "Configure the 3rd time (NTP) server"
-msgstr ""
+msgstr "Konfigurasi server waktu (NTP) ketiga"
 
 msgctxt "#736"
 msgid "Set to ON to delay Kodi startup until the network is available. Use this if the OS is booting into Kodi before the network is up and central MySQL databases are accessible."
@@ -207,11 +212,11 @@ msgstr ""
 
 msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
-msgstr ""
+msgstr "Aktifkan untuk mengaktifkan daemon cron"
 
 msgctxt "#746"
 msgid "Set the password for SSH"
-msgstr ""
+msgstr "Atur kata sandi SSH"
 
 msgctxt "#747"
 msgid "Enable a PIN for @DISTRONAME@ Settings access"
