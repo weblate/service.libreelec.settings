@@ -4,10 +4,15 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-01-13 09:13+0000\n"
+"Last-Translator: naciohr <naciohr@gmail.com>\n"
+"Language-Team: Galician (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/gl_es/>\n"
 "Language: gl_es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -15,87 +20,87 @@ msgstr ""
 
 msgctxt "#601"
 msgid "Interface"
-msgstr ""
+msgstr "Interface"
 
 msgctxt "#602"
 msgid "Address"
-msgstr ""
+msgstr "Enderezo"
 
 msgctxt "#603"
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgctxt "#604"
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 msgctxt "#605"
 msgid "Address"
-msgstr ""
+msgstr "Enderezo"
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr ""
+msgstr "Distribución: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr ""
+msgstr "Versión: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr ""
+msgstr "Arquitectura: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr ""
+msgstr "LibreELEC foi creado por un equipo global de entusiastas do Linux e do Kodi que aportan tempo e esforzo para xestionaren o proxecto, escribiren código e proporcionaren soporte. Divertímonos creándoo. Esperamos que te divirtas usándoo!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
-msgstr ""
+msgstr "O [B]soporte[/B] proporciónase mediante o noso foro:[CR]https://forum.libreelec.tv[CR][CR]A [B]documentación[/B] pódese ler na nosa wiki:[CR]https://libreelec.wiki[CR][CR]O [B]código[/B] pódese atopar en GitHub:[CR]https://github.com/LibreELEC[CR][CR]As [B]doazóns[/B] para os custes do proxecto pódense facer a través de OpenCollective:[CR]https://opencollective.com/libreelec/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
-msgstr ""
+msgstr "Configura un hostname, tipo de teclado, realizar un reinicio, actualizar ou copias de seguranza e recuperacións"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
-msgstr ""
+msgstr "Configurar as opcións de arranque da rede, NTP e VPNs"
 
 msgctxt "#702"
 msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
-msgstr ""
+msgstr "Xestionar o Ethernet, Rede sen fíos e as conexións VPN dispoñíbeis no sistema"
 
 msgctxt "#703"
 msgid "Configure system services like Samba, SSH, Cron, Avahi and Syslog"
-msgstr ""
+msgstr "Configurar servizos do sistema como Samba, SSH, Cron, Avahi e Syslog"
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr ""
+msgstr "Configurar e emparellar dispositivos Bluetooth"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr ""
+msgstr "Información útil como os detalles da versión e da arquitectura, soporte e vencellos á documentación e como doar e apoiar ao proxecto."
 
 msgctxt "#707"
 msgid "Configure updates"
-msgstr ""
+msgstr "Configurar actualizacións"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr ""
+msgstr "Configurar o Hostname da túa @DISTRONAME@ do sistema. Isto empregarase para o HTPC \\\\hostname en Windows e o nome do servidor SMB no Finder de macOS"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
-msgstr ""
+msgstr "Configurar a disposición do 1° teclado software"
 
 msgctxt "#712"
 msgid "Configure the 2nd keyboard software layout"
-msgstr ""
+msgstr "Configurar a disposición do 2° teclado software"
 
 msgctxt "#713"
 msgid "Configure the physical keyboard type"
-msgstr ""
+msgstr "Configurar o tipo de teclado físico"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"

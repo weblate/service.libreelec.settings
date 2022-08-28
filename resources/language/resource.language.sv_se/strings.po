@@ -9,15 +9,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-12-14 06:26+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2022-01-13 09:13+0000\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/sv_se/>\n"
 "Language: sv_se\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -1079,7 +1079,7 @@ msgstr "Säkerhetskopia är ofullständig. Ett fel uppstod. Se Kodiloggen för m
 
 msgctxt "#32410"
 msgid "Logging"
-msgstr ""
+msgstr "Loggning"
 
 msgctxt "#32411"
 msgid "Use Persistent Logs"
@@ -1087,7 +1087,7 @@ msgstr "Använd bestående loggar"
 
 msgctxt "#32412"
 msgid "Use Persistent Journal and Log files instead of default volatile ones. Reboot to apply changes."
-msgstr ""
+msgstr "Använd beständiga journal- och loggfiler istället för de flyktiga standardfilerna. Starta om för att tillämpa ändringar."
 
 msgctxt "#32413"
 msgid "Journal Size"
@@ -1095,7 +1095,7 @@ msgstr "Journal storlek"
 
 msgctxt "#32414"
 msgid "Set max. size of persistent journal. Reboot to apply changes."
-msgstr ""
+msgstr "Ställ in max. storleken på ihållande journal. Starta om för att tillämpa ändringar."
 
 msgctxt "#32415"
 msgid "Disable journald Rate Limit"
@@ -1103,4 +1103,4 @@ msgstr ""
 
 msgctxt "#32416"
 msgid "Reboot to apply changes."
-msgstr ""
+msgstr "Starta om för att tillämpa ändringar."

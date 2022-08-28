@@ -15,15 +15,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-12-14 06:26+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2022-03-19 06:50+0000\n"
+"Last-Translator: S J <sanjos1984@gmail.com>\n"
 "Language-Team: French (Canada) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/fr_ca/>\n"
 "Language: fr_ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -51,15 +51,15 @@ msgstr "Adresse"
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr "Distribution :"
+msgstr "Distribution: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr "Version :"
+msgstr "Version: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr "Architecture :"
+msgstr "Architecture: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
@@ -123,7 +123,7 @@ msgstr "Activer cette option affichera une notification à l'écran lorsqu'une m
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr "Envoyez les fichiers de configuration de démarrage de /flash, kodi.log, les logs du kernel et la configuration Samba à http://ix.io, et affichez l'URL raccourcie."
+msgstr "Envoyez les fichiers de configuration de démarrage de /flash, kodi.log, les logs du kernel et la configuration Samba à http://ix.io, et affichez l'URL raccourcie"
 
 msgctxt "#719"
 msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://ix.io, and display the short URL"
@@ -795,7 +795,7 @@ msgstr "Bienvenue"
 
 msgctxt "#32302"
 msgid "This wizard will guide you through the process of setting up your new @DISTRONAME@ installation - setting your location, timezone and connecting you to the internet.[CR][CR]These settings can be changed later by navigating to Programs > @DISTRONAME@ Settings."
-msgstr "Cet assistant va vous guider au travers du processus de configuration de votre nouvelle installation de @DISTRONAME@ - paramétrage de votre localisation, fuseau horaire et connecter votre appareil à Internet.[CR][CR]Ces réglages peuvent être changés plus tard en allant dans Programmes > Paramètres @DISTRONAME@"
+msgstr "Cet assistant va vous guider au travers du processus de configuration de votre nouvelle installation de @DISTRONAME@ - paramétrage de votre localisation, fuseau horaire et connecter votre appareil à Internet.[CR][CR]Ces réglages peuvent être changés plus tard en allant dans Programmes > Paramètres @DISTRONAME@."
 
 msgctxt "#32303"
 msgid "Next"
@@ -895,7 +895,7 @@ msgstr "Bluetooth"
 
 msgctxt "#32333"
 msgid "Connected: "
-msgstr "Connecté :"
+msgstr "Connecté: "
 
 msgctxt "#32334"
 msgid "Yes"
@@ -987,7 +987,7 @@ msgstr "Soumettre des journaux"
 
 msgctxt "#32377"
 msgid "Upload latest Kodi log and configs, and view the short URL"
-msgstr "Téléchargez le dernier journal Kodi et les configurations, et affichez l'URL raccourcie."
+msgstr "Téléchargez le dernier journal Kodi et les configurations, et affichez l'URL raccourcie"
 
 msgctxt "#32378"
 msgid "Upload latest Kodi crash log and configs, and view the short URL"

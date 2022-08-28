@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-11-26 20:29+0000\n"
+"PO-Revision-Date: 2022-07-20 13:14+0000\n"
 "Last-Translator: dtech <dee.gabor@gmail.com>\n"
 "Language-Team: Hungarian <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/hu_hu/>\n"
 "Language: hu_hu\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.13\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -85,7 +85,7 @@ msgstr "Olyan rendszerszolgáltatások konfigurálása, mint a Samba, SSH, Cron,
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr "Bluetooth eszközök konfigurálása és párosítása"
+msgstr "Bluetooth eszközök beállítása és párosítása"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
@@ -97,7 +97,7 @@ msgstr "Frissítések beállításai"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr "A @DISTRONAME@ rendszeredhez tartozó hoszt nevének beállítása. A HTPC így lesz elérhető Windows alatt: \\\\hosztnév, valamint Mac OS Finder-en keresztül SMB szerverként"
+msgstr "A @DISTRONAME@ rendszeredhez tartozó hoszt nevének beállítása. A HTPC így lesz elérhető Windows alatt: \\\\hosztnév, valamint macOS Finder-en keresztül SMB szerverként"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
@@ -121,11 +121,11 @@ msgstr "Bekapcsolás esetén a kijelzőn üzenet jelenik meg, ha új frissítés
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr "Küldj betöltési konfigurációt /flash-ből, kodi.log-ot, kernel naplót és Samba beállításokat a http://ix.io címre és jelenítsd meg a rövid URL-t"
+msgstr "Küldj betöltési konfigurációt /flash-ből, kodi.log-ot, kernel naplót és Samba beállításokat a http://ix.io címre és jelenítsd meg a rövid Hivatkozást"
 
 msgctxt "#719"
 msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr "Küldj betöltési konfigurációt /flash-ből, kodi_crash.log-ot, kernel naplót és Samba beállításokat a http://ix.io címre és jelenítsd meg a rövid URL-t"
+msgstr "Küldj betöltési konfigurációt /flash-ből, kodi_crash.log-ot, kernel naplót és Samba beállításokat a http://ix.io címre és jelenítsd meg a rövid Hivatkozást"
 
 msgctxt "#720"
 msgid "Set to ON to enable the Bluetooth service"
