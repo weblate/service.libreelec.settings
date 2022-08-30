@@ -419,14 +419,10 @@ class updates(modules.Module):
     def get_json(self, url=None):
         if not url:
             url = self.UPDATE_DOWNLOAD_URL % ('releases', 'releases.json')
-        if url.split('/')[-1] != 'releases.json':
+        if not url.endswith('releases.json'):
             url = f'{url}/releases.json'
         data = oe.load_url(url)
-        if not data is None:
-            update_json = json.loads(data)
-        else:
-            update_json = None
-        return update_json
+        return json.loads(data) if data else None
 
     @log.log_function()
     def build_json(self, notify_error=False):
