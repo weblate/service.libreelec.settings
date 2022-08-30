@@ -191,6 +191,14 @@ class updates(modules.Module):
     def exit(self):
         pass
 
+    @log.log_function()
+    def rchop(self, s, suffix):
+        """Remove suffix from string."""
+        # TODO usage may be replaced by .removesuffix() in python >=3.9
+        if suffix and s.endswith(suffix):
+            return s[:-len(suffix)]
+        return s
+
     # Identify connected GPU card (card0, card1 etc.)
     @log.log_function()
     def get_gpu_card(self):
@@ -456,9 +464,9 @@ class updates(modules.Module):
                             if shortname is None:
                                 matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
                                 if matches:
-                                    update_files.append(matches[0].strip('.tar'))
+                                    update_files.append(rchop(matches[0], '.tar'))
                                 else:
-                                    update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'].strip('.tar'))
+                                    update_files.append(rchop(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'], '.tar'))
                             else:
                                 build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
                                 if shortname in build:
