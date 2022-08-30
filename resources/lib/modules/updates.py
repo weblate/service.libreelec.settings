@@ -263,36 +263,34 @@ class updates(modules.Module):
         log.log(f'loaded hardware_flag {self.hardware_flags}', log.DEBUG)
 
         # AutoUpdate
-
         value = oe.read_setting('updates', 'AutoUpdate')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['AutoUpdate']['value'] = value
         value = oe.read_setting('updates', 'SubmitStats')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['SubmitStats']['value'] = value
         value = oe.read_setting('updates', 'UpdateNotify')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['UpdateNotify']['value'] = value
         if os.path.isfile(f'{self.LOCAL_UPDATE_DIR}/SYSTEM'):
             self.update_in_progress = True
 
         # Manual Update
-
         value = oe.read_setting('updates', 'Channel')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['Channel']['value'] = value
         value = oe.read_setting('updates', 'ShowCustomChannels')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['ShowCustomChannels']['value'] = value
 
         value = oe.read_setting('updates', 'CustomChannel1')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel1']['value'] = value
         value = oe.read_setting('updates', 'CustomChannel2')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel2']['value'] = value
         value = oe.read_setting('updates', 'CustomChannel3')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel3']['value'] = value
 
         self.update_json = self.build_json()
@@ -324,30 +322,30 @@ class updates(modules.Module):
 
     @log.log_function()
     def set_auto_update(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         if not hasattr(self, 'update_disabled'):
-            if not hasattr(self, 'update_thread'):
+            if hasattr(self, 'update_thread'):
+                self.update_thread.wait_evt.set()
+            else:
                 self.update_thread = updateThread(oe)
                 self.update_thread.start()
-            else:
-                self.update_thread.wait_evt.set()
             log.log(str(self.struct['update']['settings']['AutoUpdate']['value']), log.INFO)
 
     @log.log_function()
     def set_channel(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         self.struct['update']['settings']['Build']['values'] = self.get_available_builds()
 
     @log.log_function()
     def set_custom_channel(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         self.update_json = self.build_json()
         self.struct['update']['settings']['Channel']['values'] = self.get_channels()
-        if not self.struct['update']['settings']['Channel']['values'] is None:
-            if not self.struct['update']['settings']['Channel']['value'] in self.struct['update']['settings']['Channel']['values']:
+        if self.struct['update']['settings']['Channel']['values']:
+            if self.struct['update']['settings']['Channel']['value'] not in self.struct['update']['settings']['Channel']['values']:
                 self.struct['update']['settings']['Channel']['value'] = None
         self.struct['update']['settings']['Build']['values'] = self.get_available_builds()
 
@@ -380,7 +378,7 @@ class updates(modules.Module):
     def get_channels(self):
         channels = []
         log.log(str(self.update_json), log.DEBUG)
-        if not self.update_json is None:
+        if self.update_json:
             for channel in self.update_json:
                 channels.append(channel)
         return sorted(list(set(channels)), key=cmp_to_key(self.custom_sort_train))
@@ -389,7 +387,7 @@ class updates(modules.Module):
     def do_manual_update(self, listItem=None):
         self.struct['update']['settings']['Build']['value'] = ''
         update_json = self.build_json(notify_error=True)
-        if update_json is None:
+        if not update_json:
             return
         self.update_json = update_json
         builds = self.get_available_builds()
@@ -406,7 +404,7 @@ class updates(modules.Module):
                 version = regex.findall(longname)[0]
             else:
                 version = oe.VERSION
-            if self.struct['update']['settings']['Build']['value'] != '':
+            if self.struct['update']['settings']['Build']['value']:
                 self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.get_available_builds(self.struct['update']['settings']['Build']['value'])
                 message = f"{oe._(32188)}: {version}\n{oe._(32187)}: {self.struct['update']['settings']['Build']['value']}\n{oe._(32180)}"
                 answer = xbmcDialog.yesno('LibreELEC Update', message)
@@ -419,7 +417,7 @@ class updates(modules.Module):
 
     @log.log_function()
     def get_json(self, url=None):
-        if url is None:
+        if not url:
             url = self.UPDATE_DOWNLOAD_URL % ('releases', 'releases.json')
         if url.split('/')[-1] != 'releases.json':
             url = f'{url}/releases.json'
@@ -438,9 +436,9 @@ class updates(modules.Module):
             for i in 1,2,3:
                 custom_urls.append(self.struct['update']['settings'][f'CustomChannel{str(i)}']['value'])
             for custom_url in custom_urls:
-                if custom_url != '':
+                if custom_url:
                     custom_update_json = self.get_json(custom_url)
-                    if not custom_update_json is None:
+                    if custom_update_json:
                         for channel in custom_update_json:
                             update_json[channel] = custom_update_json[channel]
                     elif notify_error:
@@ -455,26 +453,22 @@ class updates(modules.Module):
         channel = self.struct['update']['settings']['Channel']['value']
         update_files = []
         build = None
-        if not self.update_json is None:
-            if channel != '':
-                if channel in self.update_json:
-                    regex = re.compile(self.update_json[channel]['prettyname_regex'])
-                    if oe.ARCHITECTURE in self.update_json[channel]['project']:
-                        for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
-                            if shortname is None:
-                                matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
-                                if matches:
-                                    update_files.append(rchop(matches[0], '.tar'))
-                                else:
-                                    update_files.append(rchop(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'], '.tar'))
-                            else:
-                                build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
-                                if shortname in build:
-                                    break
-        if build is None:
-            return update_files
-        else:
-            return build
+        if self.update_json and channel and channel in self.update_json:
+            regex = re.compile(self.update_json[channel]['prettyname_regex'])
+            if oe.ARCHITECTURE in self.update_json[channel]['project']:
+                for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
+                    if shortname:
+                        build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
+                        if shortname in build:
+                            break
+                    else:
+                        matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                        if matches:
+                            update_files.append(rchop(matches[0], '.tar'))
+                        else:
+                            update_files.append(rchop(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'], '.tar'))
+
+        return build if build else update_files
 
     @log.log_function()
     def check_updates_v2(self, force=False):
@@ -513,7 +507,7 @@ class updates(modules.Module):
             if not os.path.exists(self.LOCAL_UPDATE_DIR):
                 os.makedirs(self.LOCAL_UPDATE_DIR)
             downloaded = oe.download_file(self.update_file, oe.TEMP + 'update_file', silent)
-            if not downloaded is None:
+            if downloaded:
                 self.update_file = self.update_file.split('/')[-1]
                 if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
                     oe.notify(oe._(32363), oe._(32366))
