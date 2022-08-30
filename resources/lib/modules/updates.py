@@ -17,7 +17,7 @@ import threading
 import subprocess
 import shutil
 from xml.dom import minidom
-import datetime
+from datetime import datetime
 import tempfile
 from functools import cmp_to_key
 
@@ -542,10 +542,10 @@ class updates(modules.Module):
             log.log(f'json values: {jdata}', log.DEBUG)
 
             if jdata['BOOTLOADER_CURRENT'] != 0:
-                state['bootloader']['current'] = datetime.datetime.utcfromtimestamp(jdata['BOOTLOADER_CURRENT']).strftime('%Y-%m-%d')
+                state['bootloader']['current'] = datetime.utcfromtimestamp(jdata['BOOTLOADER_CURRENT']).strftime('%Y-%m-%d')
 
             if jdata['BOOTLOADER_LATEST'] != 0:
-                state['bootloader']['latest'] = datetime.datetime.utcfromtimestamp(jdata['BOOTLOADER_LATEST']).strftime('%Y-%m-%d')
+                state['bootloader']['latest'] = datetime.utcfromtimestamp(jdata['BOOTLOADER_LATEST']).strftime('%Y-%m-%d')
 
             if jdata['VL805_CURRENT']:
                 state['vl805']['current'] = jdata['VL805_CURRENT']
