@@ -449,6 +449,7 @@ class updates(modules.Module):
     @log.log_function()
     def get_available_builds(self, shortname=None):
         channel = self.struct['update']['settings']['Channel']['value']
+        matches = []
         update_files = []
         build = None
         if self.update_json and channel and channel in self.update_json:
@@ -456,15 +457,56 @@ class updates(modules.Module):
             if oe.ARCHITECTURE in self.update_json[channel]['project']:
                 for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
                     if shortname:
-                        build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
-                        if shortname in build:
-                            break
+                        # check tarballs, then images, then uboot images for matching file; add subpath if key is present
+                        try:
+                            build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
+                            if shortname in build:
+                                break
+                        except KeyError:
+                            pass
+                        try:
+                            build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']
+                            if shortname in build:
+                                break
+                        except KeyError:
+                            pass
+                        try:
+                            for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
+                                build = uboot_image_data['name']
+                                if shortname in build:
+                                    break
+                        except KeyError:
+                            pass
                     else:
-                        matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
-                        if matches:
-                            update_files.append(rchop(matches[0], '.tar'))
-                        else:
-                            update_files.append(rchop(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'], '.tar'))
+                        try:
+                            matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                            if matches:
+                                update_files.append(matches[0])
+                        except KeyError:
+                            pass
+                        if not matches:
+                            # The same release could have tarballs and images. Prioritize tarball in response.
+                            # images and uboot images in same release[i] entry are mutually exclusive.
+                            try:
+                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                                continue
+                            except KeyError:
+                                pass
+                            try:
+                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name'])
+                                continue
+                            except KeyError:
+                                pass
+                            try:
+                                for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
+                                    update_files.append(uboot_image_data['name'])
+                            except KeyError:
+                                pass
+
+        if update_files:
+            for idx, fname in enumerate(update_files):
+                update_files[idx] = self.rchop(update_files[idx], '.tar')
+                update_files[idx] = self.rchop(update_files[idx], '.img.gz')
 
         return build if build else update_files
 
