@@ -451,7 +451,8 @@ class updates(modules.Module):
         channel = self.struct['update']['settings']['Channel']['value']
         matches = []
         update_files = []
-        build = None
+        build = ''
+        break_loop = False
         if self.update_json and channel and channel in self.update_json:
             regex = re.compile(self.update_json[channel]['prettyname_regex'])
             if oe.ARCHITECTURE in self.update_json[channel]['project']:
@@ -461,12 +462,20 @@ class updates(modules.Module):
                         try:
                             build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
                             if shortname in build:
+                                try:
+                                    build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['subpath']}/{build}"
+                                except KeyError:
+                                    pass
                                 break
                         except KeyError:
                             pass
                         try:
                             build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']
                             if shortname in build:
+                                try:
+                                    build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['subpath']}/{build}"
+                                except KeyError:
+                                    pass
                                 break
                         except KeyError:
                             pass
@@ -474,7 +483,14 @@ class updates(modules.Module):
                             for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
                                 build = uboot_image_data['name']
                                 if shortname in build:
+                                    try:
+                                        build = f"{uboot_image_data['subpath']}/{build}"
+                                    except KeyError:
+                                        pass
+                                    break_loop = True
                                     break
+                            if break_loop:
+                                break
                         except KeyError:
                             pass
                     else:
