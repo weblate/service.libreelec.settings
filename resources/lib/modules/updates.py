@@ -417,6 +417,7 @@ class updates(modules.Module):
 
     @log.log_function()
     def get_json(self, url=None):
+        """Download and extract data from a releases.json file. Complete the URL if necessary."""
         if not url:
             url = self.UPDATE_DOWNLOAD_URL % ('releases', 'releases.json')
         if not url.startswith('http://') and not url.startswith('https://'):
@@ -448,6 +449,13 @@ class updates(modules.Module):
 
     @log.log_function()
     def get_available_builds(self, shortname=None):
+        """Parse a releases.json file. What it returns depends on how it's called:
+
+        If called with an argument (a user selected 'shortname' of a build), then it returns the build's
+        full name, with the directory subpath of its location prepended to the string when present.
+
+        If called without an argument, return a list of compatible builds with the running image.
+        """
         channel = self.struct['update']['settings']['Channel']['value']
         matches = []
         update_files = []
