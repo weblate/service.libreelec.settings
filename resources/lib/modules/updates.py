@@ -192,6 +192,14 @@ class updates(modules.Module):
         pass
 
     @log.log_function()
+    def lchop(self, s, prefix):
+        """Remove prefix from string."""
+        # TODO usage may be replaced by .removeprefix() in python >=3.9
+        if prefix and s.startswith(prefix):
+            return s[len(prefix):]
+        return s
+
+    @log.log_function()
     def rchop(self, s, suffix):
         """Remove suffix from string."""
         # TODO usage may be replaced by .removesuffix() in python >=3.9
@@ -529,6 +537,7 @@ class updates(modules.Module):
 
         if update_files:
             for idx, fname in enumerate(update_files):
+                update_files[idx] = self.lchop(update_files[idx], f'{oe.DISTRIBUTION}-{oe.ARCHITECTURE}-')
                 update_files[idx] = self.rchop(update_files[idx], '.tar')
                 update_files[idx] = self.rchop(update_files[idx], '.img.gz')
 
