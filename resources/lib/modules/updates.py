@@ -464,6 +464,14 @@ class updates(modules.Module):
 
         If called without an argument, return a list of compatible builds with the running image.
         """
+
+        def pretty_filename(s):
+            """Make filenames prettier to users."""
+            s = self.lchop(s, f'{oe.DISTRIBUTION}-{oe.ARCHITECTURE}-')
+            s = self.rchop(s, '.tar')
+            s = self.rchop(s, '.img.gz')
+            return s
+
         channel = self.struct['update']['settings']['Channel']['value']
         matches = []
         update_files = []
@@ -520,26 +528,20 @@ class updates(modules.Module):
                             # The same release could have tarballs and images. Prioritize tarball in response.
                             # images and uboot images in same release[i] entry are mutually exclusive.
                             try:
-                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                                update_files.append(pretty_filename(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']))
                                 continue
                             except KeyError:
                                 pass
                             try:
-                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name'])
+                                update_files.append(pretty_filename(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']))
                                 continue
                             except KeyError:
                                 pass
                             try:
                                 for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
-                                    update_files.append(uboot_image_data['name'])
+                                    update_files.append(pretty_filename(uboot_image_data['name']))
                             except KeyError:
                                 pass
-
-        if update_files:
-            for idx, fname in enumerate(update_files):
-                update_files[idx] = self.lchop(update_files[idx], f'{oe.DISTRIBUTION}-{oe.ARCHITECTURE}-')
-                update_files[idx] = self.rchop(update_files[idx], '.tar')
-                update_files[idx] = self.rchop(update_files[idx], '.img.gz')
 
         return build if build else update_files
 
