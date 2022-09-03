@@ -17,7 +17,7 @@ import threading
 import subprocess
 import shutil
 from xml.dom import minidom
-import datetime
+from datetime import datetime
 import tempfile
 from functools import cmp_to_key
 
@@ -191,6 +191,22 @@ class updates(modules.Module):
     def exit(self):
         pass
 
+    @log.log_function()
+    def lchop(self, s, prefix):
+        """Remove prefix from string."""
+        # TODO usage may be replaced by .removeprefix() in python >=3.9
+        if prefix and s.startswith(prefix):
+            return s[len(prefix):]
+        return s
+
+    @log.log_function()
+    def rchop(self, s, suffix):
+        """Remove suffix from string."""
+        # TODO usage may be replaced by .removesuffix() in python >=3.9
+        if suffix and s.endswith(suffix):
+            return s[:-len(suffix)]
+        return s
+
     # Identify connected GPU card (card0, card1 etc.)
     @log.log_function()
     def get_gpu_card(self):
@@ -211,22 +227,22 @@ class updates(modules.Module):
         gpu_props = {}
         gpu_driver = ""
         gpu_card = self.get_gpu_card()
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'Using card: {gpu_card}', oe.LOGDEBUG)
+        log.log(f'Using card: {gpu_card}', log.DEBUG)
         gpu_path = oe.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=1).replace('\n','')
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'gpu path: {gpu_path}', oe.LOGDEBUG)
+        log.log(f'gpu path: {gpu_path}', log.DEBUG)
         if gpu_path:
             drv_path = os.path.dirname(os.path.dirname(gpu_path))
             props = oe.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=1)
             if props:
                 for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
                     gpu_props[key] = value
-            oe.dbg_log('updates::get_gpu_type', f'gpu props: {gpu_props}', oe.LOGDEBUG)
+            log.log(f'gpu props: {gpu_props}', log.DEBUG)
             gpu_driver = gpu_props.get("DRIVER", "")
         if not gpu_driver:
             gpu_driver = oe.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=1).replace('\n','')
         if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
             gpu_driver = 'nvidia-legacy'
-        oe.dbg_log('updates::get_hardware_flags_x86_64', f'gpu driver: {gpu_driver}', oe.LOGDEBUG)
+        log.log(f'gpu driver: {gpu_driver}', log.DEBUG)
         return gpu_driver if gpu_driver else "unknown"
 
     @log.log_function()
@@ -235,7 +251,7 @@ class updates(modules.Module):
             dtflag = oe.execute('/usr/bin/dtflag', get_result=1).rstrip('\x00\n')
         else:
             dtflag = "unknown"
-        oe.dbg_log('system::get_hardware_flags_dtflag', f'ARM board: {dtflag}', oe.LOGDEBUG)
+        log.log(f'ARM board: {dtflag}', log.DEBUG)
         return dtflag
 
     @log.log_function()
@@ -245,46 +261,44 @@ class updates(modules.Module):
         elif oe.ARCHITECTURE.split('.')[1] in ['aarch64', 'arm' ]:
             return self.get_hardware_flags_dtflag()
         else:
-            oe.dbg_log('updates::get_hardware_flags', f'Project is {oe.PROJECT}, no hardware flag available', oe.LOGDEBUG)
+            log.log(f'Project is {oe.PROJECT}, no hardware flag available', log.DEBUG)
             return ''
 
     @log.log_function()
     def load_values(self):
         # Hardware flags
         self.hardware_flags = self.get_hardware_flags()
-        oe.dbg_log('system::load_values', f'loaded hardware_flag {self.hardware_flags}', oe.LOGDEBUG)
+        log.log(f'loaded hardware_flag {self.hardware_flags}', log.DEBUG)
 
         # AutoUpdate
-
         value = oe.read_setting('updates', 'AutoUpdate')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['AutoUpdate']['value'] = value
         value = oe.read_setting('updates', 'SubmitStats')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['SubmitStats']['value'] = value
         value = oe.read_setting('updates', 'UpdateNotify')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['UpdateNotify']['value'] = value
         if os.path.isfile(f'{self.LOCAL_UPDATE_DIR}/SYSTEM'):
             self.update_in_progress = True
 
         # Manual Update
-
         value = oe.read_setting('updates', 'Channel')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['Channel']['value'] = value
         value = oe.read_setting('updates', 'ShowCustomChannels')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['ShowCustomChannels']['value'] = value
 
         value = oe.read_setting('updates', 'CustomChannel1')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel1']['value'] = value
         value = oe.read_setting('updates', 'CustomChannel2')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel2']['value'] = value
         value = oe.read_setting('updates', 'CustomChannel3')
-        if not value is None:
+        if value:
             self.struct['update']['settings']['CustomChannel3']['value'] = value
 
         self.update_json = self.build_json()
@@ -316,30 +330,30 @@ class updates(modules.Module):
 
     @log.log_function()
     def set_auto_update(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         if not hasattr(self, 'update_disabled'):
-            if not hasattr(self, 'update_thread'):
+            if hasattr(self, 'update_thread'):
+                self.update_thread.wait_evt.set()
+            else:
                 self.update_thread = updateThread(oe)
                 self.update_thread.start()
-            else:
-                self.update_thread.wait_evt.set()
-            oe.dbg_log('updates::set_auto_update', str(self.struct['update']['settings']['AutoUpdate']['value']), oe.LOGINFO)
+            log.log(str(self.struct['update']['settings']['AutoUpdate']['value']), log.INFO)
 
     @log.log_function()
     def set_channel(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         self.struct['update']['settings']['Build']['values'] = self.get_available_builds()
 
     @log.log_function()
     def set_custom_channel(self, listItem=None):
-        if not listItem == None:
+        if listItem:
             self.set_value(listItem)
         self.update_json = self.build_json()
         self.struct['update']['settings']['Channel']['values'] = self.get_channels()
-        if not self.struct['update']['settings']['Channel']['values'] is None:
-            if not self.struct['update']['settings']['Channel']['value'] in self.struct['update']['settings']['Channel']['values']:
+        if self.struct['update']['settings']['Channel']['values']:
+            if self.struct['update']['settings']['Channel']['value'] not in self.struct['update']['settings']['Channel']['values']:
                 self.struct['update']['settings']['Channel']['value'] = None
         self.struct['update']['settings']['Build']['values'] = self.get_available_builds()
 
@@ -355,12 +369,12 @@ class updates(modules.Module):
           try:
             a_float = float(a_items[1])
           except:
-            oe.dbg_log('updates::custom_sort_train', f"invalid channel name: '{a}'", oe.LOGWARNING)
+            log.log(f"invalid channel name: '{a}'", log.WARNING)
             a_float = 0
           try:
             b_float = float(b_items[1])
           except:
-            oe.dbg_log('updates::custom_sort_train', f"invalid channel name: '{b}'", oe.LOGWARNING)
+            log.log(f"invalid channel name: '{b}'", log.WARNING)
             b_float = 0
           return (b_float - a_float)
         elif (a_builder < b_builder):
@@ -371,8 +385,8 @@ class updates(modules.Module):
     @log.log_function()
     def get_channels(self):
         channels = []
-        oe.dbg_log('updates::get_channels', str(self.update_json), oe.LOGDEBUG)
-        if not self.update_json is None:
+        log.log(str(self.update_json), log.DEBUG)
+        if self.update_json:
             for channel in self.update_json:
                 channels.append(channel)
         return sorted(list(set(channels)), key=cmp_to_key(self.custom_sort_train))
@@ -381,7 +395,7 @@ class updates(modules.Module):
     def do_manual_update(self, listItem=None):
         self.struct['update']['settings']['Build']['value'] = ''
         update_json = self.build_json(notify_error=True)
-        if update_json is None:
+        if not update_json:
             return
         self.update_json = update_json
         builds = self.get_available_builds()
@@ -398,7 +412,7 @@ class updates(modules.Module):
                 version = regex.findall(longname)[0]
             else:
                 version = oe.VERSION
-            if self.struct['update']['settings']['Build']['value'] != '':
+            if self.struct['update']['settings']['Build']['value']:
                 self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.get_available_builds(self.struct['update']['settings']['Build']['value'])
                 message = f"{oe._(32188)}: {version}\n{oe._(32187)}: {self.struct['update']['settings']['Build']['value']}\n{oe._(32180)}"
                 answer = xbmcDialog.yesno('LibreELEC Update', message)
@@ -411,16 +425,15 @@ class updates(modules.Module):
 
     @log.log_function()
     def get_json(self, url=None):
-        if url is None:
+        """Download and extract data from a releases.json file. Complete the URL if necessary."""
+        if not url:
             url = self.UPDATE_DOWNLOAD_URL % ('releases', 'releases.json')
-        if url.split('/')[-1] != 'releases.json':
+        if not url.startswith('http://') and not url.startswith('https://'):
+            url = f'https://{url}'
+        if not url.endswith('releases.json'):
             url = f'{url}/releases.json'
         data = oe.load_url(url)
-        if not data is None:
-            update_json = json.loads(data)
-        else:
-            update_json = None
-        return update_json
+        return json.loads(data) if data else None
 
     @log.log_function()
     def build_json(self, notify_error=False):
@@ -430,9 +443,9 @@ class updates(modules.Module):
             for i in 1,2,3:
                 custom_urls.append(self.struct['update']['settings'][f'CustomChannel{str(i)}']['value'])
             for custom_url in custom_urls:
-                if custom_url != '':
+                if custom_url:
                     custom_update_json = self.get_json(custom_url)
-                    if not custom_update_json is None:
+                    if custom_update_json:
                         for channel in custom_update_json:
                             update_json[channel] = custom_update_json[channel]
                     elif notify_error:
@@ -444,34 +457,96 @@ class updates(modules.Module):
 
     @log.log_function()
     def get_available_builds(self, shortname=None):
+        """Parse a releases.json file. What it returns depends on how it's called:
+
+        If called with an argument (a user selected 'shortname' of a build), then it returns the build's
+        full name, with the directory subpath of its location prepended to the string when present.
+
+        If called without an argument, return a list of compatible builds with the running image.
+        """
         channel = self.struct['update']['settings']['Channel']['value']
+        matches = []
         update_files = []
-        build = None
-        if not self.update_json is None:
-            if channel != '':
-                if channel in self.update_json:
-                    regex = re.compile(self.update_json[channel]['prettyname_regex'])
-                    if oe.ARCHITECTURE in self.update_json[channel]['project']:
-                        for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
-                            if shortname is None:
-                                matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
-                                if matches:
-                                    update_files.append(matches[0].strip('.tar'))
-                                else:
-                                    update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'].strip('.tar'))
-                            else:
-                                build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
+        build = ''
+        break_loop = False
+        if self.update_json and channel and channel in self.update_json:
+            regex = re.compile(self.update_json[channel]['prettyname_regex'])
+            if oe.ARCHITECTURE in self.update_json[channel]['project']:
+                for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
+                    if shortname:
+                        # check tarballs, then images, then uboot images for matching file; add subpath if key is present
+                        try:
+                            build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
+                            if shortname in build:
+                                try:
+                                    build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['subpath']}/{build}"
+                                except KeyError:
+                                    pass
+                                break
+                        except KeyError:
+                            pass
+                        try:
+                            build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']
+                            if shortname in build:
+                                try:
+                                    build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['subpath']}/{build}"
+                                except KeyError:
+                                    pass
+                                break
+                        except KeyError:
+                            pass
+                        try:
+                            for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
+                                build = uboot_image_data['name']
                                 if shortname in build:
+                                    try:
+                                        build = f"{uboot_image_data['subpath']}/{build}"
+                                    except KeyError:
+                                        pass
+                                    break_loop = True
                                     break
-        if build is None:
-            return update_files
-        else:
-            return build
+                            if break_loop:
+                                break
+                        except KeyError:
+                            pass
+                    else:
+                        try:
+                            matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                            if matches:
+                                update_files.append(matches[0])
+                        except KeyError:
+                            pass
+                        if not matches:
+                            # The same release could have tarballs and images. Prioritize tarball in response.
+                            # images and uboot images in same release[i] entry are mutually exclusive.
+                            try:
+                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                                continue
+                            except KeyError:
+                                pass
+                            try:
+                                update_files.append(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name'])
+                                continue
+                            except KeyError:
+                                pass
+                            try:
+                                for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
+                                    update_files.append(uboot_image_data['name'])
+                            except KeyError:
+                                pass
+
+        if update_files:
+            for idx, fname in enumerate(update_files):
+                update_files[idx] = self.lchop(update_files[idx], f'{oe.DISTRIBUTION}-{oe.ARCHITECTURE}-')
+                update_files[idx] = self.rchop(update_files[idx], '.tar')
+                update_files[idx] = self.rchop(update_files[idx], '.img.gz')
+
+        return build if build else update_files
 
     @log.log_function()
     def check_updates_v2(self, force=False):
         if hasattr(self, 'update_in_progress'):
-            oe.dbg_log('updates::check_updates_v2', 'Update in progress (exit)', oe.LOGDEBUG)
+            log.log('Update in progress (exit)', log.DEBUG)
             return
         if self.struct['update']['settings']['SubmitStats']['value'] == '1':
             systemid = oe.SYSTEMID
@@ -485,9 +560,9 @@ class updates(modules.Module):
         if oe.BUILDER_NAME:
            url += f'&b={oe.url_quote(oe.BUILDER_NAME)}'
 
-        oe.dbg_log('updates::check_updates_v2', f'URL: {url}', oe.LOGDEBUG)
+        log.log(f'URL: {url}', log.DEBUG)
         update_json = oe.load_url(url)
-        oe.dbg_log('updates::check_updates_v2', f'RESULT: {repr(update_json)}', oe.LOGDEBUG)
+        log.log(f'RESULT: {repr(update_json)}', log.DEBUG)
         if update_json:
             update_json = json.loads(update_json)
             self.last_update_check = time.time()
@@ -505,7 +580,7 @@ class updates(modules.Module):
             if not os.path.exists(self.LOCAL_UPDATE_DIR):
                 os.makedirs(self.LOCAL_UPDATE_DIR)
             downloaded = oe.download_file(self.update_file, oe.TEMP + 'update_file', silent)
-            if not downloaded is None:
+            if downloaded:
                 self.update_file = self.update_file.split('/')[-1]
                 if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
                     oe.notify(oe._(32363), oe._(32366))
@@ -520,7 +595,7 @@ class updates(modules.Module):
 
     def get_rpi_flashing_state(self):
         try:
-            oe.dbg_log('updates::get_rpi_flashing_state', 'enter_function', oe.LOGDEBUG)
+            log.log('enter_function', log.DEBUG)
 
             jdata = {
                         'EXITCODE': 'EXIT_FAILED',
@@ -540,14 +615,14 @@ class updates(modules.Module):
                     state['incompatible'] = False
                     jdata = json.load(machine_out)
 
-            oe.dbg_log('updates::get_rpi_flashing_state', f'console output: {console_output}', oe.LOGDEBUG)
-            oe.dbg_log('updates::get_rpi_flashing_state', f'json values: {jdata}', oe.LOGDEBUG)
+            log.log(f'console output: {console_output}', log.DEBUG)
+            log.log(f'json values: {jdata}', log.DEBUG)
 
             if jdata['BOOTLOADER_CURRENT'] != 0:
-                state['bootloader']['current'] = datetime.datetime.utcfromtimestamp(jdata['BOOTLOADER_CURRENT']).strftime('%Y-%m-%d')
+                state['bootloader']['current'] = datetime.utcfromtimestamp(jdata['BOOTLOADER_CURRENT']).strftime('%Y-%m-%d')
 
             if jdata['BOOTLOADER_LATEST'] != 0:
-                state['bootloader']['latest'] = datetime.datetime.utcfromtimestamp(jdata['BOOTLOADER_LATEST']).strftime('%Y-%m-%d')
+                state['bootloader']['latest'] = datetime.utcfromtimestamp(jdata['BOOTLOADER_LATEST']).strftime('%Y-%m-%d')
 
             if jdata['VL805_CURRENT']:
                 state['vl805']['current'] = jdata['VL805_CURRENT']
@@ -566,11 +641,11 @@ class updates(modules.Module):
                 else:
                     state['vl805']['state'] = oe._(32029) % state['vl805']['current']
 
-            oe.dbg_log('updates::get_rpi_flashing_state', f'state: {state}', oe.LOGDEBUG)
-            oe.dbg_log('updates::get_rpi_flashing_state', 'exit_function', oe.LOGDEBUG)
+            log.log(f'state: {state}', log.DEBUG)
+            log.log('exit_function', log.DEBUG)
             return state
         except Exception as e:
-            oe.dbg_log('updates::get_rpi_flashing_state', f'ERROR: ({repr(e)})')
+            log.log(f'ERROR: ({repr(e)})')
             return {'incompatible': True}
 
     @log.log_function()
@@ -579,14 +654,14 @@ class updates(modules.Module):
         if os.path.exists(self.RPI_FLASHING_TRIGGER):
             with open(self.RPI_FLASHING_TRIGGER, 'r') as trigger:
                 values = trigger.read().split('\n')
-        oe.dbg_log('updates::get_rpi_eeprom', f'values: {values}', oe.LOGDEBUG)
+        log.log(f'values: {values}', log.DEBUG)
         return 'true' if (f'{device}="yes"') in values else 'false'
 
     @log.log_function()
     def set_rpi_eeprom(self):
         bootloader = (self.struct['rpieeprom']['settings']['bootloader']['value'] == 'true')
         vl805 = (self.struct['rpieeprom']['settings']['vl805']['value'] == 'true')
-        oe.dbg_log('updates::set_rpi_eeprom', f'states: [{bootloader}], [{vl805}]', oe.LOGDEBUG)
+        log.log(f'states: [{bootloader}], [{vl805}]', log.DEBUG)
         if bootloader or vl805:
             values = []
             values.append('BOOTLOADER="%s"' % ('yes' if bootloader else 'no'))
@@ -621,7 +696,7 @@ class updateThread(threading.Thread):
         threading.Thread.__init__(self)
         self.stopped = False
         self.wait_evt = threading.Event()
-        oe.dbg_log('updates::updateThread', 'Started', oe.LOGINFO)
+        log.log('updateThread Started', log.INFO)
 
     @log.log_function()
     def stop(self):
@@ -639,4 +714,4 @@ class updateThread(threading.Thread):
                 oe.notify(oe._(32363), oe._(32364))
                 self.wait_evt.wait(3600)
             self.wait_evt.clear()
-        oe.dbg_log('updates::updateThread', 'Stopped', oe.LOGINFO)
+        log.log('updateThread Stopped', log.INFO)
