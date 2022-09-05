@@ -473,7 +473,6 @@ class updates(modules.Module):
             return s
 
         channel = self.struct['update']['settings']['Channel']['value']
-        matches = []
         update_files = []
         build = ''
         break_loop = False
@@ -518,13 +517,14 @@ class updates(modules.Module):
                         except KeyError:
                             pass
                     else:
+                        matches = []
                         try:
                             matches = regex.findall(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name'])
-                            if matches:
-                                update_files.append(matches[0])
                         except KeyError:
                             pass
-                        if not matches:
+                        if matches:
+                            update_files.append(matches[0])
+                        else:
                             # The same release could have tarballs and images. Prioritize tarball in response.
                             # images and uboot images in same release[i] entry are mutually exclusive.
                             try:
