@@ -10,15 +10,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-12-14 06:26+0000\n"
-"Last-Translator: teodurini84 <matteo.durini@gmail.com>\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2022-09-03 11:21+0000\n"
+"Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
 "Language-Team: Italian <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/it_it/>\n"
 "Language: it_it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.14\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -158,7 +159,7 @@ msgstr "Abilita o disabilita il supporto per le reti wireless (WLAN)"
 
 msgctxt "#727"
 msgid "Enable a 'tethered' Wireless Access Point. This requires your wireless card (and driver) to support bridging and access point mode. Not all cards are capable."
-msgstr "Abilita il tethering nella scheda di rete. Non tutte le schede di rete (o i relativi driver) hanno questa funzionalità"
+msgstr "Abilita un punto di accesso wireless \"tethered\". Richiede che la scheda wireless (e il driver) supporti il bridging e la modalità access point. Non tutte le carte sono in grado."
 
 msgctxt "#728"
 msgid "Configure the Access Point SSID"
@@ -186,11 +187,11 @@ msgstr "Imposta il 3° server NTP"
 
 msgctxt "#736"
 msgid "Set to ON to delay Kodi startup until the network is available. Use this if the OS is booting into Kodi before the network is up and central MySQL databases are accessible."
-msgstr "Imposta su ON per ritardare l'avvio di Kodi fino ad avere una connessione di rete disponibile. Da utilizzare nel caso un cui Kodi si avvii prima che la connessione al database MySQL centrale sia disponibile"
+msgstr "Imposta su ON per ritardare l'avvio di Kodi fino a quando la rete non è disponibile. Usalo se il sistema operativo si avvia in Kodi prima che la rete sia attiva e che i database MySQL centrali siano accessibili."
 
 msgctxt "#737"
 msgid "Time in seconds to wait for an established network connection."
-msgstr "Tempo di attesa in secondi per la creazione di una connessione"
+msgstr "Tempo di attesa in secondi per stabilire una connessione di rete."
 
 msgctxt "#738"
 msgid "Set to ON to enable the embedded Samba (SMB) filesharing service"
@@ -210,11 +211,11 @@ msgstr "Imposta la password per Samba"
 
 msgctxt "#742"
 msgid "Set to ON to enable the embedded SSH server. The SSH console can be accessed with username 'root' and password '@ROOT_PASSWORD@'."
-msgstr "Imposta su ON per abilitare il server SSH. La console SSH è accessibile con nome utente 'root' e password '@ROOT_PASSWORD@'"
+msgstr "Imposta su ON per abilitare il server SSH incorporato. È possibile accedere alla console SSH con nome utente 'root' e password '@ROOT_PASSWORD@'."
 
 msgctxt "#743"
 msgid "Set to ON if you have copied private SSH keys to your HTPC and would like to improve security by disabling SSH username and password authentication."
-msgstr "Imposta su ON nel caso sia stata copiata la chiave SSH nel proprio HTPC e si voglia migliorare la sicurezza disabilitando l'autenticazione di SSH tramite utente e password"
+msgstr "Imposta su ON se hai copiato le chiavi SSH private sul tuo HTPC e desideri migliorare la sicurezza disabilitando l'autenticazione di nome utente e password SSH."
 
 msgctxt "#744"
 msgid "Set to ON to enable the Avahi (Zeroconf/Bonjour) network discovery service"
@@ -246,7 +247,7 @@ msgstr "750"
 
 msgctxt "#751"
 msgid "With OBEX filetransfer you can send files, for example movies or pictures over bluetooth to @DISTRONAME@."
-msgstr "Con OBEX è possibile spedire file quali film o fotografie tramite Bluetooth a @DISTRONAME@"
+msgstr "Con il trasferimento di file OBEX puoi inviare file, ad esempio film o immagini tramite bluetooth a @DISTRONAME@."
 
 msgctxt "#752"
 msgid "Here you can set the folder location where OBEX file transfer should store incoming files"
@@ -294,7 +295,7 @@ msgstr "Seleziona una versione disponibile"
 
 msgctxt "#771"
 msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
-msgstr "Il firewall blocca il traffico di rete indesiderato. Casa (default) ammette il traffico dalle sole reti private (192.168.x.x, 172.16.x.x e 10.x.x.x). Pubblico blocca il traffico da ogni rete. Personalizzato sfrutta le regole in /storage/.config/iptables. Off disabilita il firewall"
+msgstr "Il firewall blocca il traffico di rete indesiderato. Casa (impostazione predefinita) consente solo il traffico da intervalli di rete privati (192.168.x.x, 172.16.x.x e 10.x.x.x). Pubblico blocca tutto il traffico da tutte le reti. Personalizzato utilizza le regole in /storage/.config/iptables. Off disabilita il firewall."
 
 msgctxt "#772"
 msgid "Checking for a new version will submit the installed Distribution, Project, CPU Arch and Version to the update server. This data is also used to report basic statistics for the project. To continue checking for updates while opting-out of stats reporting, disable this option."
@@ -350,15 +351,15 @@ msgstr "Visualizza canali personalizzati"
 
 msgctxt "#32017"
 msgid "  - Custom Channel 1"
-msgstr "- Canale personalizzato 1"
+msgstr "  - Canale personalizzato 1"
 
 msgctxt "#32018"
 msgid "  - Custom Channel 2"
-msgstr "- Canale personalizzato 2"
+msgstr "  - Canale personalizzato 2"
 
 msgctxt "#32019"
 msgid "  - Custom Channel 3"
-msgstr "- Canale personalizzato 3"
+msgstr "  - Canale personalizzato 3"
 
 msgctxt "#32020"
 msgid "Available Versions"
@@ -670,7 +671,7 @@ msgstr "Password per SSH"
 
 msgctxt "#32210"
 msgid "The default SSH password is widely known and considered insecure.[CR][CR]Setting a personal password is recommended."
-msgstr "La password di default per SSH è nota ed è considerata insicura.[CR][CR]È consigliato impostare una propria"
+msgstr "La password SSH predefinita è ampiamente conosciuta e considerata non sicura.[CR][CR]Si consiglia di impostare una password personale."
 
 msgctxt "#32212"
 msgid "Cancel"
@@ -762,7 +763,7 @@ msgstr "PIN errato!"
 
 msgctxt "#32235"
 msgid " attempts remaining."
-msgstr "tentativi rimasti."
+msgstr " tentativi rimasti."
 
 msgctxt "#32236"
 msgid "You have entered an incorrect PIN too many times.[CR][CR]You will need to wait 5 minutes before trying again."
@@ -778,7 +779,7 @@ msgstr "Tempo rimanente prima che sia possibile nuovamente inserire il PIN: %02d
 
 msgctxt "#32240"
 msgid "Wireless Regulatory Domain"
-msgstr ""
+msgstr "Dominio normativo wireless"
 
 msgctxt "#32300"
 msgid "Welcome to @DISTRONAME@"
@@ -798,7 +799,7 @@ msgstr "Avanti"
 
 msgctxt "#32304"
 msgid "To be identified easily on the network, your new @DISTRONAME@ machine needs a name.[CR][CR]Try to choose something meaningful - like the room it's in - so you'll know what it is when you see it on the network.[CR][CR]This name is used when configuring network services, like file sharing using samba."
-msgstr "Per essere facilmente identificata sulla rete, la nuova macchina @DISTRONAME@ ha bisogno di un nome.[CR][CR]Scegli qualcosa di significativo (come la stanza in cui si trova), così saprai a cosa si riferisce quando la rileverai nella rete.[CR][CR].Questo nome è utilizzato nella configurazione dei servizi di rete, come ad esempio la condivisione con Samba"
+msgstr "Per essere facilmente identificata sulla rete, la tua nuova macchina @DISTRONAME@ ha bisogno di un nome.[CR][CR]Cerca di scegliere qualcosa di significativo, come la stanza in cui si trova, così saprai di cosa si tratta quando lo vedrai sul network.[CR][CR]Questo nome viene utilizzato durante la configurazione dei servizi di rete, come la condivisione di file tramite samba."
 
 msgctxt "#32305"
 msgid "Networking"
@@ -874,7 +875,7 @@ msgstr "Vuoi procedere?"
 
 msgctxt "#32328"
 msgid "The system must reboot."
-msgstr "Il sistema deve essere riavviato"
+msgstr "Il sistema deve essere riavviato."
 
 msgctxt "#32329"
 msgid "Rebooting in %d seconds"
@@ -890,7 +891,7 @@ msgstr "Bluetooth"
 
 msgctxt "#32333"
 msgid "Connected: "
-msgstr "Connesso:"
+msgstr "Connesso: "
 
 msgctxt "#32334"
 msgid "Yes"
@@ -902,7 +903,7 @@ msgstr "No"
 
 msgctxt "#32338"
 msgid "No Bluetooth adapter found."
-msgstr "Nessun adattatore Bluetooth rilevato"
+msgstr "Nessun adattatore Bluetooth trovato."
 
 msgctxt "#32339"
 msgid "No Bluetooth device found. Please put your Bluetooth device into discovery mode[CR]and start the scan"
@@ -910,7 +911,7 @@ msgstr "Nessun dispositivo Bluetooth rilevato. Imposta il dispositivo Bluetooth 
 
 msgctxt "#32343"
 msgid "Enter the following Key on your Device."
-msgstr "Inserire la seguente chiave nel vostro dispositivo"
+msgstr "Inserisci la seguente chiave sul tuo dispositivo."
 
 msgctxt "#32344"
 msgid "Enable Bluetooth"
