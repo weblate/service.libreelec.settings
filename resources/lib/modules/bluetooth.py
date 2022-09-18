@@ -273,7 +273,7 @@ class bluetooth(modules.Module):
     @log.log_function()
     def menu_connections(self, focusItem=None):
         self.discover_devices()
-        if not hasattr(self, 'discovery_thread') or self.discovery_thread.stopped:
+        if self.dbusBluezAdapter is not None and (not hasattr(self, 'discovery_thread') or self.discovery_thread.stopped):
             if hasattr(self, 'discovery_thread') and self.discovery_thread.stopped:
                 del self.discovery_thread
             self.start_discovery()
