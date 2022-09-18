@@ -360,7 +360,10 @@ class bluetooth(modules.Module):
                 if dbusDevice in self.listItems:
                     self.listItems[dbusDevice].setLabel(apName)
                     for dictProperty in dictProperties:
-                        self.listItems[dbusDevice].setProperty(dictProperty, dictProperties[dictProperty])
+                        try:
+                            self.listItems[dbusDevice].setProperty(dictProperty, dictProperties[dictProperty])
+                        except KeyError as e:
+                            log.log(f'Suppressed error: {repr(e)}', log.INFO)
 
     @log.log_function()
     def open_context_menu(self, listItem):
