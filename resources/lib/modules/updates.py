@@ -388,7 +388,20 @@ class updates(modules.Module):
         log.log(str(self.update_json), log.DEBUG)
         if self.update_json:
             for channel in self.update_json:
-                channels.append(channel)
+                # filter versions older than current; just add when unknown
+                try:
+                    channel_version = channel.split('-')[1]
+                except IndexError:
+                    channel_version = False
+                if channel_version and channel_version.replace('.','',1).isdigit():
+                    channel_version = float(channel_version)
+                else:
+                    channel_version = False
+                if channel_version:
+                    if float(oe.VERSION_ID) <= channel_version:
+                        channels.append(channel)
+                else:
+                    channels.append(channel)
         return sorted(list(set(channels)), key=cmp_to_key(self.custom_sort_train))
 
     @log.log_function()
