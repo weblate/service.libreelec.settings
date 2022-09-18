@@ -697,7 +697,6 @@ class discoveryThread(threading.Thread):
 
 class pinkeyTimer(threading.Thread):
 
-    @log.log_function()
     def __init__(self, parent, runtime=60):
         self.parent = weakref.proxy(parent)
         self.start_time = time.time()
