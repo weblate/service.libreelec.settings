@@ -5,27 +5,29 @@
 
 ################################# variables ##################################
 
+import binascii
+import hashlib
+import imp
+import locale
+import os
+import re
+import subprocess
+import sys
+import time
+import tarfile
+import traceback
+import urllib.request
+import urllib.parse
+from xml.dom import minidom
+
 import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcvfs
-import os
-import re
-import locale
-import sys
-import urllib.request, urllib.error, urllib.parse
-import time
-import tarfile
-import traceback
-import subprocess
-import defaults
-import shutil
-import hashlib, binascii
-
-from xml.dom import minidom
-import imp
-
 from xbmc import LOGDEBUG, LOGINFO, LOGWARNING, LOGERROR
+
+import defaults
+
 
 __author__ = 'LibreELEC'
 __scriptid__ = 'service.libreelec.settings'
