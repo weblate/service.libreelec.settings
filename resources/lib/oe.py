@@ -935,9 +935,9 @@ DEVICE = os_release_data[5]
 BUILDER_NAME = os_release_data[6]
 BUILDER_VERSION = os_release_data[7]
 DOWNLOAD_DIR = '/storage/downloads'
-XBMC_USER_HOME = os.environ.get('XBMC_USER_HOME', '/storage/.kodi')
-CONFIG_CACHE = os.environ.get('CONFIG_CACHE', '/storage/.cache')
-USER_CONFIG = os.environ.get('USER_CONFIG', '/storage/.config')
+XBMC_USER_HOME = defaults.XBMC_USER_HOME
+CONFIG_CACHE = defaults.CONFIG_CACHE
+USER_CONFIG = defaults.USER_CONFIG
 TEMP = f'{XBMC_USER_HOME}/temp/'
 winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)
 if os.path.exists('/etc/machine-id'):
