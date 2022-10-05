@@ -3,19 +3,22 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
+import glob
+import os
+import re
+import subprocess
+import tarfile
+from xml.dom import minidom
+
+import xbmc
+import xbmcgui
+
 import hostname
 import log
 import modules
 import oe
-import os
-import re
-import glob
-import xbmc
-import xbmcgui
-import tarfile
 import oeWindows
-from xml.dom import minidom
-import subprocess
+
 
 xbmcDialog = xbmcgui.Dialog()
 

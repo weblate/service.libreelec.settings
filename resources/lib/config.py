@@ -2,7 +2,9 @@
 # Copyright (C) 2020-present Team LibreELEC
 
 import os
+
 import os_tools
+
 
 OS_RELEASE = os_tools.read_shell_settings('/etc/os-release')
 

@@ -3,15 +3,18 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
-import oe
+import os
+import re
+import time
+from threading import Thread
+from xml.dom import minidom
+
 import xbmc
 import xbmcgui
 import xbmcaddon
-import os
-import time
-import re
-from xml.dom import minidom
-from threading import Thread
+
+import oe
+
 
 xbmcDialog = xbmcgui.Dialog()
 

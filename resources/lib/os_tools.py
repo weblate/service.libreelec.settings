@@ -3,6 +3,7 @@
 
 import os
 
+
 def read_shell_setting(file, default):
     setting = default
     if os.path.isfile(file):

@@ -1,9 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
 
-import config
 import os
 import subprocess
+
+import config
+
 
 REGDOMAIN_DEFAULT = 'NOT SET (DEFAULT)'
 REGDOMAIN_LIST = [REGDOMAIN_DEFAULT] + [

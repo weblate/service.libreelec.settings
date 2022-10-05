@@ -1,10 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
 
-import dbus_utils
 import dbussy
-import log
 import ravel
+
+import dbus_utils
+import log
+
 
 BUS_NAME = 'net.connman'
 ERROR_AGENT_CANCELLED = 'net.connman.Agent.Error.Canceled'
