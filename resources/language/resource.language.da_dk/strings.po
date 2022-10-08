@@ -4,7 +4,8 @@
 # Addon Provider: LibreELEC
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-19 06:50+0000\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2022-09-21 06:20+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/da_dk/>\n"
 "Language: da_dk\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -148,11 +149,11 @@ msgstr "Aktiver eller deaktiver understøttelse af trådløse (WLAN) netværk"
 
 msgctxt "#727"
 msgid "Enable a 'tethered' Wireless Access Point. This requires your wireless card (and driver) to support bridging and access point mode. Not all cards are capable."
-msgstr ""
+msgstr "Aktiver et forbundet trådløst adgangspunkt. Dette kræver, at dit trådløse kort (og driver) understøtter brokobling og adgangspunkttilstand. Ikke alle kort understøtter dette."
 
 msgctxt "#728"
 msgid "Configure the Access Point SSID"
-msgstr ""
+msgstr "Konfigurer SSID for adgangspunktet"
 
 msgctxt "#729"
 msgid "Configure the Access Point Passphrase"
