@@ -272,7 +272,7 @@ class connmanService(object):
             for (key, value) in self.datamap[entry].items():
                 if self.struct[value]['type'] == 'Boolean':
                     if key in self.service_properties:
-                        self.struct[value]['settings'][value]['value'] = self.service_properties[key]
+                        self.struct[value]['settings'][value]['value'] = str(self.service_properties[key])
                 if self.struct[value]['type'] == 'Dictionary':
                     if key in self.service_properties:
                         for setting in self.struct[value]['settings']:

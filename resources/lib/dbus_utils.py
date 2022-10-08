@@ -44,8 +44,8 @@ class Agent(object):
 
     @log.log_function()
     def unregister_agent(self):
-        BUS.unregister(path=self.path_agent)
         self.manager_unregister_agent()
+        BUS.unregister(path=self.path_agent)
 
     def manager_register_agent(self):
         pass

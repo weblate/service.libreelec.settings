@@ -90,7 +90,8 @@ class bluetooth(modules.Module):
 
     @log.log_function()
     def stop_service(self):
-        self.bluez_agent.unregister_agent()
+        if hasattr(self, 'dbusBluezAdapter') and self.dbusBluezAdapter is not None:
+            self.bluez_agent.unregister_agent()
         if hasattr(self, 'discovery_thread'):
             try:
                 self.discovery_thread.stop()
@@ -273,7 +274,7 @@ class bluetooth(modules.Module):
     @log.log_function()
     def menu_connections(self, focusItem=None):
         self.discover_devices()
-        if not hasattr(self, 'discovery_thread') or self.discovery_thread.stopped:
+        if self.dbusBluezAdapter is not None and (not hasattr(self, 'discovery_thread') or self.discovery_thread.stopped):
             if hasattr(self, 'discovery_thread') and self.discovery_thread.stopped:
                 del self.discovery_thread
             self.start_discovery()
@@ -360,7 +361,10 @@ class bluetooth(modules.Module):
                 if dbusDevice in self.listItems:
                     self.listItems[dbusDevice].setLabel(apName)
                     for dictProperty in dictProperties:
-                        self.listItems[dbusDevice].setProperty(dictProperty, dictProperties[dictProperty])
+                        try:
+                            self.listItems[dbusDevice].setProperty(dictProperty, dictProperties[dictProperty])
+                        except KeyError as e:
+                            log.log(f'Suppressed error: {repr(e)}', log.INFO)
 
     @log.log_function()
     def open_context_menu(self, listItem):
@@ -697,7 +701,6 @@ class discoveryThread(threading.Thread):
 
 class pinkeyTimer(threading.Thread):
 
-    @log.log_function()
     def __init__(self, parent, runtime=60):
         self.parent = weakref.proxy(parent)
         self.start_time = time.time()
