@@ -3,20 +3,22 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2017-present Team LibreELEC
 
+import os
+import random
+import string
+
+import xbmc
+import xbmcgui
+from dbussy import DBusError
+
+import dbus_connman
 import log
 import modules
 import oe
-import os
-import xbmc
-import xbmcgui
 import oeWindows
-import random
-import string
-import ui_tools
 import regdomain
-import dbus_connman
-import log
-from dbussy import DBusError
+import ui_tools
+
 
 ####################################################################
 ## Connection properties class

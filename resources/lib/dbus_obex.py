@@ -1,6 +1,11 @@
-import dbus_utils
+# SPDX-License-Identifier: GPL-2.0
+# Copyright (C) 2020-present Team LibreELEC
+
 import dbussy
 import ravel
+
+import dbus_utils
+
 
 BUS_NAME = 'org.bluez.obex'
 ERROR_REJECTED = 'org.bluez.Error.Rejected'

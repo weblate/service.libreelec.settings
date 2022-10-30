@@ -2,9 +2,9 @@
 # Copyright (C) 2009-2013 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
-import oe
+
 import log
-import modules
+import oe
 
 
 class about:

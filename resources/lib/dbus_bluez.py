@@ -1,9 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
 
-import dbus_utils
 import dbussy
 import ravel
+
+import dbus_utils
+
 
 BUS_NAME = 'org.bluez'
 ERROR_REJECTED = 'org.bluez.Error.Rejected'

@@ -3,9 +3,11 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
-import xbmc
 import socket
+
+import xbmc
 import xbmcaddon
+
 
 __scriptid__ = 'service.libreelec.settings'
 __addon__ = xbmcaddon.Addon(id=__scriptid__)

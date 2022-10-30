@@ -1,10 +1,14 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
+
 import asyncio
-import dbussy
-import log
-import ravel
 import threading
+
+import dbussy
+import ravel
+
+import log
+
 
 BUS_NAME = ''
 INTERFACE_AGENT = ''

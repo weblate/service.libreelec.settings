@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
+
 import inspect
 import os
 import pprint
@@ -7,6 +8,7 @@ import sys
 from functools import wraps
 
 from debug_utils import get_exception_message, format_stack_trace, inspect_object
+
 
 DEBUG = 0
 INFO = 1

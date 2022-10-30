@@ -1,9 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (C) 2020-present Team LibreELEC
 
-import log
-import xbmcgui
 import xbmcaddon
+import xbmcgui
+
+import log
+
 
 ADDON = xbmcaddon.Addon()
 ADDON_ICON = ADDON.getAddonInfo('icon')

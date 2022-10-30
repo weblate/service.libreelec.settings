@@ -3,14 +3,16 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
+import os
+import socket
+import threading
+
+import xbmc
+
 import syspath
 import dbus_utils
-import oe
-import os
 import log
-import threading
-import socket
-import xbmc
+import oe
 
 
 class Service_Thread(threading.Thread):

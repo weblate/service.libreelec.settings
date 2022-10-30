@@ -3,23 +3,26 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2018-present Team LibreELEC
 
+import json
+import os
+import re
+import shutil
+import subprocess
+import tempfile
+import threading
+import time
+from datetime import datetime
+from functools import cmp_to_key
+from xml.dom import minidom
+
+import xbmc
+import xbmcgui
+
 import log
 import modules
 import oe
-import os
-import re
-import time
-import json
-import xbmc
-import xbmcgui
 import oeWindows
-import threading
-import subprocess
-import shutil
-from xml.dom import minidom
-from datetime import datetime
-import tempfile
-from functools import cmp_to_key
+
 
 class updates(modules.Module):
 
