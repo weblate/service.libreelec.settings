@@ -186,26 +186,20 @@ class ProgressDialog:
         self.label3 = _(label3)
         self.minSampleInterval = minSampleInterval
         self.maxUpdatesPerSecond = 1 / maxUpdatesPerSecond
-
         self.dialog = None
-
         self.source = None
         self.total_size = 0
-
         self.reset()
 
     def reset(self):
         self.percent = 0
         self.speed = 0
-
         self.partial_size = 0
         self.prev_size = 0
-
         self.start = 0
         self.last_update = 0
         self.minutes = 0
         self.seconds = 0
-
         self.cancelled = False
 
     def setSource(self, source):
@@ -259,15 +253,13 @@ class ProgressDialog:
 
     # Update the progress dialog when required, or upon completion
     def needsUpdate(self, chunk):
-        if not chunk:
-            return True
-        else:
-            return ((time.time() - self.last_update) >= self.maxUpdatesPerSecond)
+        return ((time.time() - self.last_update) >= self.maxUpdatesPerSecond) if chunk else True
 
     def iscanceled(self):
         if self.dialog:
             self.cancelled = self.dialog.iscanceled()
         return self.cancelled
+
 
 def _(code):
     wizardComp = read_setting('libreelec', 'wizard_completed')
@@ -318,15 +310,6 @@ def execute(command_line, get_result=0):
 
 
 @log.log_function()
-def enable_service(service):
-    if os.path.exists(f'{CONFIG_CACHE}/services/{service}'):
-        pass
-    if os.path.exists(f'{CONFIG_CACHE}/services/{service}.disabled'):
-        pass
-    service_file = f'{CONFIG_CACHE}/services/{service}'
-
-
-@log.log_function()
 def set_service_option(service, option, value):
     lines = []
     changed = False
@@ -355,18 +338,14 @@ def get_service_option(service, option, default=None):
     if os.path.exists(conf_file_name):
         with open(conf_file_name, 'r') as conf_file:
             for line in conf_file:
-                if option in line:
-                    if '=' in line:
-                        default = line.strip().split('=')[-1]
+                if option in line and '=' in line:
+                    default = line.strip().split('=')[-1]
     return default
 
 
 @log.log_function()
 def get_service_state(service):
-    if os.path.exists(f'{CONFIG_CACHE}/services/{service}.conf'):
-        return '1'
-    else:
-        return '0'
+    return '1' if os.path.exists(f'{CONFIG_CACHE}/services/{service}.conf') else '0'
 
 
 @log.log_function()
@@ -407,13 +386,13 @@ def set_service(service, options, state):
 
 @log.log_function()
 def load_file(filename):
+    content = ''
     if os.path.isfile(filename):
-        objFile = open(filename, 'r', encoding='utf-8')
-        content = objFile.read()
-        objFile.close()
+        with open(filename, 'r', encoding='utf-8') as objFile:
+            content = objFile.read()
     else:
-        content = ''
-    return content.strip()
+        log.log(f'Error: Failed to read file: {filename}', log.ERROR)
+    return content.strip() if content else content
 
 def url_quote(var):
     return urllib.parse.quote(var, safe="")
@@ -426,15 +405,14 @@ def load_url(url):
     return content.decode('utf-8').strip()
 
 
+@log.log_function()
 def download_file(source, destination, silent=False):
-    try:
-        local_file = open(destination, 'wb')
-        response = urllib.request.urlopen(urllib.parse.quote(source, safe=':/'))
-
-        progress = ProgressDialog()
-        if not silent:
-            progress.open()
-        progress.setSource(source)
+    log.log(f'Downloading: {source} to {destination}', log.INFO)
+    progress = ProgressDialog()
+    if not silent:
+        progress.open()
+    progress.setSource(source)
+    with urllib.request.urlopen(urllib.parse.quote(source, safe=':/')) as response, open(destination, 'wb') as local_file:
         progress.setSize(int(response.getheader('Content-Length').strip()))
         last_percent = 0
         while not (progress.iscanceled() or xbmcm.abortRequested()):
@@ -450,32 +428,24 @@ def download_file(source, destination, silent=False):
                 local_file.write(part)
             else:
                 break
+    progress.close()
 
-        progress.close()
-        local_file.close()
-        response.close()
-
-        if progress.iscanceled() or xbmcm.abortRequested():
-            os.remove(destination)
-            return None
-        return destination
-
-    except Exception as e:
-        log.log(f'oe::download_file(src: {source}, dest: {destination}): ERROR: ({repr(e)})', log.ERROR)
+    if progress.iscanceled() or xbmcm.abortRequested():
+        os.remove(destination)
+        return None
+    return destination
 
 
+@log.log_function()
 def copy_file(source, destination, silent=False):
-    try:
-        log.log(f'oe: copy file: SOURCE: {source}, DEST: {destination}', log.INFO)
-        source_file = open(source, 'rb')
-        destination_file = open(destination, 'wb')
-
-        progress = ProgressDialog()
-        if not silent:
-            progress.open()
-        progress.setSource(source)
-        progress.setSize(os.path.getsize(source))
-        last_percent = 0
+    log.log(f'Copying: {source} to {destination}', log.INFO)
+    progress = ProgressDialog()
+    if not silent:
+        progress.open()
+    progress.setSource(source)
+    progress.setSize(os.path.getsize(source))
+    last_percent = 0
+    with open(source, 'rb') as source_file, open(destination, 'wb') as destination_file:
         while not (progress.iscanceled() or xbmcm.abortRequested()):
             part = source_file.read(32768)
             progress.sample(part)
@@ -483,23 +453,18 @@ def copy_file(source, destination, silent=False):
                 progress.update(part)
             else:
                 if progress.getPercent() - last_percent > 5 or not part:
-                    log.log(f'oe: copy file {destination}: {progress.getPercent()}%% with {progress.getSpeed()} KB/s', log.INFO)
+                    log.log(f'copy file {destination} progress: {progress.getPercent()}%% with {progress.getSpeed()} KB/s', log.INFO)
                     last_percent = progress.getPercent()
             if part:
                 destination_file.write(part)
             else:
                 break
-        progress.close()
-        source_file.close()
-        destination_file.close()
+    progress.close()
 
-        if progress.iscanceled() or xbmcm.abortRequested():
-            os.remove(destination)
-            return None
-        return destination
-
-    except Exception as e:
-        log.log(f'oe::copy_file(src: {source}, dest: {destination}): ERROR: ({repr(e)})', log.ERROR)
+    if progress.iscanceled() or xbmcm.abortRequested():
+        os.remove(destination)
+        return None
+    return destination
 
 
 @log.log_function()
@@ -613,9 +578,8 @@ def save_config(xml_conf):
     while conf_lock:
         time.sleep(0.2)
     conf_lock = True
-    config_file = open(configFile, 'w')
-    config_file.write(xml_conf.toprettyxml())
-    config_file.close()
+    with open(configFile, 'w') as config_file:
+        config_file.write(xml_conf.toprettyxml())
     conf_lock = False
 
 
@@ -726,8 +690,7 @@ def load_modules():
 
 
 def timestamp():
-    localtime = time.localtime()
-    return time.strftime('%Y%m%d%H%M%S', localtime)
+    return time.strftime('%Y%m%d%H%M%S')
 
 
 def split_dialog_text(text):
@@ -749,10 +712,7 @@ def reboot_counter(seconds=10, title=' '):
         reboot_dlg.update(int(progress), _(32329) % seconds)
         xbmcm.waitForAbort(1)
         seconds = seconds - 1
-    if reboot_dlg.iscanceled() or xbmcm.abortRequested():
-        return 0
-    else:
-        return 1
+    return 0 if reboot_dlg.iscanceled() or xbmcm.abortRequested() else 1
 
 
 def exit():
