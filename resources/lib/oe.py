@@ -24,7 +24,6 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcvfs
-from xbmc import LOGDEBUG, LOGINFO, LOGWARNING, LOGERROR
 
 import defaults
 import log
@@ -73,7 +72,7 @@ try:
     imp.reload(sys)
     # sys.setdefaultencoding(encoding)
 except Exception as e:
-    xbmc.log(f'## LibreELEC Addon ## oe:encoding: ERROR: ({repr(e)})', LOGERROR)
+    xbmc.log(f'## LibreELEC Addon ## oe:encoding: ERROR: ({repr(e)})', xbmc.LOGERROR)
 
 ## load oeSettings modules
 
@@ -292,15 +291,6 @@ def _(code):
             codeNew = __addon__.getLocalizedString(code)
     return codeNew
 
-
-def dbg_log(source, text, level=LOGERROR):
-    if level == LOGDEBUG and os.environ.get('DEBUG', 'no') == 'no':
-        return
-    xbmc.log(f"## LibreELEC Addon ## {source} ## {text}", level)
-    if level == LOGERROR:
-        tracedata = traceback.format_exc()
-        if tracedata != "NoneType: None\n":
-            xbmc.log(tracedata, level)
 
 @log.log_function()
 def notify(title, message, icon='icon'):
