@@ -244,7 +244,7 @@ class bluetooth(modules.Module):
             listItem = oe.winOeMain.getControl(oe.listObject['btlist']).getSelectedItem()
         if listItem is None:
             return
-        oe.dbg_log('bluetooth::remove_device->entry::', listItem.getProperty('entry'), oe.LOGDEBUG)
+        log.log(f"remove_device->entry: {listItem.getProperty('entry')}", log.DEBUG)
         path = listItem.getProperty('entry')
         dbus_bluez.adapter_remove_device(self.dbusBluezAdapter, path)
         self.disable_device_standby(listItem)
@@ -256,7 +256,7 @@ class bluetooth(modules.Module):
 
     @log.log_function()
     def dbus_error_handler(self, error):
-        oe.dbg_log('bluetooth::dbus_error_handler::err_message', repr(error.message), oe.LOGDEBUG)
+        log.log(f'error message: {repr(error.message)}', log.DEBUG)
         oe.notify('Bluetooth error', error.message.split('.')[0], 'bt')
         if hasattr(self, 'pinkey_window'):
             self.close_pinkey_window()
@@ -292,7 +292,7 @@ class bluetooth(modules.Module):
             oe.winOeMain.getControl(1301).setLabel(oe._(32346))
             oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
             self.clear_list()
-            oe.dbg_log('bluetooth::menu_connections', 'exit_function (BT Disabled)', oe.LOGDEBUG)
+            log.log('exit_function (BT Disabled)', log.DEBUG)
             oe.winOeMain.setProperty('show_bt_label', 'true')
             return
         if self.dbusBluezAdapter is None:
@@ -300,7 +300,7 @@ class bluetooth(modules.Module):
             oe.winOeMain.getControl(1301).setLabel(oe._(32338))
             oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
             self.clear_list()
-            oe.dbg_log('bluetooth::menu_connections', 'exit_function (No Adapter)', oe.LOGDEBUG)
+            log.log('exit_function (No Adapter)', log.DEBUG)
             oe.winOeMain.setProperty('show_bt_label', 'true')
             return
         if not dbus_bluez.adapter_get_powered(self.dbusBluezAdapter):
@@ -309,7 +309,7 @@ class bluetooth(modules.Module):
             oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
             self.clear_list()
             oe.winOeMain.setProperty('show_bt_label', 'true')
-            oe.dbg_log('bluetooth::menu_connections', 'exit_function (No Adapter Powered)', oe.LOGDEBUG)
+            log.log('exit_function (No Adapter Powered)', log.DEBUG)
             return
 
         rebuildList = False
@@ -646,7 +646,7 @@ class Obex_Agent(dbus_obex.Agent):
         xbmcDialog = xbmcgui.Dialog()
         properties = self.transfer_get_all_properties(transfer)
         answer = xbmcDialog.yesno('Bluetooth', f"{oe._(32381)}\n\n{properties['Name']}")
-        oe.dbg_log('bluetooth::obexAgent::AuthorizePush::answer=', repr(answer), oe.LOGDEBUG)
+        log.log(f'answer={repr(answer)}', log.DEBUG)
         if answer != 1:
             self.reject('Not Authorized')
         self.parent.download_path = transfer
