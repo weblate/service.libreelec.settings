@@ -72,12 +72,12 @@ try:
     imp.reload(sys)
     # sys.setdefaultencoding(encoding)
 except Exception as e:
-    xbmc.log(f'## LibreELEC Addon ## oe:encoding: ERROR: ({repr(e)})', xbmc.LOGERROR)
+    log.log(f'## LibreELEC Addon ## oe:encoding: ERROR: ({repr(e)})', log.ERROR)
 
 ## load oeSettings modules
 
 import oeWindows
-xbmc.log(f"## LibreELEC Addon ## {str(__addon__.getAddonInfo('version'))}")
+log.log(f"## LibreELEC Addon ## {str(__addon__.getAddonInfo('version'))}", log.INFO)
 
 class PINStorage:
     def __init__(self, module='system', prefix='pinlock', maxAttempts=4, delay=300):
@@ -520,7 +520,7 @@ def stop_service():
         module = dictModules[strModule]
         if hasattr(module, 'stop_service') and module.ENABLED:
             module.stop_service()
-    xbmc.log('## LibreELEC Addon ## STOP SERVICE DONE !')
+    log.log('## LibreELEC Addon ## STOP SERVICE DONE !', log.INFO)
 
 
 @log.log_function()
