@@ -27,6 +27,7 @@ import xbmcvfs
 
 import defaults
 import log
+import os_tools
 
 
 __author__ = 'LibreELEC'
@@ -380,7 +381,7 @@ def set_service(service, options, state):
     if not __oe__.is_service:
         if service in defaults._services:
             for svc in defaults._services[service]:
-                execute(f'systemctl restart {svc}')
+                os_tools.execute(f'systemctl restart {svc}')
     log.log('exit_function', log.DEBUG)
 
 
@@ -831,9 +832,9 @@ else:
     SYSTEMID = os.environ.get('SYSTEMID', '')
 
 if PROJECT == 'RPi':
-  RPI_CPU_VER = execute('vcgencmd otp_dump 2>/dev/null | grep 30: | cut -c8', get_result=1).replace('\n','')
+    RPI_CPU_VER = os_tools.execute('vcgencmd otp_dump 2>/dev/null | grep 30: | cut -c8', get_result=True).replace('\n','')
 else:
-  RPI_CPU_VER = ''
+    RPI_CPU_VER = None
 
 BOOT_STATUS = load_file('/storage/.config/boot.status')
 

@@ -7,7 +7,6 @@ import json
 import os
 import re
 import shutil
-import subprocess
 import tempfile
 import threading
 import time
@@ -22,6 +21,7 @@ import log
 import modules
 import oe
 import oeWindows
+import os_tools
 
 
 class updates(modules.Module):
@@ -231,18 +231,18 @@ class updates(modules.Module):
         gpu_driver = ""
         gpu_card = self.get_gpu_card()
         log.log(f'Using card: {gpu_card}', log.DEBUG)
-        gpu_path = oe.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=1).replace('\n','')
+        gpu_path = os_tools.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=True).replace('\n','')
         log.log(f'gpu path: {gpu_path}', log.DEBUG)
         if gpu_path:
             drv_path = os.path.dirname(os.path.dirname(gpu_path))
-            props = oe.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=1)
+            props = os_tools.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=True)
             if props:
                 for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
                     gpu_props[key] = value
             log.log(f'gpu props: {gpu_props}', log.DEBUG)
             gpu_driver = gpu_props.get("DRIVER", "")
         if not gpu_driver:
-            gpu_driver = oe.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=1).replace('\n','')
+            gpu_driver = os_tools.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=True).replace('\n','')
         if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
             gpu_driver = 'nvidia-legacy'
         log.log(f'gpu driver: {gpu_driver}', log.DEBUG)
@@ -251,7 +251,7 @@ class updates(modules.Module):
     @log.log_function()
     def get_hardware_flags_dtflag(self):
         if os.path.exists('/usr/bin/dtflag'):
-            dtflag = oe.execute('/usr/bin/dtflag', get_result=1).rstrip('\x00\n')
+            dtflag = os_tools.execute('/usr/bin/dtflag', get_result=True).rstrip('\x00\n')
         else:
             dtflag = "unknown"
         log.log(f'ARM board: {dtflag}', log.DEBUG)
@@ -607,7 +607,7 @@ class updates(modules.Module):
                 if silent == False:
                     oe.winOeMain.close()
                     oe.xbmcm.waitForAbort(1)
-                    subprocess.call(['/usr/bin/systemctl', '--no-block', 'reboot'], close_fds=True)
+                    os_tools.execute('/usr/bin/systemctl --no-block reboot')
             else:
                 delattr(self, 'update_in_progress')
 
@@ -628,7 +628,7 @@ class updates(modules.Module):
                     }
 
             with tempfile.NamedTemporaryFile(mode='r', delete=True) as machine_out:
-                console_output = oe.execute(f'/usr/bin/.rpi-eeprom-update.real -j -m "{machine_out.name}"', get_result=1).split('\n')
+                console_output = os_tools.execute(f'/usr/bin/.rpi-eeprom-update.real -j -m "{machine_out.name}"', get_result=True).split('\n')
                 if os.path.getsize(machine_out.name) != 0:
                     state['incompatible'] = False
                     jdata = json.load(machine_out)

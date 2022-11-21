@@ -4,6 +4,7 @@
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
 import os
+import shutil
 import subprocess
 
 import xbmc
@@ -545,7 +546,9 @@ class services(modules.Module):
         newpwd = xbmcDialog.input(oe._(746))
         if newpwd:
             if newpwd == "libreelec":
-                oe.execute('cp -fp /usr/cache/shadow /storage/.cache/shadow')
+                if os.path.isfile('/storage/.cache/shadow'):
+                    os.remove('/storage/.cache/shadow')
+                shutil.copy2('/usr/cache/shadow', '/storage/.cache/shadow')
                 readout3 = "Retype password"
             else:
                 ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=0)
