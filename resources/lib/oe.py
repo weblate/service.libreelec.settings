@@ -11,7 +11,6 @@ import imp
 import locale
 import os
 import re
-import subprocess
 import sys
 import time
 import tarfile
@@ -290,23 +289,6 @@ def notify(title, message, icon='icon'):
     log.log('enter_function', log.DEBUG)
     msg = f'Notification("{title}", "{message[0:64]}", 5000, "{__media__}/{icon}.png")'
     xbmc.executebuiltin(msg)
-    log.log('exit_function', log.DEBUG)
-
-
-@log.log_function()
-def execute(command_line, get_result=0):
-    log.log('enter_function', log.DEBUG)
-    log.log(f'oe: executing command: {command_line}', log.DEBUG)
-    if get_result == 0:
-        process = subprocess.Popen(command_line, shell=True, close_fds=True)
-        process.wait()
-    else:
-        result = ''
-        process = subprocess.Popen(command_line, shell=True, close_fds=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        process.wait()
-        for line in process.stdout.readlines():
-            result = result + line.decode('utf-8')
-        return result
     log.log('exit_function', log.DEBUG)
 
 
