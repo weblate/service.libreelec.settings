@@ -460,7 +460,9 @@ class system(modules.Module):
 
     @log.log_function()
     def set_hw_clock(self):
-        os_tools.execute(f'{self.SET_CLOCK_CMD} 2>/dev/null')
+        # does device have an RTC?
+        if os.path.exists('/proc/driver/rtc'):
+            os_tools.execute(f'{self.SET_CLOCK_CMD} 2>/dev/null')
 
     @log.log_function()
     def reset_soft(self, listItem=None):
