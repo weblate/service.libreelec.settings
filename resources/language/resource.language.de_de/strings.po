@@ -12,15 +12,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2021-12-14 06:26+0000\n"
-"Last-Translator: Kai Sommerfeld <kai.sommerfeld@gmx.com>\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2023-02-02 21:37+0000\n"
+"Last-Translator: Demian <Demian@gmx.co.uk>\n"
 "Language-Team: German <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/de_de/>\n"
 "Language: de_de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -60,7 +61,7 @@ msgstr "Architektur: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr "LibreELEC wurde von einem globalen Team von Linux- und Kodi-Enthusiasten gegründet, die Zeit und Mühe investiert haben, um das Projekt zu verwalten, Code zu schreiben und Support bereitzustellen. Wir haben Spaß dabei. Wir hoffen, Du hast Spaß beim Benutzen!"
+msgstr "LibreELEC wurde von einem globalen Team von Linux- und Kodi-Enthusiasten gegründet, die Zeit und Mühe investiert haben, um das Projekt zu verwalten, Code zu schreiben und Support bereitzustellen. Wir haben Spaß dabei. Wir wünschen Euch viel Spaß damit!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
@@ -88,7 +89,7 @@ msgstr "Bluetooth-Geräte verbinden und verwalten"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr "Nützliche Informationen, wie Versions- und Architekturdetails, Links zu Support und Dokumentation, sowie Informationen zu Spenden und Unterstützung des Projektes."
+msgstr "Nützliche Informationen, wie Versions- und Architekturdetails, Links zu Support und Dokumentation sowie Informationen zu Spenden und Unterstützung des Projektes."
 
 msgctxt "#707"
 msgid "Configure updates"
@@ -112,11 +113,11 @@ msgstr "Tastaturbelegung konfigurieren"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
-msgstr "@DISTRONAME@ kann für automatische oder manuelle Aktualisierungen konfiguriert werden. Automatische Aktualisierungen sind für stabile Releases und Release Candidates für stabile Releases verfügbar. Automatische Aktualisierungen werden für Beta- und Entwickler- Versionen standardmäßig abgeschaltet"
+msgstr "@DISTRONAME@ kann für automatische oder manuelle Aktualisierungen konfiguriert werden. Automatische Aktualisierungen sind für stabile Releases und Release Candidates für stabile Releases verfügbar. Automatische Aktualisierungen werden für Beta- und Entwicklerversionen standardmäßig abgeschaltet"
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
-msgstr "Auf EIN stellen und eine Bildschirm-Benachrichtigung wird angezeigt, sobald eine neue Aktualisierung verfügbar ist"
+msgstr "Auf EIN stellen und eine Bildschirmbenachrichtigung wird angezeigt, sobald eine neue Aktualisierung verfügbar ist"
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
@@ -132,7 +133,7 @@ msgstr "Auf EIN stellen, um Bluetooth zu aktivieren"
 
 msgctxt "#722"
 msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backup/"
-msgstr "Erzeugt eine Sicherung als tar-Archiv, welches die gesamten Einstellungen, Datenbanken und Vorschaubilder von @DISTRONAME@ und Kodi enthält. Die Sicherungen werden unter /storage/backup/ abgelegt"
+msgstr "Erzeugt eine Sicherung als tar-Archiv, das die gesamten Einstellungen, Datenbanken und Vorschaubilder von @DISTRONAME@ und Kodi enthält. Die Sicherungen werden unter /storage/backup/ abgelegt"
 
 msgctxt "#723"
 msgid "Restore a tar archive backup previously created using the backup option above"
@@ -144,7 +145,7 @@ msgid ""
 "Permanently reset @DISTRONAME@ configuration to defaults (resets also Kodi to default including your library. your media - music/videos/etc are not touched)"
 msgstr ""
 "[COLOR FF00FF00]SOFT RESET[/COLOR]\n"
-"Standardeinstellungen von @DISTRONAME@ und Kodi dauerhaft wiederherstellen (inklusive Reset der Datenbank. Musik- und Video-Dateien etc. werden dabei aber nicht verändert)"
+"Standardeinstellungen von @DISTRONAME@ und Kodi dauerhaft wiederherstellen (inklusive Reset der Datenbank. Musik- und Videodateien usw. werden dabei aber nicht verändert)"
 
 msgctxt "#725"
 msgid ""
@@ -152,7 +153,7 @@ msgid ""
 "Permanently reset @DISTRONAME@ and Kodi configuration to defaults (everything in your storage partition will be deleted)"
 msgstr ""
 "[COLOR FFFF0000]HARD RESET[/COLOR]\n"
-"Standardeinstellungen von @DISTRONAME@ und Kodi dauerhaft wiederherstellen (die gesamte Partition \"storage\" wird gelöscht)"
+"Standardeinstellungen von @DISTRONAME@ und Kodi dauerhaft wiederherstellen (die gesamte Partition „storage“ wird gelöscht)"
 
 msgctxt "#726"
 msgid "Enable or disable support for Wireless (WLAN) networks"
@@ -168,7 +169,7 @@ msgstr "SSID für Zugriffspunkt konfigurieren"
 
 msgctxt "#729"
 msgid "Configure the Access Point Passphrase"
-msgstr "Passwort für Zgriffspunkt konfigurieren"
+msgstr "Passwort für Zugangspunkt konfigurieren"
 
 msgctxt "#730"
 msgid "Enable or disable support for Wired (Ethernet) networks"
@@ -196,7 +197,7 @@ msgstr "Zeit in Sekunden, um auf eine bestehende Netzwerkverbindung zu warten."
 
 msgctxt "#738"
 msgid "Set to ON to enable the embedded Samba (SMB) filesharing service"
-msgstr "Auf EIN stellen, um den eingebetteten Samba (SMB) Datenfreigabedienst zu aktivieren"
+msgstr "Auf EIN stellen, um den eingebetteten Samba(SMB)-Datenfreigabedienst zu aktivieren"
 
 msgctxt "#739"
 msgid "Set to ON to require username/password access to local Samba fileshares"
@@ -212,7 +213,7 @@ msgstr "Samba-Passwort für Freigaben festlegen"
 
 msgctxt "#742"
 msgid "Set to ON to enable the embedded SSH server. The SSH console can be accessed with username 'root' and password '@ROOT_PASSWORD@'."
-msgstr "Auf EIN stellen, um den eingebetteten SSH-Server zu aktivieren. Auf die SSH-Konsole kann mit dem Benutzernamen 'root' und dem Passwort '@ROOT_PASSWORD@' zugegriffen werden."
+msgstr "Auf EIN stellen, um den eingebetteten SSH-Server zu aktivieren. Auf die SSH-Konsole kann mit dem Benutzernamen „root“ und dem Passwort „@ROOT_PASSWORD@“ zugegriffen werden."
 
 msgctxt "#743"
 msgid "Set to ON if you have copied private SSH keys to your HTPC and would like to improve security by disabling SSH username and password authentication."
@@ -220,7 +221,7 @@ msgstr "Auf EIN stellen, wenn private SSH-Schlüssel auf den HTPC kopiert wurden
 
 msgctxt "#744"
 msgid "Set to ON to enable the Avahi (Zeroconf/Bonjour) network discovery service"
-msgstr "Auf EIN stellen, um den Avahi (Zeroconf/Bonjour) Netzwerkverzeichnisdienst zu aktivieren"
+msgstr "Auf EIN stellen, um den Avahi(Zeroconf/Bonjour)-Netzwerkverzeichnisdienst zu aktivieren"
 
 msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
@@ -264,7 +265,7 @@ msgstr "Konfiguration des zweiten Tastaturschemas"
 
 msgctxt "#755"
 msgid "Auto share external drives / partitions"
-msgstr "Automatische Freigabe externer Laufwerke / Partitionen"
+msgstr "Automatische Freigabe externer Laufwerke/Partitionen"
 
 msgctxt "#756"
 msgid "Disable older SMB protocols by specifying the minimum supported protocol."
@@ -280,7 +281,7 @@ msgstr "NetBIOS-Gruppe, zu welcher der Server gehört. Standard ist WORKGROUP."
 
 msgctxt "#760"
 msgid "Select an update channel"
-msgstr "Update-Kanal auswählen"
+msgstr "Updatekanal auswählen"
 
 msgctxt "#761"
 msgid "Enable to allow entering a custom update url"
@@ -288,7 +289,7 @@ msgstr "Aktiveren, um die Eingabe einer benutzerdefinierten Update-URL zu erlaub
 
 msgctxt "#762"
 msgid "Enter a custom update url (url should be the root of the update files)"
-msgstr "Benutzerdefinierte Update-URL eingeben (URL sollte das Wurzelverzeichnis der Update-Dateien sein)"
+msgstr "Benutzerdefinierte Update-URL eingeben (URL sollte das Wurzelverzeichnis der Updatedateien sein)"
 
 msgctxt "#770"
 msgid "Select an available version"
@@ -296,15 +297,15 @@ msgstr "Eine verfügbare Version auswählen"
 
 msgctxt "#771"
 msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
-msgstr "Die Firewall blockiert unerwünschten Netzwerkverkehr. Privat (Standard) erlaubt nur den Datenverkehr von privaten Netzwerkbereichen (192.168.x.x, 172.16.x.x und 10.x.x.x). Öffentlich blockiert den Datenverkehr von allen Netzwerken. Benutzerdefiniert verwendet die Regeln unter /storage/.config/iptables. Deaktiviert schaltet die Firewall aus."
+msgstr "Die Firewall blockiert unerwünschten Netzwerkverkehr. „Privat“ (Standard) erlaubt nur den Datenverkehr von privaten Netzwerkbereichen (192.168.x.x, 172.16.x.x und 10.x.x.x). „Öffentlich“ blockiert den Datenverkehr von allen Netzwerken. „Benutzerdefiniert“ verwendet die Regeln unter /storage/.config/iptables. „Deaktiviert“ schaltet die Firewall aus."
 
 msgctxt "#772"
 msgid "Checking for a new version will submit the installed Distribution, Project, CPU Arch and Version to the update server. This data is also used to report basic statistics for the project. To continue checking for updates while opting-out of stats reporting, disable this option."
-msgstr "Das Überprüfen auf eine neue Version übermittelt die installierte Distribution, das Projekt, die CPU-Architektur und die Version an den Update-Server. Diese Daten werden auch verwendet, um grundlegende Statistiken für das Projekt zu übermitteln. Um weiterhin nach Updates suchen zu können, bei dem das Übermitteln der Statistiken deaktiviert ist, bitte diese Option deaktivieren."
+msgstr "Das Überprüfen auf eine neue Version übermittelt die installierte Distribution, das Projekt, die CPU-Architektur und die Version an den Updateserver. Diese Daten werden auch verwendet, um grundlegende Statistiken für das Projekt zu übermitteln. Um weiterhin nach Updates suchen zu können, bei dem das Übermitteln der Statistiken deaktiviert ist, bitte diese Option deaktivieren."
 
 msgctxt "#773"
 msgid "Set the idle timeout (in minutes) before devices will be disconnected (defaults to 0 for no timeout). Applies to devices where \"Enable Standby\" has been activated in the LibreELEC device connection context menu."
-msgstr "Das Leerlauf-Timeout (in Minuten) einstellen, bevor die Geräte getrennt werden (standardmäßig 0 für kein Timeout). Gilt für Geräte, bei denen \"Standby aktivieren\" im Kontextmenü der @DISTRONAME@-Geräteverbindung aktiviert wurde."
+msgstr "Das Leerlauf-Timeout (in Minuten) einstellen, bevor die Geräte getrennt werden (standardmäßig 0 für kein Timeout). Gilt für Geräte, bei denen „Standby aktivieren“ im Kontextmenü der @DISTRONAME@-Geräteverbindung aktiviert wurde."
 
 msgctxt "#32001"
 msgid "Services"
@@ -344,7 +345,7 @@ msgstr "Automatische Aktualisierungen"
 
 msgctxt "#32015"
 msgid "Update Channel"
-msgstr "Update-Kanal"
+msgstr "Updatekanal"
 
 msgctxt "#32016"
 msgid "Show Custom Channels"
@@ -432,7 +433,7 @@ msgstr "Passwort"
 
 msgctxt "#32108"
 msgid "Enable 'tethered' Wireless Access Point"
-msgstr "WLAN-Acces Point ('tethered') aktivieren"
+msgstr "WLAN-Accesspoint („tethered“) aktivieren"
 
 msgctxt "#32109"
 msgid "Connect Automatically"
@@ -464,7 +465,7 @@ msgstr "Subnetzmaske"
 
 msgctxt "#32116"
 msgid "Default Gateway"
-msgstr "Standard-Gateway"
+msgstr "Standardgateway"
 
 msgctxt "#32117"
 msgid "Prefix Length"
@@ -536,7 +537,7 @@ msgstr "Aktualisieren"
 
 msgctxt "#32143"
 msgid "Disconnect"
-msgstr "Verbindung trennen"
+msgstr "Trennen"
 
 msgctxt "#32144"
 msgid "Connect"
@@ -544,7 +545,7 @@ msgstr "Verbinden"
 
 msgctxt "#32145"
 msgid "Pair"
-msgstr "Verbinden (pairing)"
+msgstr "Verbinden (Pairing)"
 
 msgctxt "#32146"
 msgid "Hidden Network Name"
@@ -572,7 +573,7 @@ msgstr "Dateiname"
 
 msgctxt "#32182"
 msgid "Download speed"
-msgstr "Download-Geschwindigkeit"
+msgstr "Downloadgeschwindigkeit"
 
 msgctxt "#32183"
 msgid "Time remaining"
@@ -696,11 +697,11 @@ msgstr "Automatische Freigabe externer Laufwerke"
 
 msgctxt "#32217"
 msgid "Minimum supported protocol"
-msgstr "Niedrigste unterstützte Protokoll-Version"
+msgstr "Niedrigste unterstützte Protokollversion"
 
 msgctxt "#32218"
 msgid "Maximum supported protocol"
-msgstr "Höchste unterstützte Protokoll-Version"
+msgstr "Höchste unterstützte Protokollversion"
 
 msgctxt "#32220"
 msgid "Bad password!"
@@ -768,7 +769,7 @@ msgstr " Verbleibende Eingabeversuche."
 
 msgctxt "#32236"
 msgid "You have entered an incorrect PIN too many times.[CR][CR]You will need to wait 5 minutes before trying again."
-msgstr "Es wurde zu oft hintereinander eine falsche PIN eingegeben.[CR][CR]5 Minuten Wartezeit bis zur nächsten Einagebmöglichkeit."
+msgstr "Es wurde zu oft hintereinander eine falsche PIN eingegeben.[CR][CR]5 Minuten Wartezeit bis zur nächsten Eingabemöglichkeit."
 
 msgctxt "#32237"
 msgid "@DISTRONAME@ Settings Locked!"
@@ -792,7 +793,7 @@ msgstr "Willkommen"
 
 msgctxt "#32302"
 msgid "This wizard will guide you through the process of setting up your new @DISTRONAME@ installation - setting your location, timezone and connecting you to the internet.[CR][CR]These settings can be changed later by navigating to Programs > @DISTRONAME@ Settings."
-msgstr "Dieser Assistent führt durch die Einrichtung einer neuen Installation von @DISTRONAME@. Dazu zählt u.a. die Auswahl des Standortes, der Zeitzone und die Konfiguration der Internetverbindung.[CR][CR]Diese Einstellungen können später über Programme > @DISTRONAME@ Konfiguration angepasst werden."
+msgstr "Dieser Assistent führt durch die Einrichtung einer neuen Installation von @DISTRONAME@. Dazu zählt u. a. die Auswahl des Standortes, der Zeitzone und die Konfiguration der Internetverbindung.[CR][CR]Diese Einstellungen können später über Programme > @DISTRONAME@ Konfiguration angepasst werden."
 
 msgctxt "#32303"
 msgid "Next"
@@ -808,7 +809,7 @@ msgstr "Netzwerk"
 
 msgctxt "#32306"
 msgid "In order to download backdrops, banners and thumbnails for your movies and TV shows and to stream online content from sites like YouTube, @DISTRONAME@ needs to be connected the Internet.[CR][CR]An Internet connection is also required for @DISTRONAME@ to automatically update itself."
-msgstr "@DISTRONAME@ muss mit dem Internet verbunden sein, um Hintergrundbilder, Banner und Vorschaubilder für Serien und Filme herunterladen zu können und um Online-Inhalte von z. B. Youtube streamen zu können.[CR][CR]Außerdem wird eine Internetverbindung auch für automatische Aktualisierungen von @DISTRONAME@ benötigt."
+msgstr "@DISTRONAME@ muss mit dem Internet verbunden sein, um Hintergrundbilder, Banner und Vorschaubilder für Serien und Filme herunterladen zu können und um Onlineinhalte von z. B. Youtube streamen zu können.[CR][CR]Außerdem wird eine Internetverbindung auch für automatische Aktualisierungen von @DISTRONAME@ benötigt."
 
 msgctxt "#32307"
 msgid "Previous"
@@ -832,11 +833,11 @@ msgstr "Dateifreigaben und Fernzugriffe"
 
 msgctxt "#32312"
 msgid "@DISTRONAME@ also supports SSH for remote access. This is for advanced users who wish to interact with @DISTRONAME@'s underlying operating system. The default user is [COLOR blue]root[/COLOR] and the default password is [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
-msgstr "@DISTRONAME@ unterstützt SSH für den Fernzugriff. Diese Möglichkeit ist für erfahrene Benutzer gedacht, die direkt auf das @DISTRONAME@ basierende Betriebssystem zugreifen möchten. Der Standard-Benutzername lautet [COLOR blue]root[/COLOR]. Das Standard-Passwort ist [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
+msgstr "@DISTRONAME@ unterstützt SSH für den Fernzugriff. Diese Möglichkeit ist für erfahrene Benutzer gedacht, die direkt auf das @DISTRONAME@ basierende Betriebssystem zugreifen möchten. Der Standardbenutzername lautet [COLOR blue]root[/COLOR]. Das Standardpasswort ist [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
 
 msgctxt "#32313"
 msgid "In order to share your files between your computers @DISTRONAME@ has incorporated a samba server. This samba server can be integrated into your local network by accessing it in a familiar way with Finder or Windows Explorer."
-msgstr "Um Dateien mit anderen Geräten im Netzwerk teilen zu können, hat @DISTRONAME@ einen eingabauten Samba-Server. Dieser Server kann in das lokale Netzwerk eingebunden werden, sodass in gewohnter Weise, z. B. mit dem Finder oder Windows Explorer, darauf zugegriffen werden kann."
+msgstr "Um Dateien mit anderen Geräten im Netzwerk teilen zu können, hat @DISTRONAME@ einen eingebauten Sambaserver. Dieser Server kann in das lokale Netzwerk eingebunden werden, sodass in gewohnter Weise, z. B. mit dem Finder oder Windows Explorer, darauf zugegriffen werden kann."
 
 msgctxt "#32316"
 msgid "Configure Services:"
@@ -968,7 +969,7 @@ msgstr "Sichern"
 
 msgctxt "#32372"
 msgid "Create System and Kodi Backup"
-msgstr "System und Kodi Datensicherung erstellen"
+msgstr "System- und Kodi-Datensicherung erstellen"
 
 msgctxt "#32373"
 msgid "Restore Backup"
@@ -984,15 +985,15 @@ msgstr "Fehlerbericht (Protokoll) übermitteln"
 
 msgctxt "#32377"
 msgid "Upload latest Kodi log and configs, and view the short URL"
-msgstr "Aktuelle Kodi Log und Konfigurationen übermitteln und die Kurz-URL anzeigen"
+msgstr "Aktuelles Kodi-Protokoll und die Konfigurationen übermitteln und die Kurz-URL anzeigen"
 
 msgctxt "#32378"
 msgid "Upload latest Kodi crash log and configs, and view the short URL"
-msgstr "Aktuelles Kodi Absturzprotokoll und Konfigurationen übermitteln, und die Kurz-URL anzeigen"
+msgstr "Aktuelles Kodi-Absturzprotokoll und die Konfigurationen übermitteln und die Kurz-URL anzeigen"
 
 msgctxt "#32379"
 msgid "There is not enough free storage space to continue!"
-msgstr "Es ist nicht genügend freier Speicherplatz vorhanden, um fortzufahren!"
+msgstr "Es ist nicht genügend freier Speicherplatz vorhanden um fortzufahren!"
 
 msgctxt "#32380"
 msgid "Restoring system settings requires a reboot. Are you sure you want to restore?"
@@ -1016,7 +1017,7 @@ msgstr "OBEX aktiviert"
 
 msgctxt "#32385"
 msgid "OBEX Upload Folder"
-msgstr "OBEX-Hochladeordner"
+msgstr "OBEX-Uploadordner"
 
 msgctxt "#32386"
 msgid "Keyboard Layout Variant #1"
@@ -1044,7 +1045,7 @@ msgstr "** Abgesicherter Modus! ** Abgesicherter Modus! ** Abgesicherter Modus! 
 
 msgctxt "#32394"
 msgid "@DISTRONAME@ has temporarily started in safe mode due to repeated Kodi crashes.[CR][CR]You may now investigate the cause of the crashes by enabling ssh or Samba.[CR][CR]Your original Kodi installation can be accessed via \"/storage/.kodi.FAILED\" and the Samba \"Kodi-Failed\" share.[CR][CR]Rebooting will return to your original Kodi installation.[CR][CR]Go to https://forum.libreelec.tv if you require further assistance. When posting to the forum include the link to your crash log which can be viewed by clicking the crash log option in Settings > LibreELEC > System > Submit Log."
-msgstr "@DISTRONAME@ wurde temporär aufgrund wiederholter Abstürze von Kodi im Sicherheitsmodus gestartet.[CR][CR]Die Gründe für die Abstürze können durch aktivieren von SSH oder Samba untersucht werden.[CR][CR]Auf die ursprüngliche Kodi-Installation kann über \\\"/storage/.kodi.FAILED\\\" und der Samba-Freigabe \\\"Kodi-Failed\\\" zugegriffen werden.[CR][CR]Über einen Neustart gelangt man zurück zur ursprünglichen Kodi-Installation.[CR][CR]https://forum.libreelec.tv besuchen, wenn weitere Hilfe benötigt wird. Bei Forum-Posts bitte Absturzprotokolle hinzufügen. Diese Absturzprotokolle können unter Einstellungen > LibreELEC > System > Fehlerbericht (Protokoll) übermitteln, angezeigt werden."
+msgstr "@DISTRONAME@ wurde temporär aufgrund wiederholter Kodi-Abstürze im Sicherheitsmodus gestartet.[CR][CR]Die Gründe für die Abstürze können durch aktivieren von SSH oder Samba untersucht werden.[CR][CR]Auf die ursprüngliche Kodi-Installation kann über „/storage/.kodi.FAILED“ und der Samba-Freigabe „Kodi-Failed“ zugegriffen werden.[CR][CR]Über einen Neustart gelangt man zurück zur ursprünglichen Kodi-Installation.[CR][CR]https://forum.libreelec.tv besuchen, wenn weitere Hilfe benötigt wird. Bei Forum-Posts bitte Absturzprotokolle hinzufügen. Diese Absturzprotokolle können unter „Einstellungen > LibreELEC > System > Fehlerbericht (Protokoll) übermitteln“ angezeigt werden."
 
 msgctxt "#32395"
 msgid "Firewall"
@@ -1072,7 +1073,7 @@ msgstr "Leerlauf-Timeout"
 
 msgctxt "#32401"
 msgid "Syncing Disks..."
-msgstr "Disks synchronisieren..."
+msgstr "Disks synchronisieren …"
 
 msgctxt "#32402"
 msgid "Backup is incomplete. An error occurred. See Kodi log for details."
@@ -1084,7 +1085,7 @@ msgstr "Protokollierung"
 
 msgctxt "#32411"
 msgid "Use Persistent Logs"
-msgstr "Persistente Protokolle verwenden"
+msgstr "Dauerhafte Protokolle verwenden"
 
 msgctxt "#32412"
 msgid "Use Persistent Journal and Log files instead of default volatile ones. Reboot to apply changes."
@@ -1092,15 +1093,15 @@ msgstr "Anstelle der standardmäßigen flüchtigen Protokolle und Journale persi
 
 msgctxt "#32413"
 msgid "Journal Size"
-msgstr "Journal-Größe"
+msgstr "Journalgröße"
 
 msgctxt "#32414"
 msgid "Set max. size of persistent journal. Reboot to apply changes."
-msgstr "Maximale Größe für das persistente Journal festlegen. Um die Änderungen zu aktivieren, bitte das System neu starten."
+msgstr "Maximale Größe für das dauerhafte Journal festlegen. Um die Änderungen zu aktivieren, bitte das System neu starten."
 
 msgctxt "#32415"
 msgid "Disable journald Rate Limit"
-msgstr "Rate Limit des journald deaktivieren"
+msgstr "Ratenlimit des \"journald\" deaktivieren"
 
 msgctxt "#32416"
 msgid "Reboot to apply changes."
