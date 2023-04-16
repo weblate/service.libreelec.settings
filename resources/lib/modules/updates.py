@@ -587,6 +587,7 @@ class updates(modules.Module):
             if 'update' in update_json['data'] and 'folder' in update_json['data']:
                 self.update_file = self.UPDATE_DOWNLOAD_URL % (update_json['data']['folder'], update_json['data']['update'])
                 if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
+                    # update available message
                     oe.notify(oe._(32363), oe._(32364))
                 if self.struct['update']['settings']['AutoUpdate']['value'] == 'auto' and force == False:
                     self.update_in_progress = True
@@ -601,6 +602,7 @@ class updates(modules.Module):
             if downloaded:
                 self.update_file = self.update_file.split('/')[-1]
                 if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
+                    # update download complete message
                     oe.notify(oe._(32363), oe._(32366))
                 shutil.move(oe.TEMP + 'update_file', self.LOCAL_UPDATE_DIR + self.update_file)
                 os.sync()
@@ -729,7 +731,10 @@ class updateThread(threading.Thread):
             if not hasattr(oe.dictModules['updates'], 'update_in_progress'):
                 self.wait_evt.wait(21600)
             else:
-                oe.notify(oe._(32363), oe._(32364))
+                # TODO this should check if update notifications are enabled too?
+                if not xbmc.Player().isPlaying():
+                    # update available message
+                    oe.notify(oe._(32363), oe._(32364))
                 self.wait_evt.wait(3600)
             self.wait_evt.clear()
         log.log('updateThread Stopped', log.INFO)
