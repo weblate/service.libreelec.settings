@@ -15,15 +15,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
-"PO-Revision-Date: 2022-02-13 01:15+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2023-03-16 21:16+0000\n"
+"Last-Translator: José Antonio Alvarado <jalvarado0.eses@gmail.com>\n"
 "Language-Team: Spanish (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/es_es/>\n"
 "Language: es_es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -51,19 +52,19 @@ msgstr "Dirección"
 
 msgctxt "#606"
 msgid "Distribution: "
-msgstr "Distribución:"
+msgstr "Distribución: "
 
 msgctxt "#607"
 msgid "Version: "
-msgstr "Versión:"
+msgstr "Versión: "
 
 msgctxt "#608"
 msgid "Architecture: "
-msgstr "Arquitectura:"
+msgstr "Arquitectura: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr "LibreELEC ha sido creado por un equipo internacional de entusiastas de Linux y Kodi, los cuales contribuyen con tiempo y esfuerzo a gestionar el proyecto, escribir el código y dar soporte. Nosotros nos divertimos haciéndolo. Deseamos que tú te diviertas usándolo."
+msgstr "LibreELEC se ha creado por un equipo internacional de entusiastas de Linux y Kodi, quienes contribuyen con tiempo y esfuerzo a gestionar el proyecto, escribir el código y dar soporte. Nosotros nos divertimos haciéndolo. ¡Esperamos que te diviertas utilizándolo!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
@@ -71,7 +72,7 @@ msgstr "El [B]soporte[/B] se proporciona a través de nuestro foro:[CR]https://f
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
-msgstr "Configura el nombre del equipo, tipo de teclado, restaurar valores de fábrica, actualizar o respaldar y restaurar."
+msgstr "Configurar un nombre de host, un tipo de teclado, realizar un reinicio, una actualización o copias de seguridad y restauraciones"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
@@ -99,7 +100,7 @@ msgstr "Configurar actualizaciones"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr "Configura el nombre del equipo de tu sistema @DISTRONAME@. Este será usado por el HTPC \\\\nombredelequipo en Windows y en el servidor de nombres SMB de macOS Finder"
+msgstr "Configura el nombre de host de tu sistema @DISTRONAME@. Este será utilizado para el \\\\hostname del HTPC en Windows y el nombre del servidor SMB en el Finder de Mac OS"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
@@ -115,11 +116,11 @@ msgstr "Configurar el tipo de teclado físico"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
-msgstr "@DISTRONAME@ puede ser configurado con actualizaciones manuales o automáticas. Las actualizaciones automáticas están disponibles para las versiones estables y candidatas a versión estable. Las actualizaciones automáticas no están habilitadas para versiones beta o de desarrollo."
+msgstr "@DISTRONAME@ puede ser configurado con actualizaciones manuales o automáticas. Las actualizaciones automáticas están disponibles para las versiones estables y candidatas a versión estable. Las actualizaciones automáticas no están habilitadas para versiones beta o de desarrollo"
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
-msgstr "Habilita esta función y se mostrará una notificación cuando una nueva versión esté disponible."
+msgstr "Establecer a ON y aparecerá una notificación en pantalla cuando haya una nueva actualización disponible"
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
@@ -191,7 +192,7 @@ msgstr "Configurar el 3er servidor de tiempo (NTP)"
 
 msgctxt "#736"
 msgid "Set to ON to delay Kodi startup until the network is available. Use this if the OS is booting into Kodi before the network is up and central MySQL databases are accessible."
-msgstr "Habilita esta función para retrasar el arranque de Kodi hasta que la red esté disponible. Usa esta función si es necesario que la base de datos MySQL esté accesible antes que inicie Kodi"
+msgstr "Establecer en ON para retrasar el inicio de Kodi hasta que la red esté disponible. Usar esta opción si el sistema operativo arranca en Kodi antes de que la red esté disponible y las bases de datos centrales MySQL sean accesibles."
 
 msgctxt "#737"
 msgid "Time in seconds to wait for an established network connection."
@@ -355,15 +356,15 @@ msgstr "Mostrar canales personalizados"
 
 msgctxt "#32017"
 msgid "  - Custom Channel 1"
-msgstr "- Canal personalizado 1"
+msgstr "  - Canal personalizado 1"
 
 msgctxt "#32018"
 msgid "  - Custom Channel 2"
-msgstr "- Canal personalizado 2"
+msgstr "  - Canal personalizado 2"
 
 msgctxt "#32019"
 msgid "  - Custom Channel 3"
-msgstr "- Canal personalizado 3"
+msgstr "  - Canal personalizado 3"
 
 msgctxt "#32020"
 msgid "Available Versions"
@@ -767,7 +768,7 @@ msgstr "¡PIN incorrecto!"
 
 msgctxt "#32235"
 msgid " attempts remaining."
-msgstr "intentos restantes."
+msgstr " intentos restantes."
 
 msgctxt "#32236"
 msgid "You have entered an incorrect PIN too many times.[CR][CR]You will need to wait 5 minutes before trying again."
@@ -895,7 +896,7 @@ msgstr "Bluetooth"
 
 msgctxt "#32333"
 msgid "Connected: "
-msgstr "Conectado:"
+msgstr "Conectado: "
 
 msgctxt "#32334"
 msgid "Yes"
@@ -911,7 +912,7 @@ msgstr "No se encontró adaptador Bluetooth."
 
 msgctxt "#32339"
 msgid "No Bluetooth device found. Please put your Bluetooth device into discovery mode[CR]and start the scan"
-msgstr "No se ha encontrado un dispositivo Bluetooth. Por favor, configura tu dispositivo Bluetooth en modo descubrir[CR] y comienza la exploración."
+msgstr "No se ha encontrado un dispositivo Bluetooth. Por favor, configura tu dispositivo Bluetooth en modo descubrir[CR] y comienza la exploración"
 
 msgctxt "#32343"
 msgid "Enter the following Key on your Device."
@@ -1091,7 +1092,7 @@ msgstr "Usar registro continuo"
 
 msgctxt "#32412"
 msgid "Use Persistent Journal and Log files instead of default volatile ones. Reboot to apply changes."
-msgstr "Usar ficheros de registro y diario persistentes en lugar de temporales. Reiniciar para aplicar cambios"
+msgstr "Usar ficheros de diario y registro persistentes en lugar de los temporales predeterminados. Reiniciar para aplicar los cambios."
 
 msgctxt "#32413"
 msgid "Journal Size"
