@@ -6,7 +6,7 @@
 import glob
 import os
 import re
-import subprocess
+import shutil
 import tarfile
 from xml.dom import minidom
 
@@ -18,6 +18,7 @@ import log
 import modules
 import oe
 import oeWindows
+import os_tools
 
 
 xbmcDialog = xbmcgui.Dialog()
@@ -366,13 +367,25 @@ class system(modules.Module):
                 '-model ' + str(self.struct['keyboard']['settings']['KeyboardType']['value']),
                 '-option "grp:alt_shift_toggle"',
                 ]
-            oe.execute('setxkbmap ' + ' '.join(parameters))
+            os_tools.execute('setxkbmap ' + ' '.join(parameters))
         elif self.nox_keyboard_layouts == True:
-            log.log(str(self.struct['keyboard']['settings']['KeyboardLayout1']['value']), log.INFO)
             parameter = self.struct['keyboard']['settings']['KeyboardLayout1']['value']
-            command = f'loadkmap < `ls -1 {self.NOX_KEYBOARD_INFO}/*/{parameter}.bmap`'
-            log.log(command, log.INFO)
-            oe.execute(command)
+            log.log(f'Settings keyboard layout: {parameter}', log.INFO)
+            path_to_bmap = None
+            for dirpath, dirnames, filenames in os.walk(self.NOX_KEYBOARD_INFO):
+                for f in filenames:
+                    if f == f'{parameter}.bmap':
+                        path_to_bmap = f'{dirpath}/{f}'
+                        log.log(f'Found keyboard layout: {path_to_bmap}', log.INFO)
+                        break
+                if path_to_bmap:
+                    break
+            if path_to_bmap:
+                command = f'loadkmap < {path_to_bmap}'
+                log.log(f'Executing {command}', log.INFO)
+                os_tools.execute(command)
+            else:
+                log.log('No keyboard layout found.', log.INFO)
 
     @log.log_function()
     def set_hostname(self, listItem=None):
@@ -447,7 +460,9 @@ class system(modules.Module):
 
     @log.log_function()
     def set_hw_clock(self):
-        oe.execute(f'{self.SET_CLOCK_CMD} 2>/dev/null')
+        # does device have an RTC?
+        if os.path.exists('/proc/driver/rtc'):
+            os_tools.execute(f'{self.SET_CLOCK_CMD} 2>/dev/null')
 
     @log.log_function()
     def reset_soft(self, listItem=None):
@@ -455,7 +470,7 @@ class system(modules.Module):
             open(self.XBMC_RESET_FILE, 'a').close()
             oe.winOeMain.close()
             oe.xbmcm.waitForAbort(1)
-            subprocess.call(['/usr/bin/systemctl', '--no-block', 'reboot'], close_fds=True)
+            os_tools.execute('/usr/bin/systemctl --no-block reboot')
 
     @log.log_function()
     def reset_hard(self, listItem=None):
@@ -463,7 +478,8 @@ class system(modules.Module):
             open(self.LIBREELEC_RESET_FILE, 'a').close()
             oe.winOeMain.close()
             oe.xbmcm.waitForAbort(1)
-            subprocess.call(['/usr/bin/systemctl', '--no-block', 'reboot'], close_fds=True)
+            os_tools.execute('/usr/bin/systemctl --no-block reboot')
+
 
     @log.log_function()
     def ask_sure_reset(self, part):
@@ -551,7 +567,7 @@ class system(modules.Module):
             log.log(f'Restore file: {restore_file_path}', log.INFO)
             restore_file_name = restore_file_path.split('/')[-1]
             if os.path.exists(self.RESTORE_DIR):
-                oe.execute(f'rm -rf {self.RESTORE_DIR}')
+                shutil.rmtree(self.RESTORE_DIR)
             os.makedirs(self.RESTORE_DIR)
             folder_stat = os.statvfs(self.RESTORE_DIR)
             file_size = os.path.getsize(restore_file_path)
@@ -564,7 +580,8 @@ class system(modules.Module):
                     log.log('Restore file successfully copied.', log.INFO)
                 else:
                     log.log(f'Failed to copy restore file to: {self.RESTORE_DIR}', log.ERROR)
-                    oe.execute(f'rm -rf {self.RESTORE_DIR}')
+                    if os.path.exists(self.RESTORE_DIR):
+                        shutil.rmtree(self.RESTORE_DIR)
             else:
                 txt = oe.split_dialog_text(oe._(32379))
                 answer = xbmcDialog.ok('Restore', f'{txt[0]}\n{txt[1]}\n{txt[2]}')
@@ -575,10 +592,11 @@ class system(modules.Module):
                     if oe.reboot_counter(10, oe._(32371)) == 1:
                         oe.winOeMain.close()
                         oe.xbmcm.waitForAbort(1)
-                        subprocess.call(['/usr/bin/systemctl', '--no-block', 'reboot'], close_fds=True)
+                        os_tools.execute('/usr/bin/systemctl --no-block reboot')
                 else:
                     log.log('User Abort!')
-                    oe.execute(f'rm -rf {self.RESTORE_DIR}')
+                    if os.path.exists(self.RESTORE_DIR):
+                        shutil.rmtree(self.RESTORE_DIR)
 
     @log.log_function()
     def do_send_system_logs(self, listItem=None):
@@ -592,7 +610,7 @@ class system(modules.Module):
     def do_send_logs(self, log_cmd):
         paste_dlg = xbmcgui.DialogProgress()
         paste_dlg.create('Pasting log files', 'Pasting...')
-        result = oe.execute(log_cmd, get_result=1)
+        result = os_tools.execute(log_cmd, get_result=True)
         if not paste_dlg.iscanceled():
             paste_dlg.close()
             link = result.find('http')

@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: GPL-2.0
-# Copyright (C) 2020-present Team LibreELEC
+# Copyright (C) 2020-present Team LibreELEC (https://libreelec.tv)
 
 import os
-import subprocess
 
 import config
+import os_tools
 
 
 REGDOMAIN_DEFAULT = 'NOT SET (DEFAULT)'
@@ -197,4 +197,4 @@ def set_regdomain(regdomain):
         code = regdomain[-3:-1]
         with open(config.REGDOMAIN_CONF, 'w') as file:
             file.write(f'REGDOMAIN={code}\n')
-    subprocess.check_output(config.SETREGDOMAIN)
+    os_tools.execute(config.SETREGDOMAIN)
