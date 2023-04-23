@@ -312,10 +312,10 @@ class services(modules.Module):
                     self.D_SAMBA_WORKGROUP).replace('"', '')
             self.struct['samba']['settings']['samba_secure']['value'] = oe.get_service_option('samba', 'SAMBA_SECURE',
                     self.D_SAMBA_SECURE).replace('true', '1').replace('false', '0').replace('"', '')
-            self.struct['samba']['settings']['samba_username']['value'] = oe.get_service_option('samba', 'SAMBA_USERNAME',
-                    self.D_SAMBA_USERNAME).replace('"', '')
-            self.struct['samba']['settings']['samba_password']['value'] = oe.get_service_option('samba', 'SAMBA_PASSWORD',
-                    self.D_SAMBA_PASSWORD).replace('"', '')
+            self.struct['samba']['settings']['samba_username']['value'] = self.sh_unesc_str(oe.get_service_option('samba', 'SAMBA_USERNAME',
+                    self.D_SAMBA_USERNAME).replace('"', ''))
+            self.struct['samba']['settings']['samba_password']['value'] = self.sh_unesc_str(oe.get_service_option('samba', 'SAMBA_PASSWORD',
+                    self.D_SAMBA_PASSWORD).replace('"', ''))
             self.struct['samba']['settings']['samba_minprotocol']['value'] = oe.get_service_option('samba', 'SAMBA_MINPROTOCOL',
                     self.D_SAMBA_MINPROTOCOL).replace('"', '')
             self.struct['samba']['settings']['samba_maxprotocol']['value'] = oe.get_service_option('samba', 'SAMBA_MAXPROTOCOL',
@@ -390,8 +390,8 @@ class services(modules.Module):
             options['SAMBA_AUTOSHARE'] = val_autoshare
             options['SAMBA_MINPROTOCOL'] = self.struct['samba']['settings']['samba_minprotocol']['value']
             options['SAMBA_MAXPROTOCOL'] = self.struct['samba']['settings']['samba_maxprotocol']['value']
-            options['SAMBA_USERNAME'] = self.struct['samba']['settings']['samba_username']['value']
-            options['SAMBA_PASSWORD'] = self.struct['samba']['settings']['samba_password']['value']
+            options['SAMBA_USERNAME'] = self.sh_esc_str(self.struct['samba']['settings']['samba_username']['value'])
+            options['SAMBA_PASSWORD'] = self.sh_esc_str(self.struct['samba']['settings']['samba_password']['value'])
         else:
             state = 0
             self.struct['samba']['settings']['samba_username']['hidden'] = True
@@ -569,3 +569,17 @@ class services(modules.Module):
         else:
             log.log('User cancelled')
         return SSHchange
+
+    def sh_esc_str(self, string):
+        escape = ''
+        for c in string:
+            escape += '\\' + c
+        return escape
+
+    def sh_unesc_str(self, string):
+        size = len(string)
+        if size % 2:
+            return string
+        if string[0::2] != '\\' * (size // 2):
+            return string
+        return string[1::2]
