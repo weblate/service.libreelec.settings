@@ -328,7 +328,9 @@ def get_service_option(service, option, default=None):
 
 @log.log_function()
 def get_service_state(service):
-    return '1' if os.path.exists(f'{CONFIG_CACHE}/services/{service}.conf') else '0'
+    base_name = f'{CONFIG_CACHE}/services/{service}'
+    return '1' if os.path.exists(f'{base_name}.conf') \
+                  and not os.path.exists(f'{base_name}.disabled') else '0'
 
 
 @log.log_function()
@@ -343,13 +345,9 @@ def set_service(service, options, state):
     # Service Enabled
     if state == 1:
         # Is Service alwys enabled ?
-        if get_service_state(service) == '1':
-            cfn = f'{CONFIG_CACHE}/services/{service}.conf'
-            cfo = cfn
-        else:
-            cfn = f'{CONFIG_CACHE}/services/{service}.conf'
-            cfo = f'{CONFIG_CACHE}/services/{service}.disabled'
-        if os.path.exists(cfo) and not cfo == cfn:
+        cfo = f'{CONFIG_CACHE}/services/{service}.disabled'
+        cfn = f'{CONFIG_CACHE}/services/{service}.conf'
+        if os.path.exists(cfo):
             os.remove(cfo)
         with open(cfn, 'w') as cf:
             for option in options:
@@ -360,6 +358,9 @@ def set_service(service, options, state):
         cfn = f'{CONFIG_CACHE}/services/{service}.disabled'
         if os.path.exists(cfo):
             os.rename(cfo, cfn)
+        else:
+            with open(cfn, 'w') as cf:
+                pass
     if not __oe__.is_service:
         if service in defaults._services:
             for svc in defaults._services[service]:
