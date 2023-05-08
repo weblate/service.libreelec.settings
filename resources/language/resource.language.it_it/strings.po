@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LibreELEC Settings Add-on\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2022-09-03 11:21+0000\n"
+"PO-Revision-Date: 2023-05-08 07:16+0000\n"
 "Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
 "Language-Team: Italian <https://kodi.weblate.cloud/projects/kodi-add-ons-services/service-libreelec-settings/it_it/>\n"
 "Language: it_it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14\n"
+"X-Generator: Weblate 4.15.2\n"
 
 msgctxt "#600"
 msgid "@DISTRONAME@ Settings"
@@ -59,7 +59,7 @@ msgstr "Architettura: "
 
 msgctxt "#609"
 msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
-msgstr "LibreELEC è realizzato da un team globale di appassionati di Linux e Kodi che donano tempo e sforzi per gestire il progetto, scrivere codice e fornire supporto. Noi ci divertiamo a farlo. Speriamo voi vi divertiate ad usarlo!"
+msgstr "LibreELEC è creato da un team globale di appassionati di Linux e Kodi che contribuiscono con tempo e sforzi per gestire il progetto, scrivere codice e fornire supporto. Ci divertiamo a realizzarlo. Ci auguriamo che ti diverta ad usarlo!"
 
 msgctxt "#610"
 msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via OpenCollective:[CR]https://opencollective.com/libreelec/donate"
@@ -67,27 +67,27 @@ msgstr "Il [B]supporto[/B] è fornito attraverso il nostro forum: [CR]https://fo
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
-msgstr "Configura un nome host, il tipo di tastiera, effettua un reset, un aggiornamento, un backup od un suo recupero"
+msgstr "Configura un nome host, un tipo di tastiera, reimposta, aggiorna, crea o ripristina un backup del sistema"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"
-msgstr "Configurazione rete, NTP e VPN"
+msgstr "Configura le opzioni di avvio della rete, NTP e VPN"
 
 msgctxt "#702"
 msgid "Manage the Ethernet, Wireless and VPN connections available to the system"
-msgstr "Gestione connessioni ethernet, wireless o VPN disponibili nel sistema"
+msgstr "Gestisci le connessioni Ethernet, Wireless e VPN disponibili per il sistema"
 
 msgctxt "#703"
 msgid "Configure system services like Samba, SSH, Cron, Avahi and Syslog"
-msgstr "Configurazione servizi di sistema come Samba, SSH, cron, Avahi o Syslog"
+msgstr "Configura servizi di sistema come Samba, SSH, Cron, Avahi e Syslog"
 
 msgctxt "#704"
 msgid "Configure and pair Bluetooth devices"
-msgstr "Configura e gestione dispositivi Bluetooth"
+msgstr "Configura e abbina i dispositivi Bluetooth"
 
 msgctxt "#705"
 msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
-msgstr "Informazioni utili quali versione e dettagli sull'architettura, supporto e documentazione e su come donare o supportare il progetto."
+msgstr "Informazioni utili come dettagli sulla versione e sull'architettura, link di supporto e documentazione, come donare e sostenere il progetto."
 
 msgctxt "#707"
 msgid "Configure updates"
@@ -95,63 +95,63 @@ msgstr "Configura gli aggiornamenti"
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr "Imposta il nome host del tuo sistema @DISTRONAME@. Il nome sarà usato come \\\\hostname nelle cartelle di rete di Windows o nel Finder di Mac OS"
+msgstr "Configura il nome host del tuo sistema @DISTRONAME@. Verrà utilizzato per HTPC \\\\hostname in Windows e per il nome del server SMB nel Finder di MacOS"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
-msgstr "Imposta il layout principale della tastiera"
+msgstr "Configura la prima disposizione della tastiera software"
 
 msgctxt "#712"
 msgid "Configure the 2nd keyboard software layout"
-msgstr "Imposta il layout alternativo della tastiera"
+msgstr "Configura la seconda disposizione della tastiera software"
 
 msgctxt "#713"
 msgid "Configure the physical keyboard type"
-msgstr "Imposta il tipo di tastiera"
+msgstr "Configura la disposizione della tastiera fisica"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
-msgstr "@DISTRONAME@ può essere configurato per essere aggiornato in maniera manuale o automatica. Gli aggiornamenti automatici sono disponibili per le release stabili, mentre vengono automaticamente disabilitati per le release beta o di sviluppo"
+msgstr "@DISTRONAME@ può essere configurato per aggiornamenti automatici o manuali. Gli aggiornamenti automatici sono disponibili sui rilasci stabili e sui candidati al rilascio stabile. L'aggiornamento automatico si disabilita automaticamente sule versioni beta e di sviluppo"
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
-msgstr "Imposta su ON per avere una notifica nel caso sia disponibile un aggiornamento"
+msgstr "Imposta su ON e verrà visualizzata una notifica sullo schermo quando è disponibile un nuovo aggiornamento"
 
 msgctxt "#718"
 msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr "Invia i file di configurazione di boot da /flash, kodi.log, log del kernel e le configurazioni di Samba a http://ix.io e visualizza l'URL breve"
+msgstr "Invia i file di configurazione dell'avvio da /flash, kodi.log, il registro del kernel e le configurazioni di Samba a http://ix.io e visualizza l'URL breve"
 
 msgctxt "#719"
 msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://ix.io, and display the short URL"
-msgstr "Invia i file di configurazione di boot da /flash, kodi_crash.log, log del kernel e le configurazioni di Samba a http://ix.io e visualizza l'URL breve"
+msgstr "Invia i file di configurazione dell'avvio da /flash, kodi_crash.log, il registro del kernel e le configurazioni di Samba a http://ix.io e visualizza l'URL breve"
 
 msgctxt "#720"
 msgid "Set to ON to enable the Bluetooth service"
-msgstr "Imposta ON per abilitare il servizio Bluetooth"
+msgstr "Imposta su ON per abilitare il servizio Bluetooth"
 
 msgctxt "#722"
 msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backup/"
-msgstr "Crea un archivio tar contenente tutte le impostazioni, i database e le anteprime di @DISTRONAME@ e Kodi. I file verranno salvati in /storage/backup/"
+msgstr "Crea un archivio tar contenente tutte le impostazioni di configurazione, i database e il contenuto delle miniature di @DISTRONAME@ e Kodi. I file di backup verranno archiviati in /storage/backup/"
 
 msgctxt "#723"
 msgid "Restore a tar archive backup previously created using the backup option above"
-msgstr "Ripristina un archivio tar precedentemente creato con la funzione di backup"
+msgstr "Ripristina un archivio tar di backup precedentemente creato usando l'opzione di backup qui sopra"
 
 msgctxt "#724"
 msgid ""
 "[COLOR FF00FF00]SOFT RESET[/COLOR]\n"
 "Permanently reset @DISTRONAME@ configuration to defaults (resets also Kodi to default including your library. your media - music/videos/etc are not touched)"
 msgstr ""
-"[COLOR FF00FF00]SOFT RESET[/COLOR]\n"
-"Ripristina permanentemente @DISTRONAME@ alla configurazione predefinita (il ripristino include anche la configurazione e la libreria di Kodi. I file video/audio/ecc non vengono toccati)"
+"[COLOR FF00FF00]REIMPOSTAZIONE PARZIALE[/COLOR]\n"
+"Ripristina in modo permanente la configurazione di @DISTRONAME@ ai valori predefiniti (ripristina anche Kodi ai valori predefiniti, inclusa la tua libreria. i tuoi contenuti multimediali: musica/video/ecc. non vengono toccati)"
 
 msgctxt "#725"
 msgid ""
 "[COLOR FFFF0000]HARD RESET[/COLOR]\n"
 "Permanently reset @DISTRONAME@ and Kodi configuration to defaults (everything in your storage partition will be deleted)"
 msgstr ""
-"[COLOR FFFF0000]HARD RESET[/COLOR]\n"
-"Ripristina permanentemente @DISTRONAME@ e Kodi alle configurazioni predefinite (tutto il contenuto della partizione storage verrà eliminato)"
+"[COLOR FFFF0000]REIMPOSTAZIONE COMPLETA[/COLOR]\n"
+"Ripristina in modo permanente @DISTRONAME@ e la configurazione di Kodi ai valori predefiniti (tutto il contenuto nella tua partizione di archiviazione verrà eliminato)"
 
 msgctxt "#726"
 msgid "Enable or disable support for Wireless (WLAN) networks"
@@ -159,15 +159,15 @@ msgstr "Abilita o disabilita il supporto per le reti wireless (WLAN)"
 
 msgctxt "#727"
 msgid "Enable a 'tethered' Wireless Access Point. This requires your wireless card (and driver) to support bridging and access point mode. Not all cards are capable."
-msgstr "Abilita un punto di accesso wireless \"tethered\". Richiede che la scheda wireless (e il driver) supporti il bridging e la modalità access point. Non tutte le carte sono in grado."
+msgstr "Abilita un punto di accesso wireless \"tethered\". Richiede che la scheda wireless (e il driver) supportino il bridging e la modalità punto di accesso. Non tutte le schede sono in grado di farlo."
 
 msgctxt "#728"
 msgid "Configure the Access Point SSID"
-msgstr "Imposta l'SSID dell'Access Point"
+msgstr "Configura l'SSID del punto di accesso"
 
 msgctxt "#729"
 msgid "Configure the Access Point Passphrase"
-msgstr "Imposta la password"
+msgstr "Configura la frase d'accesso al punto di accesso"
 
 msgctxt "#730"
 msgid "Enable or disable support for Wired (Ethernet) networks"
@@ -175,19 +175,19 @@ msgstr "Abilita o disabilita il supporto per le reti cablate (Ethernet)"
 
 msgctxt "#732"
 msgid "Configure the 1st time (NTP) server"
-msgstr "Imposta il 1° server NTP"
+msgstr "Configura il primo server dell'ora (NTP)"
 
 msgctxt "#733"
 msgid "Configure the 2nd time (NTP) server"
-msgstr "Imposta il 2° server NTP"
+msgstr "Configura il secondo server dell'ora (NTP)"
 
 msgctxt "#734"
 msgid "Configure the 3rd time (NTP) server"
-msgstr "Imposta il 3° server NTP"
+msgstr "Configura il terzo server dell'ora (NTP)"
 
 msgctxt "#736"
 msgid "Set to ON to delay Kodi startup until the network is available. Use this if the OS is booting into Kodi before the network is up and central MySQL databases are accessible."
-msgstr "Imposta su ON per ritardare l'avvio di Kodi fino a quando la rete non è disponibile. Usalo se il sistema operativo si avvia in Kodi prima che la rete sia attiva e che i database MySQL centrali siano accessibili."
+msgstr "Imposta su ON per ritardare l'avvio di Kodi finché la rete non sarà disponibile. Usalo se @DISTRONAME@ sta avviando Kodi prima che la rete sia attiva e i database MySQL centrali siano accessibili."
 
 msgctxt "#737"
 msgid "Time in seconds to wait for an established network connection."
@@ -195,31 +195,31 @@ msgstr "Tempo di attesa in secondi per stabilire una connessione di rete."
 
 msgctxt "#738"
 msgid "Set to ON to enable the embedded Samba (SMB) filesharing service"
-msgstr "Imposta su OK per abilitare il servizio di filesharing Samba (SMB)"
+msgstr "Imposta su ON per abilitare il servizio di condivisione integrato di file Samba (SMB)"
 
 msgctxt "#739"
 msgid "Set to ON to require username/password access to local Samba fileshares"
-msgstr "Imposta su ON per richiedere username e password per accedere alle cartelle condivide con Samba"
+msgstr "Imposta su ON per richiedere l'accesso con nome utente/password alle condivisioni di file Samba locali"
 
 msgctxt "#740"
 msgid "Set the username for Samba sharing"
-msgstr "Imposta il nome utente per Samba"
+msgstr "Imposta il nome utente per la condivisione di Samba"
 
 msgctxt "#741"
 msgid "Set the password for Samba sharing"
-msgstr "Imposta la password per Samba"
+msgstr "Imposta la password per la condivisione di Samba"
 
 msgctxt "#742"
 msgid "Set to ON to enable the embedded SSH server. The SSH console can be accessed with username 'root' and password '@ROOT_PASSWORD@'."
-msgstr "Imposta su ON per abilitare il server SSH incorporato. È possibile accedere alla console SSH con nome utente 'root' e password '@ROOT_PASSWORD@'."
+msgstr "Imposta su ON per abilitare il server SSH integrato. È possibile accedere alla console SSH con il nome utente 'root' e la password '@ROOT_PASSWORD@'."
 
 msgctxt "#743"
 msgid "Set to ON if you have copied private SSH keys to your HTPC and would like to improve security by disabling SSH username and password authentication."
-msgstr "Imposta su ON se hai copiato le chiavi SSH private sul tuo HTPC e desideri migliorare la sicurezza disabilitando l'autenticazione di nome utente e password SSH."
+msgstr "Imposta su ON se hai copiato le chiavi SSH private sul tuo HTPC e desideri migliorare la sicurezza disabilitando l'autenticazione con nome utente e password SSH."
 
 msgctxt "#744"
 msgid "Set to ON to enable the Avahi (Zeroconf/Bonjour) network discovery service"
-msgstr "Imposta su ON per attivare il servizio di service discovery Avahi (Zeroconf/Bonjour)"
+msgstr "Imposta su ON per abilitare il servizio di rilevamento della rete Avahi (Zeroconf/Bonjour)"
 
 msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
@@ -235,11 +235,11 @@ msgstr "Abilita un PIN per l'accesso alle impostazioni di @DISTRONAME@"
 
 msgctxt "#748"
 msgid "Change the PIN Lock for @DISTRONAME@ Settings access"
-msgstr "Cambia PIN di accesso alle impostazioni di @DISTRONAME@"
+msgstr "Cambia il PIN di blocco per accedere alle impostazioni di @DISTRONAME@"
 
 msgctxt "#749"
 msgid "Overrride the Wireless Regulatory Domain so radio properties (channels and transmit power) comply with local laws or match the country configuration of your router."
-msgstr "Sostituisci il Wireless Regulatory Domain in modo che le proprietà radio (canali e potenza di trasmissione) siano conformi alle leggi locali o corrispondano alla configurazione del paese del router."
+msgstr "Sostituisci il settore normativo wireless in modo che le proprietà radio (canali e potenza di trasmissione) siano conformi alle leggi locali o corrispondano alla configurazione del paese del tuo router."
 
 msgctxt "#750"
 msgid "750"
@@ -247,47 +247,47 @@ msgstr "750"
 
 msgctxt "#751"
 msgid "With OBEX filetransfer you can send files, for example movies or pictures over bluetooth to @DISTRONAME@."
-msgstr "Con il trasferimento di file OBEX puoi inviare file, ad esempio film o immagini tramite bluetooth a @DISTRONAME@."
+msgstr "Con il trasferimento file OBEX puoi inviare file, ad esempio film o immagini tramite bluetooth a @DISTRONAME@."
 
 msgctxt "#752"
 msgid "Here you can set the folder location where OBEX file transfer should store incoming files"
-msgstr "Imposta qui la cartella in cui OBEX salva i file ricevuti"
+msgstr "Qui puoi impostare la posizione della cartella in cui il trasferimento file OBEX dovrebbe archiviare i file in arrivo"
 
 msgctxt "#753"
 msgid "Configure the 1st keyboard software Variant"
-msgstr "Imposta il layout della prima tastiera software"
+msgstr "Configura la prima variante della tastiera software"
 
 msgctxt "#754"
 msgid "Configure the 2nd keyboard software Variant"
-msgstr "Imposta il layout della seconda tastiera software"
+msgstr "Configura la seconda variante della tastiera software"
 
 msgctxt "#755"
 msgid "Auto share external drives / partitions"
-msgstr "Condividi automaticamente le unità esterne"
+msgstr "Condivisione automatica di unità/partizioni esterne"
 
 msgctxt "#756"
 msgid "Disable older SMB protocols by specifying the minimum supported protocol."
-msgstr "Disabilita i vecchi protocolli SMB specificando il protocollo supportato minimo."
+msgstr "Disabilita i protocolli SMB meno recenti specificando il protocollo minimo supportato."
 
 msgctxt "#757"
 msgid "Disable more recent SMB protocols for backward compatability with legacy clients."
-msgstr "Disabilita i protocolli SMB più recenti per retro-compatibilità con i vecchi client legacy."
+msgstr "Disabilita i protocolli SMB più recenti per la compatibilità con le versioni precedenti per i client obsoleti."
 
 msgctxt "#758"
 msgid "NetBIOS group to which the server belongs. Default is WORKGROUP."
-msgstr "Gruppo NETBIOS acui appartiene il server. Quello predefinito è WORKGROUP."
+msgstr "Gruppo NetBIOS a cui appartiene il server. L'impostazione predefinita è WORKGROUP."
 
 msgctxt "#760"
 msgid "Select an update channel"
-msgstr "Seleziona canale aggiornamento"
+msgstr "Seleziona un canale di aggiornamento"
 
 msgctxt "#761"
 msgid "Enable to allow entering a custom update url"
-msgstr "Abilita per impostare manalmente una URL per l'aggiornamento"
+msgstr "Abilita per consentire l'inserimento di un URL di aggiornamento personalizzato"
 
 msgctxt "#762"
 msgid "Enter a custom update url (url should be the root of the update files)"
-msgstr "Inserisci una URL personalizzata per l'aggiornamento (la URL deve puntare al root dei file di aggiornamento)"
+msgstr "Inserisci un URL di aggiornamento personalizzato (l'URL deve essere la radice dei file di aggiornamento)"
 
 msgctxt "#770"
 msgid "Select an available version"
@@ -295,15 +295,15 @@ msgstr "Seleziona una versione disponibile"
 
 msgctxt "#771"
 msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
-msgstr "Il firewall blocca il traffico di rete indesiderato. Casa (impostazione predefinita) consente solo il traffico da intervalli di rete privati (192.168.x.x, 172.16.x.x e 10.x.x.x). Pubblico blocca tutto il traffico da tutte le reti. Personalizzato utilizza le regole in /storage/.config/iptables. Off disabilita il firewall."
+msgstr "Il firewall blocca il traffico di rete indesiderato. Casa (impostazione predefinita) consente solo il traffico da intervalli di rete privati (192.168.x.x, 172.16.x.x e 10.x.x.x). Pubblico blocca tutto il traffico da tutte le reti. Personalizzato utilizza le regole in /storage/.config/iptables. Spento disabilita il firewall."
 
 msgctxt "#772"
 msgid "Checking for a new version will submit the installed Distribution, Project, CPU Arch and Version to the update server. This data is also used to report basic statistics for the project. To continue checking for updates while opting-out of stats reporting, disable this option."
-msgstr "Il controllo di una nuova versione invia al server degli aggiornamenti la distribuzione installata, la versione e l'architettura della CPU. Questi dati vengono utilizzati a fini statistici per il progetto. Per continuare a controllare la prensenza di aggiornamenti senza inviare statistiche, disabilitare questa opzione."
+msgstr "Il controllo di una nuova versione invierà la distribuzione, il progetto, l'architettura della CPU e la versione installati al server di aggiornamento. Questi dati vengono utilizzati anche per riportare le statistiche di base per il progetto. Per continuare a controllare gli aggiornamenti mentre escludi i rapporti sulle statistiche, disabilita questa opzione."
 
 msgctxt "#773"
 msgid "Set the idle timeout (in minutes) before devices will be disconnected (defaults to 0 for no timeout). Applies to devices where \"Enable Standby\" has been activated in the LibreELEC device connection context menu."
-msgstr "Imposta il timeout di inattività (in minuti) prima che i dispositivi vengano disconnessi (predefinito è 0 per nessun timeout). Si applica ai dispositivi in cui nel menu contestuale di connessione del dispositivo LibreELEC è stato attivato \"Abilita standby\"."
+msgstr "Imposta il timeout di inattività (in minuti) prima che i dispositivi vengano disconnessi (il valore predefinito è 0 per nessun timeout). Si applica ai dispositivi in cui è stato attivato \"Abilita standby\" nel menu contestuale della connessione del dispositivo LibreELEC."
 
 msgctxt "#32001"
 msgid "Services"
@@ -327,7 +327,7 @@ msgstr "Tastiera"
 
 msgctxt "#32010"
 msgid "Keyboard Layout"
-msgstr "Layout tastiera"
+msgstr "Disposizione tastiera"
 
 msgctxt "#32012"
 msgid "Select Action"
@@ -335,7 +335,7 @@ msgstr "Seleziona azione"
 
 msgctxt "#32013"
 msgid "OS Updates"
-msgstr "Aggiornamenti SO"
+msgstr "Aggiornamenti sistema operativo"
 
 msgctxt "#32014"
 msgid "Automatic Updates"
@@ -347,7 +347,7 @@ msgstr "Canale aggiornamento"
 
 msgctxt "#32016"
 msgid "Show Custom Channels"
-msgstr "Visualizza canali personalizzati"
+msgstr "Mostra canali personalizzati"
 
 msgctxt "#32017"
 msgid "  - Custom Channel 1"
@@ -371,19 +371,19 @@ msgstr "Invia statistiche"
 
 msgctxt "#32022"
 msgid "Firmware Updates"
-msgstr "Aggiornamenti Firmware"
+msgstr "Aggiornamenti firmware"
 
 msgctxt "#32023"
 msgid "Updating will occur once the system is rebooted."
-msgstr "L'aggiornamento avverrà al riavvio del sistema."
+msgstr "L'aggiornamento avverrà dopo il riavvio del sistema."
 
 msgctxt "#32024"
 msgid "Bootloader EEPROM"
-msgstr "EEPROM Bootloader"
+msgstr "EEPROM del bootloader"
 
 msgctxt "#32025"
 msgid "Update the Raspberry Pi Bootloader EEPROM to the latest version. This option is automatically disabled after rebooting. Reboot the system to apply the update."
-msgstr "Aggiorna il Bootloader Raspberry nella EEPROM del Pi all'ultima versione. Questa opzione viene disabilitata automaticamente dopo il riavvio. Riavvia il sistema per applicare l'aggiornamento."
+msgstr "Aggiorna la EEPROM del bootloader del Raspberry Pi all'ultima versione. Questa opzione viene disabilitata automaticamente dopo il riavvio. Riavvia il sistema per applicare l'aggiornamento."
 
 msgctxt "#32026"
 msgid "VIA USB3 Firmware"
@@ -391,11 +391,11 @@ msgstr "Firmware VIA USB3"
 
 msgctxt "#32027"
 msgid "Update the Raspberry Pi VIA USB3 firmware to the latest version. This option is automatically disabled after rebooting. Reboot the system to apply the update."
-msgstr "Aggiorna il firmware Raspberry Pi VIA USB3 all'ultima versione. Questa opzione viene disabilitata automaticamente dopo il riavvio. Riavvia il sistema per applicare l'aggiornamento."
+msgstr "Aggiorna il firmware VIA USB3 del Raspberry Pi all'ultima versione. Questa opzione viene disabilitata automaticamente dopo il riavvio. Riavvia il sistema per applicare l'aggiornamento."
 
 msgctxt "#32028"
 msgid "update from %s to %s"
-msgstr "aggiornato da %s a %s"
+msgstr "aggiornamento da %s a %s"
 
 msgctxt "#32029"
 msgid "up to date: %s"
@@ -419,19 +419,19 @@ msgstr "Reti cablate"
 
 msgctxt "#32105"
 msgid "Active"
-msgstr "Attiva"
+msgstr "Attivo"
 
 msgctxt "#32106"
 msgid "Username"
-msgstr "Utente"
+msgstr "Nome utente"
 
 msgctxt "#32107"
 msgid "Passphrase"
-msgstr "Password"
+msgstr "Frase d'accesso"
 
 msgctxt "#32108"
 msgid "Enable 'tethered' Wireless Access Point"
-msgstr "Abilita il tethering per l'Access Point Wireless"
+msgstr "Abilita punto di accesso wireless 'tethered'"
 
 msgctxt "#32109"
 msgid "Connect Automatically"
@@ -451,7 +451,7 @@ msgstr "IPv6"
 
 msgctxt "#32113"
 msgid "IP Address Method"
-msgstr "Assegnazione IP"
+msgstr "Metodo di assegnazione dell'indirizzo IP"
 
 msgctxt "#32114"
 msgid "IP Address"
@@ -471,7 +471,7 @@ msgstr "Lunghezza prefisso"
 
 msgctxt "#32118"
 msgid "Privacy"
-msgstr "Privacy"
+msgstr "Riservatezza"
 
 msgctxt "#32119"
 msgid "DNS Servers"
@@ -547,15 +547,15 @@ msgstr "Abbina"
 
 msgctxt "#32146"
 msgid "Hidden Network Name"
-msgstr "Nome rete nascosta"
+msgstr "Nome di rete nascosto"
 
 msgctxt "#32147"
 msgid "Wireless Network Passphrase"
-msgstr "Password rete wireless"
+msgstr "Frase d'accesso della rete wireless"
 
 msgctxt "#32148"
 msgid "Wireless Network Username"
-msgstr "Utente rete wireless"
+msgstr "Nome utente rete wireless"
 
 msgctxt "#32150"
 msgid "Edit"
@@ -579,15 +579,15 @@ msgstr "Tempo rimanente"
 
 msgctxt "#32184"
 msgid "Extract file"
-msgstr "Decompressione file"
+msgstr "Estrai file"
 
 msgctxt "#32185"
 msgid "Extract speed"
-msgstr "Velocità decompressione"
+msgstr "Velocità di estrazione"
 
 msgctxt "#32186"
 msgid "Initialize Archive File"
-msgstr "Inizializza file archvio"
+msgstr "Inizializza file di archivio"
 
 msgctxt "#32187"
 msgid "New Version"
@@ -607,7 +607,7 @@ msgstr "Nome sistema"
 
 msgctxt "#32191"
 msgid "Invalid URL"
-msgstr "URL non valida"
+msgstr "URL non valido"
 
 msgctxt "#32192"
 msgid "PIN lock"
@@ -615,15 +615,15 @@ msgstr "Blocco con PIN"
 
 msgctxt "#32193"
 msgid "Enable @DISTRONAME@ Settings PIN Lock"
-msgstr "Abilitare il PIN di blocco impostazioni di @DISTRONAME@"
+msgstr "Abilita il PIN di blocco impostazioni di @DISTRONAME@"
 
 msgctxt "#32194"
 msgid "Change @DISTRONAME@ Settings PIN Lock"
-msgstr "Cambiare il PIN di blocco impostazioni di @DISTRONAME@"
+msgstr "Cambia il PIN di blocco impostazioni di @DISTRONAME@"
 
 msgctxt "#32196"
 msgid "About"
-msgstr "Informazioni"
+msgstr "Informazioni su"
 
 msgctxt "#32198"
 msgid "SSID"
@@ -639,11 +639,11 @@ msgstr "SSH"
 
 msgctxt "#32202"
 msgid "Use Samba Password Authentication"
-msgstr "Usa l'autenticazione per Samba"
+msgstr "Usa l'autenticazione Samba con password"
 
 msgctxt "#32203"
 msgid "Disable SSH Password"
-msgstr "Disabilita la password per SSH"
+msgstr "Disattiva la password SSH"
 
 msgctxt "#32204"
 msgid "Enable Samba"
@@ -667,7 +667,7 @@ msgstr "WLAN nascosta"
 
 msgctxt "#32209"
 msgid "SSH Password"
-msgstr "Password per SSH"
+msgstr "Password SSH"
 
 msgctxt "#32210"
 msgid "The default SSH password is widely known and considered insecure.[CR][CR]Setting a personal password is recommended."
@@ -679,7 +679,7 @@ msgstr "Annulla"
 
 msgctxt "#32213"
 msgid "Keep Existing"
-msgstr "Mantieni l'esistente"
+msgstr "Mantieni esistente"
 
 msgctxt "#32214"
 msgid "Set Password"
@@ -687,23 +687,23 @@ msgstr "Imposta password"
 
 msgctxt "#32215"
 msgid "Workgroup name"
-msgstr "Nome gruppo lavoro"
+msgstr "Nome gruppo di lavoro"
 
 msgctxt "#32216"
 msgid "Auto-Share External Drives"
-msgstr "Condividi automaticamente unità esterne"
+msgstr "Condivisione automatica di unità esterne"
 
 msgctxt "#32217"
 msgid "Minimum supported protocol"
-msgstr "Protocollo supportato minimo"
+msgstr "Protocollo minimo supportato"
 
 msgctxt "#32218"
 msgid "Maximum supported protocol"
-msgstr "Protocollo supportato massimo"
+msgstr "Protocollo massimo supportato"
 
 msgctxt "#32220"
 msgid "Bad password!"
-msgstr "Password debole!"
+msgstr "Password errata!"
 
 msgctxt "#32221"
 msgid "The entered password is too weak.[CR]SSH password is unchanged."
@@ -711,7 +711,7 @@ msgstr "La password impostata è troppo debole.[CR]La password SSH non è stata 
 
 msgctxt "#32222"
 msgid "Password changed!"
-msgstr "Password sostituita!"
+msgstr "Password cambiata!"
 
 msgctxt "#32223"
 msgid "The SSH password has been successfully changed."
@@ -727,19 +727,19 @@ msgstr "Si è verificato un errore durante il processo.[CR]La password SSH non �
 
 msgctxt "#32226"
 msgid "Enter new 4 digit PIN"
-msgstr "Inserire il nuovo PIN di 4 cifre"
+msgstr "Inserisci il nuovo PIN di 4 cifre"
 
 msgctxt "#32227"
 msgid "Re-enter PIN"
-msgstr "Reinserire il PIN"
+msgstr "Reinserisci il PIN"
 
 msgctxt "#32228"
 msgid "Error - PIN codes did not match!"
-msgstr "Errore - I PIN non corrispondono!"
+msgstr "Errore - I codici PIN non corrispondono!"
 
 msgctxt "#32229"
 msgid "@DISTRONAME@ Settings PIN lock not set.[CR][CR]Please try again."
-msgstr "Impostazioni di @DISTRONAME@ non bloccate da PIN.[CR][CR]Provare di nuovo."
+msgstr "Impostazioni di @DISTRONAME@ non bloccate da PIN.[CR][CR]Per favore riprova."
 
 msgctxt "#32230"
 msgid "@DISTRONAME@ Settings PIN lock set."
@@ -747,7 +747,7 @@ msgstr "Impostazioni di @DISTRONAME@ bloccate da PIN."
 
 msgctxt "#32231"
 msgid "Your @DISTRONAME@ Settings PIN lock has been set to:"
-msgstr "Il PIN per le impostazioni di @DISTRONAME@ è stato impostato a:"
+msgstr "Il PIN per bloccare le impostazioni di @DISTRONAME@ è stato impostato a:"
 
 msgctxt "#32232"
 msgid "Error - PIN code not 4 digits!"
@@ -755,7 +755,7 @@ msgstr "Errore - Il PIN non è di 4 cifre!"
 
 msgctxt "#32233"
 msgid "@DISTRONAME@ Settings Locked[CR]Enter 4 digit PIN"
-msgstr "Impostazioni di @DISTRONAME@ protette[CR]Inserire il PIN di 4 cifre"
+msgstr "Impostazioni di @DISTRONAME@ bloccate[CR]Inserisci il PIN di 4 cifre"
 
 msgctxt "#32234"
 msgid "Incorrect PIN!"
@@ -763,23 +763,23 @@ msgstr "PIN errato!"
 
 msgctxt "#32235"
 msgid " attempts remaining."
-msgstr " tentativi rimasti."
+msgstr " tentativi rimanenti."
 
 msgctxt "#32236"
 msgid "You have entered an incorrect PIN too many times.[CR][CR]You will need to wait 5 minutes before trying again."
-msgstr "È stato inserito troppe volte un PIN errato.[CR][CR]Attendere 5 minuti per poter riprovare."
+msgstr "Hai inserito troppe volte un PIN errato.[CR][CR]Dovrai attendere 5 minuti prima di riprovare."
 
 msgctxt "#32237"
 msgid "@DISTRONAME@ Settings Locked!"
-msgstr "Impostazioni @DISTRONAME@ bloccate!"
+msgstr "Impostazioni di @DISTRONAME@ bloccate!"
 
 msgctxt "#32238"
 msgid "Time remaining before PIN can be entered: %02d:%02d[CR][CR]Too many previous failed attempts."
-msgstr "Tempo rimanente prima che sia possibile nuovamente inserire il PIN: %02d:%02d[CR][CR]Troppi tentativi precedenti non riusciti."
+msgstr "Tempo rimanente prima dell'inserimento del PIN: %02d:%02d[CR][CR]Troppi tentativi precedenti falliti."
 
 msgctxt "#32240"
 msgid "Wireless Regulatory Domain"
-msgstr "Dominio normativo wireless"
+msgstr "Settore normativo wireless"
 
 msgctxt "#32300"
 msgid "Welcome to @DISTRONAME@"
@@ -791,15 +791,15 @@ msgstr "Benvenuto"
 
 msgctxt "#32302"
 msgid "This wizard will guide you through the process of setting up your new @DISTRONAME@ installation - setting your location, timezone and connecting you to the internet.[CR][CR]These settings can be changed later by navigating to Programs > @DISTRONAME@ Settings."
-msgstr "Questa procedura guidata ti aiuterà a configurare la nuova installazione di @DISTRONAME@. Imposta la nazione, il fuso orario e una connessione ad internet.[CR][CR]Queste impostazioni potranno essere modificate successivamente in Impostazioni > @DISTRONAME@."
+msgstr "Questa procedura guidata ti aiuterà durante il processo di configurazione della tua nuova installazione di @DISTRONAME@, impostando la tua posizione, il fuso orario e la connessione a internet.[CR][CR]Queste impostazioni possono essere modificate in seguito accedendo a Impostazioni > @DISTRONAME@."
 
 msgctxt "#32303"
 msgid "Next"
-msgstr "Avanti"
+msgstr "Successivo"
 
 msgctxt "#32304"
 msgid "To be identified easily on the network, your new @DISTRONAME@ machine needs a name.[CR][CR]Try to choose something meaningful - like the room it's in - so you'll know what it is when you see it on the network.[CR][CR]This name is used when configuring network services, like file sharing using samba."
-msgstr "Per essere facilmente identificata sulla rete, la tua nuova macchina @DISTRONAME@ ha bisogno di un nome.[CR][CR]Cerca di scegliere qualcosa di significativo, come la stanza in cui si trova, così saprai di cosa si tratta quando lo vedrai sul network.[CR][CR]Questo nome viene utilizzato durante la configurazione dei servizi di rete, come la condivisione di file tramite samba."
+msgstr "Per essere facilmente identificata sulla rete, la tua nuova macchina @DISTRONAME@ ha bisogno di un nome.[CR][CR]Cerca di scegliere qualcosa di significativo, come la stanza in cui si trova, così saprai di cosa si tratta quando la vedrai in rete.[CR][CR]Questo nome viene utilizzato durante la configurazione dei servizi di rete, come la condivisione di file tramite Samba."
 
 msgctxt "#32305"
 msgid "Networking"
@@ -807,7 +807,7 @@ msgstr "Rete"
 
 msgctxt "#32306"
 msgid "In order to download backdrops, banners and thumbnails for your movies and TV shows and to stream online content from sites like YouTube, @DISTRONAME@ needs to be connected the Internet.[CR][CR]An Internet connection is also required for @DISTRONAME@ to automatically update itself."
-msgstr "Per scaricare gli sfondi, i banner e le locandine dei film e serie TV e per poter guardare filmati in streaming da siti come YouTube, @DISTRONAME@ ha bisogno di una connessione internet.[CR][CR]Una connessione ad internet è necessaria anche per permettere a @DISTRONAME@ di aggiornarsi automaticamente."
+msgstr "Per scaricare gli sfondi, i banner e le miniature di film e serie TV e per poter guardare filmati in streaming da siti come YouTube, @DISTRONAME@ deve essere connesso a internet.[CR][CR]È anche necessaria una connessione a internet affinché @DISTRONAME@ si aggiorni automaticamente."
 
 msgctxt "#32307"
 msgid "Previous"
@@ -819,7 +819,7 @@ msgstr "Nome host:"
 
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
-msgstr "Sono attualmente disponibili le seguenti reti:"
+msgstr "Attualmente sono disponibili le seguenti reti:"
 
 msgctxt "#32310"
 msgid "Language:"
@@ -831,11 +831,11 @@ msgstr "Condivisioni e accesso remoto"
 
 msgctxt "#32312"
 msgid "@DISTRONAME@ also supports SSH for remote access. This is for advanced users who wish to interact with @DISTRONAME@'s underlying operating system. The default user is [COLOR blue]root[/COLOR] and the default password is [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
-msgstr "@DISTRONAME@ supporta SSH per l'accesso remoto. L'accesso consente agli utenti esperti di interagire direttamente col sistema operativo di @DISTRONAME@. L'utente predefinito è [COLOR blue]root[/COLOR] e la password predefinita è [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
+msgstr "@DISTRONAME@ supporta anche SSH per l'accesso remoto. Questo è per gli utenti avanzati che desiderano interagire con il sistema operativo sottostante di @DISTRONAME@. L'utente predefinito è [COLOR blue]root[/COLOR] e la password predefinita è [COLOR blue]@ROOT_PASSWORD@[/COLOR]."
 
 msgctxt "#32313"
 msgid "In order to share your files between your computers @DISTRONAME@ has incorporated a samba server. This samba server can be integrated into your local network by accessing it in a familiar way with Finder or Windows Explorer."
-msgstr "Per permettere di condividere i file tra i computer, @DISTRONAME@ ha incorporato un server Samba. Ciò permette di interagire con la rete locale in maniera familiare tramite il Finder di MacOS o Windows Explorer."
+msgstr "Per condividere i tuoi file tra i tuoi computer, @DISTRONAME@ ha incorporato un server Samba. Questo server Samba può essere integrato nella tua rete locale accedendovi in modo familiare con Finder o Windows Explorer."
 
 msgctxt "#32316"
 msgid "Configure Services:"
@@ -847,7 +847,7 @@ msgstr "Grazie"
 
 msgctxt "#32318"
 msgid "Your @DISTRONAME@ installation is now complete and you are about to enter Kodi where you can set up your media libraries. For help with this, there is a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a dedicated team of developers who work purely in their spare time. Even as a volunteer project, we still have to pay for our internet bandwidth and development resources so if you find @DISTRONAME@ useful we will always appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using @DISTRONAME@ as much as we've enjoyed building it. If you need any more help, you can find links to our support forum along with latest news at our website."
-msgstr "La tua installazione di @DISTRONAME@ è ora completa e stai per entrare in Kodi dove potrai configurare le tue librerie multimediali. Per aiutarti, è presente una guida disponibile su wiki.kodi.tv[CR][CR]@DISTRONAME@ che è stata redatta da un team di sviluppatori che lavorano esclusivamente nel loro tempo libero. Sebbene sia un'attività di volontariato, la nostra larghezza di banda Internet e le risorse di sviluppo sono a pagamento, quindi se trovi utile @DISTRONAME@ una donazione di qualsiasi importo è sempre gradita.[CR][CR]Infine, speriamo che ti piaccia usare @ DISTRONAME@ tanto quanto noi ci siamo divertiti a costruirla. Se hai bisogno di ulteriore aiuto, sul nostro sito web puoi trovare i link al nostro forum di supporto con le ultime notizie."
+msgstr "La tua installazione di @DISTRONAME@ è ora completa e stai per entrare in Kodi dove potrai configurare le tue librerie multimediali. Per aiutarti, è presente una guida disponibile su wiki.kodi.tv[CR][CR]@DISTRONAME@ è stata sviluppata da un team che lavora esclusivamente nel tempo libero. Sebbene sia un'attività di volontariato, la nostra larghezza di banda internet e le risorse di sviluppo sono a pagamento, quindi se trovi utile @DISTRONAME@ una donazione di qualsiasi importo sarà sempre gradita.[CR][CR]Infine, speriamo che ti piaccia usare @ DISTRONAME@ tanto quanto noi ci siamo divertiti a svilupparla. Se hai bisogno di ulteriore aiuto, sul nostro sito web puoi trovare i link al nostro forum di supporto con le ultime notizie."
 
 msgctxt "#32319"
 msgid "Cron"
@@ -859,27 +859,27 @@ msgstr "Abilita cron"
 
 msgctxt "#32323"
 msgid "Reset to Defaults"
-msgstr "Ripristina ai valori predefiniti"
+msgstr "Reimposta ai valori predefiniti"
 
 msgctxt "#32324"
 msgid "Reset System Settings to defaults"
-msgstr "Ripristina il sistema ai valori predefiniti"
+msgstr "Reimposta le impostazioni di sistema ai valori predefiniti"
 
 msgctxt "#32325"
 msgid "Reset @DISTRONAME@ to defaults"
-msgstr "Ripristina @DISTRONAME@ ai valori predefiniti"
+msgstr "Reimposta @DISTRONAME@ ai valori predefiniti"
 
 msgctxt "#32326"
 msgid "Are you sure?"
-msgstr "Vuoi procedere?"
+msgstr "Sei sicuro?"
 
 msgctxt "#32328"
 msgid "The system must reboot."
-msgstr "Il sistema deve essere riavviato."
+msgstr "Il sistema deve riavviarsi."
 
 msgctxt "#32329"
 msgid "Rebooting in %d seconds"
-msgstr "Riavvio in %d secondi"
+msgstr "Riavvio tra %d secondi"
 
 msgctxt "#32330"
 msgid "Keyboard Type"
@@ -895,7 +895,7 @@ msgstr "Connesso: "
 
 msgctxt "#32334"
 msgid "Yes"
-msgstr "Si"
+msgstr "Sì"
 
 msgctxt "#32335"
 msgid "No"
@@ -907,7 +907,7 @@ msgstr "Nessun adattatore Bluetooth trovato."
 
 msgctxt "#32339"
 msgid "No Bluetooth device found. Please put your Bluetooth device into discovery mode[CR]and start the scan"
-msgstr "Nessun dispositivo Bluetooth rilevato. Imposta il dispositivo Bluetooth in modo ricerca[CR] e avvia la scansione"
+msgstr "Nessun dispositivo Bluetooth trovato. Metti il tuo dispositivo Bluetooth in modalità rilevamento[CR]e avvia la scansione"
 
 msgctxt "#32343"
 msgid "Enter the following Key on your Device."
@@ -927,7 +927,7 @@ msgstr "Accetta e connetti"
 
 msgctxt "#32362"
 msgid "Check for updates now:"
-msgstr "Ricerca aggiornamenti:"
+msgstr "Controlla subito gli aggiornamenti:"
 
 msgctxt "#32363"
 msgid "@DISTRONAME@"
@@ -939,19 +939,19 @@ msgstr "Aggiornamenti disponibili"
 
 msgctxt "#32365"
 msgid "Show Update Notifications"
-msgstr "Visualizza notifiche aggiornamenti"
+msgstr "Mostra notifiche di aggiornamento"
 
 msgctxt "#32366"
 msgid "Update Download Completed"
-msgstr "Download aggiornamento completato"
+msgstr "Download dell'aggiornamento completato"
 
 msgctxt "#32367"
 msgid "Update Extract Complete"
-msgstr "Estrazione aggiornamento completata"
+msgstr "Estrazione dell'aggiornamento completata"
 
 msgctxt "#32368"
 msgid "Advanced Network Settings"
-msgstr "Impostazioni avanzate di rete"
+msgstr "Impostazioni avanzate della rete"
 
 msgctxt "#32369"
 msgid "Wait for network before starting Kodi"
@@ -959,7 +959,7 @@ msgstr "Attendi la disponibilità della rete prima di avviare Kodi"
 
 msgctxt "#32370"
 msgid "Maximum Wait Time (Sec.)"
-msgstr "Attesa massima (sec.)"
+msgstr "Tempo massimo di attesa (sec.)"
 
 msgctxt "#32371"
 msgid "Backup"
@@ -975,7 +975,7 @@ msgstr "Ripristina backup"
 
 msgctxt "#32375"
 msgid "Backup Progress"
-msgstr "Progresso backup"
+msgstr "Avanzamento del backup"
 
 msgctxt "#32376"
 msgid "Submit Log"
@@ -991,15 +991,15 @@ msgstr "Carica gli ultimi crash log e le configurazioni di Kodi e visualizza l'U
 
 msgctxt "#32379"
 msgid "There is not enough free storage space to continue!"
-msgstr "Non c'è abbastanza spazio libero nel disco per continuare!"
+msgstr "Non c'è abbastanza spazio libero per continuare!"
 
 msgctxt "#32380"
 msgid "Restoring system settings requires a reboot. Are you sure you want to restore?"
-msgstr "Il recupero delle impostazioni di sistema richiede un riavvio. Vuoi procedere?"
+msgstr "Il ripristino delle impostazioni di sistema richiede un riavvio. Sei sicuro di voler ripristinare?"
 
 msgctxt "#32381"
 msgid "Accept incoming Bluetooth Filetransfer ?"
-msgstr "Accetti il file Bluetooth ricevuto?"
+msgstr "Accetta il trasferimento di file Bluetooth in entrata?"
 
 msgctxt "#32382"
 msgid "Speed"
@@ -1011,19 +1011,19 @@ msgstr "Vuoi riprodurre i file?"
 
 msgctxt "#32384"
 msgid "OBEX Enabled"
-msgstr "OBEX attivato"
+msgstr "OBEX abilitato"
 
 msgctxt "#32385"
 msgid "OBEX Upload Folder"
-msgstr "Cartella upload OBEX"
+msgstr "Cartella di caricamento OBEX"
 
 msgctxt "#32386"
 msgid "Keyboard Layout Variant #1"
-msgstr "Variante #1 layout tastiera"
+msgstr "Disposizione tastiera variante 1"
 
 msgctxt "#32387"
 msgid "Keyboard Layout Variant #2"
-msgstr "Variante #2 layout tastiera"
+msgstr "Disposizione tastiera variante 2"
 
 msgctxt "#32388"
 msgid "Enable Standby"
@@ -1035,15 +1035,15 @@ msgstr "Disabilita standby"
 
 msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
-msgstr "Addon impostazioni non ancora pronto. Prova più tardi."
+msgstr "L'add-on delle impostazioni non è ancora pronto, riprova più tardi."
 
 msgctxt "#32393"
 msgid "** SAFE MODE! ** SAFE MODE! ** SAFE MODE! **"
-msgstr "** MODALITÀ SICURA! ** MODALITÀ SICURA! ** MODALITÀ SICURA! **"
+msgstr "** MODALITÀ PROVVISORIA! ** MODALITÀ PROVVISORIA! ** MODALITÀ PROVVISORIA! **"
 
 msgctxt "#32394"
 msgid "@DISTRONAME@ has temporarily started in safe mode due to repeated Kodi crashes.[CR][CR]You may now investigate the cause of the crashes by enabling ssh or Samba.[CR][CR]Your original Kodi installation can be accessed via \"/storage/.kodi.FAILED\" and the Samba \"Kodi-Failed\" share.[CR][CR]Rebooting will return to your original Kodi installation.[CR][CR]Go to https://forum.libreelec.tv if you require further assistance. When posting to the forum include the link to your crash log which can be viewed by clicking the crash log option in Settings > LibreELEC > System > Submit Log."
-msgstr "@DISTRONAME@ è stato temporaneamente avviato in modalità provvisoria a causa di ripetuti arresti di Kodi.[CR][CR]Ora puoi indagare sulla causa degli arresti attivando ssh o Samba.[CR][CR]Puoi accedere all'installazione originale di Kodi tramite \"/storage/.kodi.FAILED\" e la condivisione \"Kodi-Failed\" di Samba.[CR][CR]Il riavvio tornerà all'installazione originale di Kodi.[CR][CR] Vai su https://forum.libreelec.tv se hai bisogno di ulteriore assistenza. Quando pubblichi sul forum, includi il link del log degli arresti anomali che può essere visualizzato facendo clic sull'opzione log degli arresti anomali in Impostazioni > LibreELEC > Sistema> Invia log."
+msgstr "@DISTRONAME@ è stato temporaneamente avviato in modalità provvisoria a causa di ripetuti arresti di Kodi.[CR][CR]Ora puoi indagare sulla causa degli arresti attivando SSH o Samba.[CR][CR]Puoi accedere all'installazione originale di Kodi tramite \"/storage/.kodi.FAILED\" e la condivisione \"Kodi-Failed\" di Samba.[CR][CR]Il riavvio tornerà all'installazione originale di Kodi.[CR][CR] Vai su https://forum.libreelec.tv se hai bisogno di ulteriore assistenza. Quando pubblichi sul forum, includi il link del registro degli arresti anomali che può essere visualizzato facendo clic sull'opzione registro degli arresti anomali in Impostazioni > LibreELEC > Sistema > Invia registro."
 
 msgctxt "#32395"
 msgid "Firewall"
@@ -1055,7 +1055,7 @@ msgstr "Personalizzato"
 
 msgctxt "#32397"
 msgid "Off"
-msgstr "Off"
+msgstr "Spento"
 
 msgctxt "#32398"
 msgid "Home"
@@ -1071,35 +1071,35 @@ msgstr "Timeout inattività"
 
 msgctxt "#32401"
 msgid "Syncing Disks..."
-msgstr "Sincronizzazione Dischi..."
+msgstr "Sincronizzazione dischi..."
 
 msgctxt "#32402"
 msgid "Backup is incomplete. An error occurred. See Kodi log for details."
-msgstr "Il backup è incompleto. Si è verificato un errore. Vedi il log di Kodi per i dettagli."
+msgstr "Il backup è incompleto. Si è verificato un errore. Vedi il registro di Kodi per i dettagli."
 
 msgctxt "#32410"
 msgid "Logging"
-msgstr "Registrazione log"
+msgstr "Registrazione eventi"
 
 msgctxt "#32411"
 msgid "Use Persistent Logs"
-msgstr "Usa log persistenti"
+msgstr "Usa registri persistenti"
 
 msgctxt "#32412"
 msgid "Use Persistent Journal and Log files instead of default volatile ones. Reboot to apply changes."
-msgstr "Usa file di log e journal persistenti invece di quelli volatili predefiniti. Riavvia per applicare le modifiche."
+msgstr "Usa i file di registro e diario persistenti invece di quelli volatili predefiniti. Riavvia per applicare le modifiche."
 
 msgctxt "#32413"
 msgid "Journal Size"
-msgstr "Dimensione journal"
+msgstr "Dimensione diario"
 
 msgctxt "#32414"
 msgid "Set max. size of persistent journal. Reboot to apply changes."
-msgstr "Imposta dimensione massima del journal persistente. Riavvia per applicare le modifiche."
+msgstr "Imposta la dimensione massima del diario persistente. Riavvia per applicare le modifiche."
 
 msgctxt "#32415"
 msgid "Disable journald Rate Limit"
-msgstr "Disabilita limite frequenza journald"
+msgstr "Disabilita il limite di frequenza di registrazione di journald"
 
 msgctxt "#32416"
 msgid "Reboot to apply changes."
