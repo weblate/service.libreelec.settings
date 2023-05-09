@@ -99,7 +99,7 @@ about = {'ENABLED': True}
 _services = {
     'sshd': ['sshd.service'],
     'avahi': ['avahi-daemon.service'],
-    'samba': ['nmbd.service', 'smbd.service'],
+    'samba': ['samba-config.service', 'nmbd.service', 'smbd.service'],
     'bluez': ['bluetooth.service'],
     'obexd': ['obex.service'],
     'crond': ['cron.service'],
