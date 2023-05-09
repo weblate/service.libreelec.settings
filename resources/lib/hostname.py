@@ -12,13 +12,11 @@ def get_hostname():
 
 
 def set_hostname(hostname):
-    with open(config.HOSTNAME, 'w') as output:
-        output.write(hostname)
-    with open('/proc/sys/kernel/hostname', 'w') as output:
-        output.write(hostname)
-    with open('/etc/hosts', 'w') as output:
-        if os.path.isfile(config.HOSTS_CONF):
-            with open(config.HOSTS_CONF) as input:
-                output.write(input.read())
-        output.write(f'127.0.0.1 localhost {hostname}\n')
-        output.write(f'::1 localhost ip6-localhost ip6-loopback {hostname}\n')
+    # network-base.service handles user created persistent settings
+    if os.path.isfile(config.HOSTNAME):
+        with open(config.HOSTNAME, 'r') as input:
+            current_hostname = input.read().strip()
+        if current_hostname != hostname:
+            with open(config.HOSTNAME, 'w') as output:
+                output.write(hostname)
+            os_tools.execute('systemctl restart network-base')
