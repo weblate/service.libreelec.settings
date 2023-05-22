@@ -444,7 +444,7 @@ class updates(modules.Module):
         """Download and extract data from a releases.json file. Complete the URL if necessary."""
         if not url:
             url = self.UPDATE_DOWNLOAD_URL % ('releases', 'releases.json')
-        if not url.startswith('http://') and not url.startswith('https://'):
+        if not url.startswith(('http://', 'https://', 'file://')):
             url = f'https://{url}'
         if not url.endswith('.json'):
             url = f'{url}/releases.json'
