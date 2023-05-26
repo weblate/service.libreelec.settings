@@ -3,7 +3,6 @@
 
 import defaults
 import log
-import oe
 
 
 class Module(object):

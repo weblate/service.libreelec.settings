@@ -13,8 +13,6 @@ import os
 import re
 import sys
 import time
-import tarfile
-import traceback
 import urllib.request
 import urllib.parse
 from xml.dom import minidom
@@ -22,7 +20,6 @@ from xml.dom import minidom
 import xbmc
 import xbmcaddon
 import xbmcgui
-import xbmcvfs
 
 import defaults
 import log
