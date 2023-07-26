@@ -498,40 +498,28 @@ class updates(modules.Module):
                 for i in sorted(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'], key=int, reverse=True):
                     if shortname:
                         # check tarballs, then images, then uboot images for matching file; add subpath if key is present
-                        try:
+                        if 'file' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                             build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']
                             if shortname in build:
-                                try:
+                                if 'subpath' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']:
                                     build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['subpath']}/{build}"
-                                except KeyError:
-                                    pass
                                 break
-                        except KeyError:
-                            pass
-                        try:
+                        if 'image' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                             build = self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']
                             if shortname in build:
-                                try:
+                                if 'subpath' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']:
                                     build = f"{self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['subpath']}/{build}"
-                                except KeyError:
-                                    pass
                                 break
-                        except KeyError:
-                            pass
-                        try:
+                        if 'uboot' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                             for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
                                 build = uboot_image_data['name']
                                 if shortname in build:
-                                    try:
+                                    if 'subpath' in uboot_image_data:
                                         build = f"{uboot_image_data['subpath']}/{build}"
-                                    except KeyError:
-                                        pass
                                     break_loop = True
                                     break
                             if break_loop:
                                 break
-                        except KeyError:
-                            pass
                     else:
                         matches = []
                         try:
@@ -543,21 +531,15 @@ class updates(modules.Module):
                         else:
                             # The same release could have tarballs and images. Prioritize tarball in response.
                             # images and uboot images in same release[i] entry are mutually exclusive.
-                            try:
+                            if 'file' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                                 update_files.append(pretty_filename(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['file']['name']))
                                 continue
-                            except KeyError:
-                                pass
-                            try:
+                            if 'image' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                                 update_files.append(pretty_filename(self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['image']['name']))
                                 continue
-                            except KeyError:
-                                pass
-                            try:
+                            if 'uboot' in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]:
                                 for uboot_image_data in self.update_json[channel]['project'][oe.ARCHITECTURE]['releases'][i]['uboot']:
                                     update_files.append(pretty_filename(uboot_image_data['name']))
-                            except KeyError:
-                                pass
 
         return build if build else update_files
 
