@@ -592,6 +592,8 @@ class updates(modules.Module):
                 if self.struct['update']['settings']['AutoUpdate']['value'] == 'auto' and force == False:
                     self.update_in_progress = True
                     self.do_autoupdate(None, True)
+        else:
+            log.log(f'Unable to load: {url}', log.ERROR)
 
     @log.log_function()
     def do_autoupdate(self, listItem=None, silent=False):
