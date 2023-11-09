@@ -17,7 +17,6 @@ import hostname
 import log
 import modules
 import oe
-import oeWindows
 import os_tools
 
 

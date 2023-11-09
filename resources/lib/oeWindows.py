@@ -3,11 +3,8 @@
 # Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 # Copyright (C) 2019-present Team LibreELEC (https://libreelec.tv)
 
-import os
 import re
-import time
 from threading import Thread
-from xml.dom import minidom
 
 import xbmc
 import xbmcgui

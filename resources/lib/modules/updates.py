@@ -12,7 +12,6 @@ import threading
 import time
 from datetime import datetime
 from functools import cmp_to_key
-from xml.dom import minidom
 
 import xbmc
 import xbmcgui
@@ -20,7 +19,6 @@ import xbmcgui
 import log
 import modules
 import oe
-import oeWindows
 import os_tools
 
 

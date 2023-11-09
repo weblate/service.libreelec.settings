@@ -7,7 +7,6 @@ import os
 import shutil
 import subprocess
 
-import xbmc
 import xbmcgui
 
 import log
