@@ -380,10 +380,15 @@ def url_quote(var):
 
 @log.log_function()
 def load_url(url):
-    request = urllib.request.Request(url)
-    response = urllib.request.urlopen(request)
-    content = response.read()
-    return content.decode('utf-8').strip()
+    try:
+        request = urllib.request.Request(url)
+        response = urllib.request.urlopen(request)
+    except urllib.error.URLError as err:
+        log.log(f'Error loading url: {url}\nReason: {err.reason}', log.ERROR)
+        return None
+    else:
+        content = response.read()
+        return content.decode('utf-8').strip()
 
 
 @log.log_function()
