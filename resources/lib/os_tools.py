@@ -36,23 +36,17 @@ def read_shell_settings(file, defaults={}):
 
 
 ### SYSTEM ACCESS ###
-def execute(command, get_result=False):
-    '''Run command, waiting for it to finish. Returns: command output or None'''
+def execute(command, get_result=False, output_err_msg=True):
+    '''Run command, waiting for it to finish. Returns: command output, empty string or None'''
     log.log(f'Executing command: {command}', log.DEBUG)
     try:
         cmd_status = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
-        log.log(f'Command failed: {command}', log.ERROR)
-        log.log(f'Executed command: {e.cmd}', log.DEBUG)
-        # with shell=True, this is the shell's exit code
-        log.log(f'shell exit code: {e.returncode}', log.ERROR)
-        log.log(f'START COMMAND OUTPUT:\n{e.stdout.decode()}\nEND COMMAND OUTPUT', log.ERROR)
-        # return None on failure. Commands that want output get nothing; remainder weren't expecting output
-        return None
-    except FileNotFoundError:
-        # this will be whether the shell is found while shell=True
-#        log.log(f'os_tools.execute: Command not found: {command.split(" ")[0]}', log.ERROR)
-        log.log('os_tools.execute: Failed to find shell.', log.ERROR)
-        return None
-    # return output if requested, otherwise None
+        if output_err_msg:
+            log.log(f'Command failed: {command}', log.ERROR)
+            log.log(f'Executed command: {e.cmd}', log.DEBUG)
+            log.log(f'\nSTART COMMAND OUTPUT:\n{e.stdout.decode()}\nEND COMMAND OUTPUT', log.ERROR)
+        # return empty string if result wanted to match old behaviour
+        return '' if get_result else None
+    # return output if requested, otherwise return None
     return cmd_status.stdout.decode() if get_result else None
