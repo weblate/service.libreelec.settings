@@ -612,12 +612,16 @@ class system(modules.Module):
         result = os_tools.execute(log_cmd, get_result=True)
         if not paste_dlg.iscanceled():
             paste_dlg.close()
-            link = result.find('http')
-            if link != -1:
-                log.log(result[link:], log.WARNING)
-                xbmcDialog.ok('Paste complete', f'Log files pasted to {result[link:]}')
+            if result:
+                link = result.find('http')
+                # TODO Localization
+                if link != -1:
+                    log.log(result[link:], log.WARNING)
+                    xbmcDialog.ok('Paste complete', f'Log files pasted to {result[link:]}')
+                else:
+                    xbmcDialog.ok('Failed paste', 'Failed to paste log files. Please try again')
             else:
-                xbmcDialog.ok('Failed paste', 'Failed to paste log files, try again')
+                xbmcDialog.ok('Failed paste', 'Failed to paste log files. Please try again.')
 
     @log.log_function()
     def tar_add_folder(self, tar, folder):

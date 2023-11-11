@@ -229,11 +229,11 @@ class updates(modules.Module):
         gpu_driver = ""
         gpu_card = self.get_gpu_card()
         log.log(f'Using card: {gpu_card}', log.DEBUG)
-        gpu_path = os_tools.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=True).replace('\n','')
+        gpu_path = os_tools.execute(f'/usr/bin/udevadm info --name=/dev/dri/{gpu_card} --query path 2>/dev/null', get_result=True, output_err_msg=False).replace('\n','')
         log.log(f'gpu path: {gpu_path}', log.DEBUG)
         if gpu_path:
             drv_path = os.path.dirname(os.path.dirname(gpu_path))
-            props = os_tools.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=True)
+            props = os_tools.execute(f'/usr/bin/udevadm info --path={drv_path} --query=property 2>/dev/null', get_result=True, output_err_msg=False)
             if props:
                 for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
                     gpu_props[key] = value
@@ -572,8 +572,6 @@ class updates(modules.Module):
                 if self.struct['update']['settings']['AutoUpdate']['value'] == 'auto' and force == False:
                     self.update_in_progress = True
                     self.do_autoupdate(None, True)
-        else:
-            log.log(f'Unable to load: {url}', log.ERROR)
 
     @log.log_function()
     def do_autoupdate(self, listItem=None, silent=False):
