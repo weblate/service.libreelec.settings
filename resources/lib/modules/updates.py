@@ -315,8 +315,11 @@ class updates(modules.Module):
             else:
                 self.struct['rpieeprom']['settings']['bootloader']['value'] = self.get_rpi_eeprom('BOOTLOADER')
                 self.struct['rpieeprom']['settings']['bootloader']['name'] = f"{oe._(32024)} ({self.rpi_flashing_state['bootloader']['state']})"
-                self.struct['rpieeprom']['settings']['vl805']['value'] = self.get_rpi_eeprom('VL805')
-                self.struct['rpieeprom']['settings']['vl805']['name'] = f"{oe._(32026)} ({self.rpi_flashing_state['vl805']['state']})"
+                if oe.DEVICE == 'RPi4':
+                    self.struct['rpieeprom']['settings']['vl805']['value'] = self.get_rpi_eeprom('VL805')
+                    self.struct['rpieeprom']['settings']['vl805']['name'] = f"{oe._(32026)} ({self.rpi_flashing_state['vl805']['state']})"
+                else:
+                    self.struct['rpieeprom']['settings']['vl805']['hidden'] = 'true'
         else:
             self.struct['rpieeprom']['hidden'] = 'true'
 
