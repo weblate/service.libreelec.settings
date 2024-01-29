@@ -615,7 +615,7 @@ class updates(modules.Module):
                     }
 
             with tempfile.NamedTemporaryFile(mode='r', delete=True) as machine_out:
-                console_output = os_tools.execute(f'/usr/bin/.rpi-eeprom-update.real -j -m "{machine_out.name}"', get_result=True).split('\n')
+                console_output = os_tools.execute(f'/usr/bin/.rpi-eeprom-update.real -j -m "{machine_out.name}"', get_result=True, output_err_msg=False).split('\n')
                 if os.path.getsize(machine_out.name) != 0:
                     state['incompatible'] = False
                     jdata = json.load(machine_out)
