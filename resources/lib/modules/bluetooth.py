@@ -708,7 +708,7 @@ class discoveryThread(threading.Thread):
     def run(self):
         self._stop_event.clear()
         while not self.stopped and not oe.xbmcm.abortRequested():
-            current_time = time.time()
+            current_time = time.monotonic()
             if (self.main_menu.getSelectedItem().getProperty('modul') == 'bluetooth'
                     and current_time > self.last_run + BT_DEVICES_LIST_REFRESH_INTERVAL_SECONDS):
                 self.parent.discover_devices()
@@ -722,8 +722,8 @@ class pinkeyTimer(threading.Thread):
 
     def __init__(self, parent, runtime=60):
         self.parent = weakref.proxy(parent)
-        self.start_time = time.time()
-        self.last_run = time.time()
+        self.start_time = time.monotonic()
+        self.last_run = time.monotonic()
         self._stop_event = threading.Event()
         self.stopped = False
         self.runtime = runtime
@@ -749,7 +749,7 @@ class pinkeyTimer(threading.Thread):
         self._stop_event.clear()
         self.endtime = self.start_time + self.runtime
         while not self.stopped and not oe.xbmcm.abortRequested():
-            current_time = time.time()
+            current_time = time.monotonic()
             percent = round(100 / self.runtime * (self.endtime - current_time), 0)
             self.parent.pinkey_window.getControl(1704).setPercent(percent)
             if current_time >= self.endtime:
