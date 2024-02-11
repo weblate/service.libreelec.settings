@@ -19,6 +19,8 @@ import modules
 import oe
 import oeWindows
 
+BT_DEVICES_LIST_REFRESH_INTERVAL_SECONDS = 5
+
 
 class bluetooth(modules.Module):
 
@@ -708,7 +710,7 @@ class discoveryThread(threading.Thread):
         while not self.stopped and not oe.xbmcm.abortRequested():
             current_time = time.time()
             if (self.main_menu.getSelectedItem().getProperty('modul') == 'bluetooth'
-                    and current_time > self.last_run + 5):
+                    and current_time > self.last_run + BT_DEVICES_LIST_REFRESH_INTERVAL_SECONDS):
                 self.parent.discover_devices()
                 self.last_run = current_time
             elif self.main_menu.getSelectedItem().getProperty('modul') != 'bluetooth':
