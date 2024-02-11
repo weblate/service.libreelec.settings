@@ -112,7 +112,6 @@ class bluetooth(modules.Module):
             except AttributeError:
                 pass
         self.clear_list()
-        self.found_devices = frozenset()
         self.visible = False
 
     # ###################################################################
@@ -287,46 +286,48 @@ class bluetooth(modules.Module):
             return
         if not oe.winOeMain.visible:
             return
+        control_list = oe.winOeMain.getControl(int(oe.listObject['btlist']))
         if not dbus_bluez.system_has_bluez():
-            self.found_devices = frozenset()
             oe.winOeMain.getControl(1301).setLabel(oe._(32346))
-            oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
+            control_list.reset()
             self.clear_list()
             log.log('exit_function (BT Disabled)', log.DEBUG)
             oe.winOeMain.setProperty('show_bt_label', 'true')
             return
         if self.dbusBluezAdapter is None:
-            self.found_devices = frozenset()
             oe.winOeMain.getControl(1301).setLabel(oe._(32338))
-            oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
+            control_list.reset()
             self.clear_list()
             log.log('exit_function (No Adapter)', log.DEBUG)
             oe.winOeMain.setProperty('show_bt_label', 'true')
             return
         if not dbus_bluez.adapter_get_powered(self.dbusBluezAdapter):
-            self.found_devices = frozenset()
             oe.winOeMain.getControl(1301).setLabel(oe._(32338))
-            oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
+            control_list.reset()
             self.clear_list()
             oe.winOeMain.setProperty('show_bt_label', 'true')
             log.log('exit_function (No Adapter Powered)', log.DEBUG)
             return
 
-        rebuildList = False
         self.dbusDevices = self.get_devices()
         if self.dbusDevices:
             oe.winOeMain.clearProperty('show_bt_label')
             oe.winOeMain.getControl(1301).setLabel('')
             found_devices = frozenset(self.dbusDevices.keys())
-            if found_devices != self.found_devices:
-                self.found_devices = found_devices
-                rebuildList = True
-                oe.winOeMain.getControl(int(oe.listObject['btlist'])).reset()
-                self.clear_list()
+            existing_devices = frozenset(self.listItems.keys())
+            new_devices = found_devices - existing_devices
+            deactivated_devices = existing_devices - found_devices
         else:
-            self.found_devices = frozenset()
+            control_list.reset()
+            self.clear_list()
             oe.winOeMain.getControl(1301).setLabel(oe._(32339))
             oe.winOeMain.setProperty('show_bt_label', 'true')
+            return
+
+        selected_dbus_device = None
+        selected_item = control_list.getSelectedItem()
+        if selected_item:
+            selected_dbus_device = selected_item.getProperty('entry')
         for dbusDevice, device_properties in self.dbusDevices.items():
             dictProperties = {}
             apName = ''
@@ -355,7 +356,7 @@ class bluetooth(modules.Module):
                     if self.properties[prop]['type'] == 4:
                         value = str(int(value))
                     dictProperties[name] = value
-            if rebuildList:
+            if dbusDevice in new_devices:
                 self.listItems[dbusDevice] = oe.winOeMain.addConfigItem(apName, dictProperties, oe.listObject['btlist'])
             else:
                 if dbusDevice in self.listItems:
@@ -365,6 +366,22 @@ class bluetooth(modules.Module):
                             self.listItems[dbusDevice].setProperty(dictProperty, dictProperties[dictProperty])
                         except KeyError as e:
                             log.log(f'Suppressed error: {repr(e)}', log.INFO)
+            for dbusDevice in deactivated_devices:
+                for i in range(control_list.size()):
+                    list_item = control_list.getListItem(i)
+                    if list_item.getProperty('entry') == dbusDevice and dbusDevice in self.listItems:
+                        control_list.removeItem(i)
+                        try:
+                            del self.listItems[dbusDevice]
+                        except KeyError as e:
+                            log.log(f'Suppressed error: {repr(e)}', log.INFO)
+                        break
+            if (new_devices or deactivated_devices) and selected_dbus_device is not None:
+                for i in range(control_list.size()):
+                    list_item = control_list.getListItem(i)
+                    if list_item.getProperty('entry') == selected_dbus_device:
+                        control_list.selectItem(i)
+                        break
 
     @log.log_function()
     def open_context_menu(self, listItem):
