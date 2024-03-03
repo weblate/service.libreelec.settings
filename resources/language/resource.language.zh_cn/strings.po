@@ -1104,3 +1104,15 @@ msgstr "禁用日志速率限制"
 msgctxt "#32416"
 msgid "Reboot to apply changes."
 msgstr "重新启动以应用更改。"
+
+msgctxt "#32417"
+msgid "Sending..."
+msgstr ""
+
+msgctxt "#32418"
+msgid "Log files sent to:"
+msgstr ""
+
+msgctxt "#32419"
+msgid "Error sending log files. Please try again."
+msgstr ""
