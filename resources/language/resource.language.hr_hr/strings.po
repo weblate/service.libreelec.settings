@@ -1100,3 +1100,15 @@ msgstr "Onemogući ograničenje brzine dnevnika"
 msgctxt "#32416"
 msgid "Reboot to apply changes."
 msgstr "Ponovno pokrenite za primjenu promjena."
+
+msgctxt "#32417"
+msgid "Sending..."
+msgstr ""
+
+msgctxt "#32418"
+msgid "Log files sent to:"
+msgstr ""
+
+msgctxt "#32419"
+msgid "Error sending log files. Please try again."
+msgstr ""

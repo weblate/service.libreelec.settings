@@ -608,20 +608,19 @@ class system(modules.Module):
     @log.log_function()
     def do_send_logs(self, log_cmd):
         paste_dlg = xbmcgui.DialogProgress()
-        paste_dlg.create('Pasting log files', 'Pasting...')
+        paste_dlg.create(oe._(32376), oe._(32417))
         result = os_tools.execute(log_cmd, get_result=True)
         if not paste_dlg.iscanceled():
             paste_dlg.close()
             if result:
                 link = result.find('http')
-                # TODO Localization
                 if link != -1:
                     log.log(result[link:], log.WARNING)
-                    xbmcDialog.ok('Paste complete', f'Log files pasted to {result[link:]}')
+                    xbmcDialog.ok(oe._(32376), f'{oe._(32418)} {result[link:]}')
                 else:
-                    xbmcDialog.ok('Failed paste', 'Failed to paste log files. Please try again')
+                    xbmcDialog.ok(oe._(32376), oe._(32419))
             else:
-                xbmcDialog.ok('Failed paste', 'Failed to paste log files. Please try again.')
+                xbmcDialog.ok(oe._(32376), oe._(32419))
 
     @log.log_function()
     def tar_add_folder(self, tar, folder):

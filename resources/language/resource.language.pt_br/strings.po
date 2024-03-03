@@ -1112,3 +1112,15 @@ msgstr "Desativa a taxa limite do journald"
 msgctxt "#32416"
 msgid "Reboot to apply changes."
 msgstr "Reinicialize para aplicar as alterações."
+
+msgctxt "#32417"
+msgid "Sending..."
+msgstr ""
+
+msgctxt "#32418"
+msgid "Log files sent to:"
+msgstr ""
+
+msgctxt "#32419"
+msgid "Error sending log files. Please try again."
+msgstr ""

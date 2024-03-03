@@ -1104,3 +1104,15 @@ msgstr "저널 속도 제한 사용 안 함"
 msgctxt "#32416"
 msgid "Reboot to apply changes."
 msgstr "다시 시작하면 변경 사항을 적용합니다."
+
+msgctxt "#32417"
+msgid "Sending..."
+msgstr ""
+
+msgctxt "#32418"
+msgid "Log files sent to:"
+msgstr ""
+
+msgctxt "#32419"
+msgid "Error sending log files. Please try again."
+msgstr ""

@@ -657,13 +657,13 @@ class updates(modules.Module):
     @log.log_function()
     def update_rpi_firmware(self, listItem):
         value = 'false'
-        if xbmcgui.Dialog().yesno('Update RPi Firmware', f'{oe._(32023)}\n\n{oe._(32326)}'):
+        if xbmcgui.Dialog().yesno(oe._(32022), f'{oe._(32023)}\n\n{oe._(32326)}'):
             # available update is newer than installed version
             if self.rpi_flashing_state[listItem.getProperty('entry')]['current'] < self.rpi_flashing_state[listItem.getProperty('entry')]['latest']:
                 update_result = os_tools.execute(f'/usr/bin/rpi-eeprom-update -A {listItem.getProperty("entry")}', get_result=True)
                 log.log(f'rpi-eeprom-update result: {update_result}', log.DEBUG)
                 if update_result:
-                    xbmcgui.Dialog().ok('Update RPi Firmware', 'Please restart to complete the update.')
+                    xbmcgui.Dialog().ok(oe._(32022), oe._(32023))
                     value = 'true'
             else:
                 xbmcgui.Dialog().ok('Update RPi Firmware', 'Firmware is up to date.')
