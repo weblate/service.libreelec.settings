@@ -565,8 +565,8 @@ class system(modules.Module):
                 return
             # file selected that won't trigger busybox's backup restoration
             if not restore_file_path.endswith(('.tar', '.tar.gz', '.tar.bz2', '.tar.xz')):
-                log.log(f'Error: Invalid restore file: {restore_file_path}', log.ERROR)
-                xbmcDialog.ok(oe._(32373), 'Error: Invalid selection. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz')
+                log.log(f'Error: Invalid backup file: {restore_file_path}', log.ERROR)
+                xbmcDialog.ok(oe._(32373), oe._(32374))
                 return
 
             log.log(f'Restore file: {restore_file_path}', log.INFO)
