@@ -32,7 +32,7 @@ def list_timezones():
 
 
 def set_timezone(timezone):
-    '''Write new timezone info to .cache file.'''
+    '''Write new timezone info to .cache file and commit change to system.'''
     current_timezone = get_timezone()
     if current_timezone != timezone or not os.path.isfile(config.TIMEZONE):
         with open(config.TIMEZONE, mode='w', encoding='utf-8') as out_file:
