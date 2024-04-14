@@ -23,9 +23,6 @@ def list_timezones():
         # if line starts with Z take second field
         if line.startswith('Z'):
             timezones.append(line.split(' ')[1])
-        # if line starts with L take third field
-        elif line.startswith('L'):
-            timezones.append(line.split(' ')[2])
     # sort and return
     timezones.sort()
     return timezones
