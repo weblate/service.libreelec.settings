@@ -260,7 +260,6 @@ class system(modules.Module):
     def start_service(self):
         self.is_service = True
         self.load_values()
-        self.set_hostname()
         self.set_keyboard_layout()
         self.set_hw_clock()
         del self.is_service
@@ -388,8 +387,6 @@ class system(modules.Module):
 
     @log.log_function()
     def set_hostname(self, listItem=None):
-        if listItem is not None:
-            self.set_value(listItem)
         value = self.struct['ident']['settings']['hostname']['value']
         if value is not None and value != '':
             hostname.set_hostname(value)
