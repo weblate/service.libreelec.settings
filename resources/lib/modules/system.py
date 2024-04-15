@@ -59,22 +59,18 @@ class system(modules.Module):
             'ident': {
                 'order': 1,
                 'name': 32189,
-                'settings': {'hostname': {
-                    'order': 1,
-                    'name': 32190,
-                    'value': '',
-                    'action': 'set_hostname',
-                    'type': 'text',
-                    'validate': '^([a-zA-Z0-9](?:[a-zA-Z0-9-\.]*[a-zA-Z0-9]))$',
-                    'InfoText': 710,
-                    }},
-                },
-            'timezone': {
-                'order': 2,
-                'name': 32420,
                 'settings': {
-                    'timezone': {
+                    'hostname': {
                         'order': 1,
+                        'name': 32190,
+                        'value': '',
+                        'action': 'set_hostname',
+                        'type': 'text',
+                        'validate': '^([a-zA-Z0-9](?:[a-zA-Z0-9-\.]*[a-zA-Z0-9]))$',
+                        'InfoText': 710,
+                        },
+                    'timezone': {
+                        'order': 2,
                         'name': 32420,
                         'value': '',
                         'action': 'set_timezone',
@@ -84,7 +80,7 @@ class system(modules.Module):
                     },
                 },
             'keyboard': {
-                'order': 3,
+                'order': 2,
                 'name': 32009,
                 'settings': {
                     'KeyboardLayout1': {
@@ -135,7 +131,7 @@ class system(modules.Module):
                     },
                 },
             'pinlock': {
-                'order': 4,
+                'order': 3,
                 'name': 32192,
                 'settings': {
                     'pinlock_enable': {
@@ -161,7 +157,7 @@ class system(modules.Module):
                     },
                 },
             'backup': {
-                'order': 5,
+                'order': 4,
                 'name': 32371,
                 'settings': {
                     'backup': {
@@ -183,7 +179,7 @@ class system(modules.Module):
                     },
                 },
             'reset': {
-                'order': 6,
+                'order': 5,
                 'name': 32323,
                 'settings': {
                     'xbmc_reset': {
@@ -205,7 +201,7 @@ class system(modules.Module):
                     },
                 },
             'debug': {
-                'order': 7,
+                'order': 6,
                 'name': 32376,
                 'settings': {
                     'paste_system': {
@@ -227,7 +223,7 @@ class system(modules.Module):
                     },
                 },
             'journal': {
-                'order': 8,
+                'order': 7,
                 'name': 32410,
                 'settings': {
                     'journal_persistent': {
@@ -322,8 +318,8 @@ class system(modules.Module):
         # Hostname
         self.struct['ident']['settings']['hostname']['value'] = hostname.get_hostname()
         # Timezone
-        self.struct['timezone']['settings']['timezone']['value'] = timezone.get_timezone()
-        self.struct['timezone']['settings']['timezone']['name'] = f"{oe._(32420)} ({self.struct['timezone']['settings']['timezone']['value']})"
+        self.struct['ident']['settings']['timezone']['value'] = timezone.get_timezone()
+        self.struct['ident']['settings']['timezone']['name'] = f"{oe._(32420)} ({self.struct['ident']['settings']['timezone']['value']})"
         # PIN Lock
         self.struct['pinlock']['settings']['pinlock_enable']['value'] = '1' if oe.PIN.isEnabled() else '0'
 
@@ -416,8 +412,8 @@ class system(modules.Module):
         timezone_select = xbmcDialog.select(oe._(32420), timezones)
         if timezone_select > -1:
             listItem = timezones[timezone_select]
-            self.struct['timezone']['settings']['timezone']['value'] = listItem
-            self.struct['timezone']['settings']['timezone']['name'] = f"{oe._(32420)} ({listItem})"
+            self.struct['ident']['settings']['timezone']['value'] = listItem
+            self.struct['ident']['settings']['timezone']['name'] = f"{oe._(32420)} ({listItem})"
             log.log(f'Setting timezone to: {timezone}', log.DEBUG)
             timezone.set_timezone(listItem)
         xbmcDialog = None
