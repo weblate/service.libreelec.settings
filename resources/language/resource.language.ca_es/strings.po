@@ -595,7 +595,7 @@ msgid "Current Version"
 msgstr ""
 
 msgctxt "#32189"
-msgid "Identification"
+msgid "OS Configuration"
 msgstr ""
 
 msgctxt "#32190"

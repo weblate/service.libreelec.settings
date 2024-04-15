@@ -609,8 +609,8 @@ msgid "Current Version"
 msgstr "Version actuelle"
 
 msgctxt "#32189"
-msgid "Identification"
-msgstr "Identification"
+msgid "OS Configuration"
+msgstr ""
 
 msgctxt "#32190"
 msgid "System Name"

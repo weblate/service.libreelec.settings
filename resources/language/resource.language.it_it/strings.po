@@ -602,7 +602,7 @@ msgid "Current Version"
 msgstr "Versione attuale"
 
 msgctxt "#32189"
-msgid "Identification"
+msgid "OS Configuration"
 msgstr "Identificazione"
 
 msgctxt "#32190"

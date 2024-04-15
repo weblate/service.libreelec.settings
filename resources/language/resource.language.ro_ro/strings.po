@@ -595,7 +595,7 @@ msgid "Current Version"
 msgstr "Versiune curentă"
 
 msgctxt "#32189"
-msgid "Identification"
+msgid "OS Configuration"
 msgstr "Identificare"
 
 msgctxt "#32190"

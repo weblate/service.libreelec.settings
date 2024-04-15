@@ -609,7 +609,7 @@ msgid "Current Version"
 msgstr "Stávající verze"
 
 msgctxt "#32189"
-msgid "Identification"
+msgid "OS Configuration"
 msgstr "Identifikace"
 
 msgctxt "#32190"

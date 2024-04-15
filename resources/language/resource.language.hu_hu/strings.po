@@ -605,7 +605,7 @@ msgid "Current Version"
 msgstr "Jelenlegi verzió"
 
 msgctxt "#32189"
-msgid "Identification"
+msgid "OS Configuration"
 msgstr "Azonosítás"
 
 msgctxt "#32190"
