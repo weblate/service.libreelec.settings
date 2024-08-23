@@ -7,7 +7,7 @@
 
 import binascii
 import hashlib
-import imp
+import importlib
 import locale
 import os
 import re
@@ -66,7 +66,7 @@ CANCEL = (
 
 try:
     encoding = locale.getpreferredencoding(do_setlocale=True)
-    imp.reload(sys)
+    importlib.reload(sys)
     # sys.setdefaultencoding(encoding)
 except Exception as e:
     log.log(f'## LibreELEC Addon ## oe:encoding: ERROR: ({repr(e)})', log.ERROR)
