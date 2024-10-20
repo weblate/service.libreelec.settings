@@ -400,6 +400,8 @@ class system(modules.Module):
 
     @log.log_function()
     def set_hostname(self, listItem=None):
+        if listItem is not None:
+            self.set_value(listItem)
         value = self.struct['ident']['settings']['hostname']['value']
         if value is not None and value != '':
             hostname.set_hostname(value)
