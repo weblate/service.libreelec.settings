@@ -40,7 +40,7 @@ class Agent(dbus_utils.Agent):
     )
     def AuthorizePush(self, transfer, reply):
         name = self.authorize_push(transfer)
-        reply[0] = (dbussy.DBUS.Signature('s'), name)
+        reply[0] = name
 
     @ravel.method(
         in_signature='',
