@@ -91,7 +91,7 @@ class Agent(dbus_utils.Agent):
         arg_keys=['device'],
         result_keyword='reply'
     )
-    def RequestPasskey(self, device):
+    def RequestPasskey(self, device, reply):
         passkey = self.request_passkey(device)
         reply[0] = (dbussy.DBUS.Signature('u'), passkey)
 
