@@ -67,7 +67,7 @@ class Agent(dbus_utils.Agent):
         out_signature=''
     )
     def Release(self):
-        raise NotImplementedError
+        pass
 
     @ravel.method(
         in_signature='o',
