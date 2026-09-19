@@ -235,7 +235,8 @@ class bluetooth(modules.Module):
     def disconnect_device_by_path(self, path):
         try:
             dbus_bluez.device_disconnect(path)
-            self.menu_connections()
+            if self.visible:
+                self.menu_connections()
         except DBusError as e:
             self.dbus_error_handler(e)
 
