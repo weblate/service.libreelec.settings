@@ -684,6 +684,8 @@ class Bluez_Agent(dbus_bluez.Agent):
 
     @log.log_function()
     def cancel(self):
+        for window in ('yesnodialog', 'virtualkeyboard', 'numericinput'):
+            xbmc.executebuiltin(f'Dialog.Close({window},true)')
         if hasattr(self.parent, 'pinkey_window'):
             self.parent.close_pinkey_window()
 
