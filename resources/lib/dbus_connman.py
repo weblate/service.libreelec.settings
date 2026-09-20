@@ -83,7 +83,7 @@ class Agent(dbus_utils.Agent):
     )
     async def RequestInput(self, request, reply):
         request = dbus_utils.convert_from_dbussy(request)
-        input = self.request_input(*request)
+        input = await dbus_utils.run_dialog(self.request_input, *request)
         input = {k: (dbussy.DBUS.Signature('s'), v)
                  for (k, v) in input.items()}
         reply[0] = input

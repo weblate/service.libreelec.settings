@@ -38,9 +38,8 @@ class Agent(dbus_utils.Agent):
         arg_keys=['transfer'],
         result_keyword='reply'
     )
-    def AuthorizePush(self, transfer, reply):
-        name = self.authorize_push(transfer)
-        reply[0] = name
+    async def AuthorizePush(self, transfer, reply):
+        reply[0] = await dbus_utils.run_dialog(self.authorize_push, transfer)
 
     @ravel.method(
         in_signature='',
