@@ -35,12 +35,12 @@ class Agent(dbus_utils.Agent):
     @ravel.method(
         in_signature='o',
         out_signature='s',
-        arg_keys=['path'],
+        arg_keys=['transfer'],
         result_keyword='reply'
     )
-    def AuthorizePush(self, transfer):
+    def AuthorizePush(self, transfer, reply):
         name = self.authorize_push(transfer)
-        reply[0] = (dbussy.DBUS.Signature('s'), name)
+        reply[0] = name
 
     @ravel.method(
         in_signature='',

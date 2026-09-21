@@ -67,7 +67,7 @@ class Agent(dbus_utils.Agent):
         out_signature=''
     )
     def Release(self):
-        raise NotImplementedError
+        pass
 
     @ravel.method(
         in_signature='o',
@@ -91,9 +91,9 @@ class Agent(dbus_utils.Agent):
         arg_keys=['device'],
         result_keyword='reply'
     )
-    def RequestPasskey(self, device):
+    def RequestPasskey(self, device, reply):
         passkey = self.request_passkey(device)
-        reply[0] = (dbussy.DBUS.Signature('u'), passkey)
+        reply[0] = passkey
 
     @ravel.method(
         in_signature='o',
@@ -103,7 +103,7 @@ class Agent(dbus_utils.Agent):
     )
     def RequestPinCode(self, device, reply):
         pincode = self.request_pincode(device)
-        reply[0] = (dbussy.DBUS.Signature('s'), pincode)
+        reply[0] = pincode
 
     def reject(self, message):
         raise dbussy.DBusError(ERROR_REJECTED, message)

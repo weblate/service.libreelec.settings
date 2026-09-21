@@ -697,7 +697,7 @@ class Obex_Agent(dbus_obex.Agent):
 
     def authorize_push(self, transfer):
         xbmcDialog = xbmcgui.Dialog()
-        properties = self.transfer_get_all_properties(transfer)
+        properties = dbus_obex.transfer_get_all_properties(transfer)
         answer = xbmcDialog.yesno('Bluetooth', f"{oe._(32381)}\n\n{properties['Name']}")
         log.log(f'answer={repr(answer)}', log.DEBUG)
         if answer != 1:
