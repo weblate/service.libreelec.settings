@@ -235,7 +235,8 @@ class bluetooth(modules.Module):
     def disconnect_device_by_path(self, path):
         try:
             dbus_bluez.device_disconnect(path)
-            self.menu_connections()
+            if self.visible:
+                self.menu_connections()
         except DBusError as e:
             self.dbus_error_handler(e)
 
@@ -487,8 +488,13 @@ class bluetooth(modules.Module):
             devices = oe.read_setting('bluetooth', 'standby')
             if devices:
                 for device in devices.split(','):
-                    if dbus_bluez.device_get_connected(device):
-                        self.disconnect_device_by_path(device)
+                    try:
+                        if dbus_bluez.device_get_connected(device):
+                            self.disconnect_device_by_path(device)
+                    except DBusError:
+                        # bluez no longer knows this device, so there is nothing
+                        # to disconnect - carry on so the rest of the list is done
+                        log.log(f'standby_devices: skipping unknown {device}', log.DEBUG)
 
 
 ####################################################################
