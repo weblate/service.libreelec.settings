@@ -50,7 +50,7 @@ class Agent(dbus_utils.Agent):
         pass
 
     def reject(self, message):
-        raise dbussy.DBusError(ERROR_REJECTED, message)
+        raise ravel.ErrorReturn(ERROR_REJECTED, message)
 
 class Listener(object):
 

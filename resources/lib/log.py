@@ -7,6 +7,8 @@ import pprint
 import sys
 from functools import wraps
 
+import ravel
+
 from debug_utils import get_exception_message, format_stack_trace, inspect_object
 
 
@@ -71,6 +73,10 @@ def log_function(level=_DEFAULT):
                 result = function(*args, **kwargs)
                 _log(f'{header}> {pprint.pformat(result)}', level)
                 return result
+            except ravel.ErrorReturn:
+                # a handler reporting a dbus error to the other end - ravel turns
+                # this into the reply, so it has to reach it
+                raise
             except Exception as e:
                 _log(f'{header}# {repr(e)}', ERROR)
                 outer_stack = list(reversed(inspect.stack(5)))[:-1]

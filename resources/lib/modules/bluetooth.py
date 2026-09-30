@@ -636,14 +636,18 @@ class Bluez_Agent(dbus_bluez.Agent):
     def request_pincode(self, device):
         xbmcKeyboard = xbmc.Keyboard('', 'Enter PIN code')
         xbmcKeyboard.doModal()
-        pincode = xbmcKeyboard.getText()
-        return pincode
+        if not xbmcKeyboard.isConfirmed():
+            self.reject('Pairing rejected!')
+        return xbmcKeyboard.getText()
 
     @log.log_function()
     def request_passkey(self, device):
         xbmcDialog = xbmcgui.Dialog()
-        passkey = int(xbmcDialog.numeric(0, 'Enter passkey (number in 0-999999)', '0'))
-        return passkey
+        # TODO: Localization
+        passkey = xbmcDialog.numeric(0, 'Enter passkey (number in 0-999999)', '0')
+        if not passkey:
+            self.reject('Pairing rejected!')
+        return int(passkey)
 
     @log.log_function()
     def display_passkey(self, device, passkey, entered):
@@ -670,7 +674,7 @@ class Bluez_Agent(dbus_bluez.Agent):
             self.reject('Passkey does not match')
 
     @log.log_function()
-    def RequestAuthorization(self, device):
+    def request_authorization(self, device):
         xbmcDialog = xbmcgui.Dialog()
         answer = xbmcDialog.yesno('Bluetooth', 'Accept pairing?')
         if answer == 1:
@@ -679,7 +683,7 @@ class Bluez_Agent(dbus_bluez.Agent):
             self.reject('Pairing rejected')
 
     @log.log_function()
-    def Cancel(self):
+    def cancel(self):
         if hasattr(self.parent, 'pinkey_window'):
             self.parent.close_pinkey_window()
 
