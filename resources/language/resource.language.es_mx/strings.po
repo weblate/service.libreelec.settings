@@ -406,6 +406,14 @@ msgctxt "#32029"
 msgid "up to date: %s"
 msgstr "actualizado: %s"
 
+msgctxt "#32031"
+msgid "Working..."
+msgstr ""
+
+msgctxt "#32032"
+msgid "Firmware is up to date."
+msgstr ""
+
 msgctxt "#32100"
 msgid "Connections"
 msgstr "Conexiones"
@@ -819,8 +827,8 @@ msgid "Previous"
 msgstr "Anteriore"
 
 msgctxt "#32308"
-msgid "Hostname:"
-msgstr "Nombre de host:"
+msgid "Set Hostname and Timezone:"
+msgstr ""
 
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
@@ -979,7 +987,7 @@ msgid "Restore Backup"
 msgstr "Restaurar respaldo"
 
 msgctxt "#32374"
-msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.bz2, .tar.gz, .tar.xz, or .tar.zst"
 msgstr ""
 
 msgctxt "#32375"
@@ -1129,3 +1137,7 @@ msgstr ""
 msgctxt "#32420"
 msgid "Timezone"
 msgstr ""
+
+#~ msgctxt "#32308"
+#~ msgid "Hostname:"
+#~ msgstr "Nombre de host:"

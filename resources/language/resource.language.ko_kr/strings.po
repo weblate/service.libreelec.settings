@@ -414,6 +414,14 @@ msgctxt "#32029"
 msgid "up to date: %s"
 msgstr "최신: %s"
 
+msgctxt "#32031"
+msgid "Working..."
+msgstr ""
+
+msgctxt "#32032"
+msgid "Firmware is up to date."
+msgstr ""
+
 msgctxt "#32100"
 msgid "Connections"
 msgstr "연결"
@@ -827,8 +835,8 @@ msgid "Previous"
 msgstr "이전"
 
 msgctxt "#32308"
-msgid "Hostname:"
-msgstr "호스트이름 :"
+msgid "Set Hostname and Timezone:"
+msgstr ""
 
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
@@ -987,8 +995,8 @@ msgid "Restore Backup"
 msgstr "복원"
 
 msgctxt "#32374"
-msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
-msgstr "오류: 잘못된 백업 파일입니다. 파일 이름은 .tar, .tar.gz, .tar.bz2, .tar.xz로 끝나야 합니다"
+msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.bz2, .tar.gz, .tar.xz, or .tar.zst"
+msgstr ""
 
 msgctxt "#32375"
 msgid "Backup Progress"
@@ -1137,3 +1145,11 @@ msgstr "로그 파일 전송 중 오류가 발생했습니다. 다시 시도해 
 msgctxt "#32420"
 msgid "Timezone"
 msgstr "시간대"
+
+#~ msgctxt "#32374"
+#~ msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+#~ msgstr "오류: 잘못된 백업 파일입니다. 파일 이름은 .tar, .tar.gz, .tar.bz2, .tar.xz로 끝나야 합니다"
+
+#~ msgctxt "#32308"
+#~ msgid "Hostname:"
+#~ msgstr "호스트이름 :"
