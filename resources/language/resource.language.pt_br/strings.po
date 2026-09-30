@@ -413,6 +413,14 @@ msgctxt "#32029"
 msgid "up to date: %s"
 msgstr "Atualizado: %s"
 
+msgctxt "#32031"
+msgid "Working..."
+msgstr ""
+
+msgctxt "#32032"
+msgid "Firmware is up to date."
+msgstr ""
+
 msgctxt "#32100"
 msgid "Connections"
 msgstr "Conexões"
@@ -826,8 +834,8 @@ msgid "Previous"
 msgstr "Anterior"
 
 msgctxt "#32308"
-msgid "Hostname:"
-msgstr "Nome da máquina:"
+msgid "Set Hostname and Timezone:"
+msgstr ""
 
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
@@ -986,8 +994,8 @@ msgid "Restore Backup"
 msgstr "Restaurar Backup"
 
 msgctxt "#32374"
-msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
-msgstr "Erro: Arquivo de backup inválido. O nome do arquivo deve terminar em: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.bz2, .tar.gz, .tar.xz, or .tar.zst"
+msgstr ""
 
 msgctxt "#32375"
 msgid "Backup Progress"
@@ -1136,3 +1144,11 @@ msgstr "Erro ao enviar arquivos de log. Por favor, tente novamente."
 msgctxt "#32420"
 msgid "Timezone"
 msgstr "Fuso horário"
+
+#~ msgctxt "#32374"
+#~ msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+#~ msgstr "Erro: Arquivo de backup inválido. O nome do arquivo deve terminar em: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+
+#~ msgctxt "#32308"
+#~ msgid "Hostname:"
+#~ msgstr "Nome da máquina:"

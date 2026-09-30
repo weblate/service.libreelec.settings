@@ -415,6 +415,14 @@ msgctxt "#32029"
 msgid "up to date: %s"
 msgstr "aktuálne: %s"
 
+msgctxt "#32031"
+msgid "Working..."
+msgstr ""
+
+msgctxt "#32032"
+msgid "Firmware is up to date."
+msgstr ""
+
 msgctxt "#32100"
 msgid "Connections"
 msgstr "Pripojenia"
@@ -828,8 +836,8 @@ msgid "Previous"
 msgstr "Predchádzajúce"
 
 msgctxt "#32308"
-msgid "Hostname:"
-msgstr "Názov hostiteľa:"
+msgid "Set Hostname and Timezone:"
+msgstr ""
 
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
@@ -988,7 +996,7 @@ msgid "Restore Backup"
 msgstr "Obnoviť zálohu"
 
 msgctxt "#32374"
-msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.gz, .tar.bz2, or .tar.xz"
+msgid "Error: Invalid backup file. Filename must end in: .tar, .tar.bz2, .tar.gz, .tar.xz, or .tar.zst"
 msgstr ""
 
 msgctxt "#32375"
@@ -1138,3 +1146,7 @@ msgstr ""
 msgctxt "#32420"
 msgid "Timezone"
 msgstr ""
+
+#~ msgctxt "#32308"
+#~ msgid "Hostname:"
+#~ msgstr "Názov hostiteľa:"
