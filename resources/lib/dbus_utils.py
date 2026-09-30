@@ -122,6 +122,18 @@ async def call_async_method(bus_name, path, interface, method_name, *args, **kwa
     return convert_from_dbussy(first)
 
 
+# Agent methods are dispatched on the asyncio loop, so anything that waits for the
+# user has to be run elsewhere or no other dbus message is served until it returns -
+# including the Cancel() and Release() the service daemon sends to withdraw the
+# request. The lock keeps two agents from putting a dialog up at the same time.
+DIALOG_LOCK = asyncio.Lock()
+
+
+async def run_dialog(func, *args):
+    async with DIALOG_LOCK:
+        return await LOOP.run_in_executor(None, func, *args)
+
+
 def run_method(bus_name, path, interface, method_name, *args, **kwargs):
     future = asyncio.run_coroutine_threadsafe(call_async_method(
         bus_name, path, interface, method_name, *args, **kwargs), LOOP)
