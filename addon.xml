@@ -20,7 +20,7 @@
     <summary lang="af_ZA">@DISTRONAME@ Konfigurasie</summary>
     <summary lang="bg_BG">Настройки на @DISTRONAME@</summary>
     <summary lang="ca_ES">Configuració de @DISTRONAME@</summary>
-    <summary lang="cs_CZ">@DISTRONAME@ Nastavení</summary>
+    <summary lang="cs_CZ">Nastavení @DISTRONAME@</summary>
     <summary lang="da_DK">@DISTRONAME@ konfiguration</summary>
     <summary lang="de_DE">@DISTRONAME@-Konfiguration</summary>
     <summary lang="el_GR">Διαμόρφωση του @DISTRONAME@</summary>
@@ -58,7 +58,7 @@
     <summary lang="zh_CN">@DISTRONAME@ 设置</summary>
     <description lang="bg_BG">Ползвайте добавката за да управлявате операционната система, в основата на @DISTRONAME@. Чрез добавката можете да настроите всичко и така не се налага да се притеснявате какво работи под Kodi.[CR][CR]От добавката можете да променяте настройките на мрежовите връзки, клавиатурната подредба и да включвате/изключвате отдалечения достъп посредством Samba или SSH.</description>
     <description lang="ca_ES">Utilitza aquest complement per configurar el sistema operatiu subjacent del sistema @DISTRONAME@. Des d&apos;aquí es pot gestionar tot el sistema, de manera que no s&apos;ha de preocupar sobre el que s&apos;executa sota el Kodi.[CR][CR]Des d&apos;aquí es pot canviar la connectivitat de la xarxa, la distribució del teclat i idioma i activar / desactivar l&apos;accés remot inclòs samba i SSH.</description>
-    <description lang="cs_CZ">Použijte toto rozšíření pro správu vašeho @DISTRONAME@ systému. Odtud můžete spravovat celý systém, takže nemusíte mít strach o to, co běží pod kapotou. [CR] [CR] Odtud můžete změnit připojení k síti, rozložení klávesnice, jazyk a povolit nebo zakázat vzdálený přístup, včetně Samby a SSH.</description>
+    <description lang="cs_CZ">Pomocí tohoto doplňku můžete spravovat služby @DISTRONAME@, aktualizace, síť, Bluetooth, zálohy a další nastavení systému.</description>
     <description lang="da_DK">Brug denne addon til at styre dit @DISTRONAME@ systems underliggende operativsystem. Herfra kan du styre hele systemet, så du ikke behøver at bekymre dig om, hvad der kører under motorhjelmen. [CR] [CR] Herfra kan du ændre din netværksforbindelse, dit tastaturlayout og sprog og aktivere/deaktivere fjernadgang, herunder Samba og SSH.</description>
     <description lang="de_DE">Verwenden Sie dieses Addon, um das Betriebssystem, auf dem @DISTRONAME@ läuft, zu administrieren. Von hier aus können Sie das gesamte System verwalten ohne sich Gedanken machen zu müssen, was genau im System abläuft.[CR][CR]Hier haben Sie die Möglichkeit Netzwerkeinstellungen, Tastaturlayouts oder Systemdienste, wie SSH oder Samba, zu konfigurieren.</description>
     <description lang="el_GR">Χρησιμοποιήστε αυτό το πρόσθετο για να διαχειριστείτε το λειτουργικό σύστημα @DISTRONAME@. Από εδώ μπορείτε να διαχειριστείτε ολόκληρο το σύστημα ούτως ώστε να μη χρειάζεται να ανησυχείτε σχετικά με το τι τρέχει στο υπόβαθρο.[CR][CR]Μπορείτε, επίσης, να αλλάξετε τη συνδεσιμότητα του δικτύου σας, τη διάταξη του πληκτρολογίου σας και τη γλώσσα, καθώς και να ενεργοποιήσετε/απενεργοποιήσετε την απομακρυσμένη πρόσβαση μέσω Samba και SSH.</description>
